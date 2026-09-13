@@ -1,0 +1,426 @@
+{
+  "usage": {
+    "provider": "cache",
+    "model": "gpt-5.6-terra",
+    "prompt_version": "evidence-v2",
+    "live_calls": 0,
+    "cached_resolutions": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "unmetered_calls": 0,
+    "input_rate_per_million": null,
+    "output_rate_per_million": null,
+    "estimated_cost": "0",
+    "cost_status": "estimated"
+  },
+  "requests": [
+    {
+      "request_id": "request_01",
+      "used": [],
+      "skipped": [],
+      "issues": []
+    },
+    {
+      "request_id": "request_02",
+      "used": [],
+      "skipped": [
+        {
+          "source_id": "message_01",
+          "reason": "unresolved_evidence"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unresolved_evidence",
+          "source_id": "message_01",
+          "detail": "source unavailable or not cached; no value imputed",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_03",
+      "used": [],
+      "skipped": [
+        {
+          "source_id": "image_01",
+          "reason": "unresolved_evidence"
+        },
+        {
+          "source_id": "message_02",
+          "reason": "unresolved_evidence"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unresolved_evidence",
+          "source_id": "image_01",
+          "detail": "source unavailable or not cached; no value imputed",
+          "blocking": false
+        },
+        {
+          "code": "unresolved_evidence",
+          "source_id": "message_02",
+          "detail": "source unavailable or not cached; no value imputed",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_04",
+      "used": [],
+      "skipped": [
+        {
+          "source_id": "message_03",
+          "reason": "unresolved_evidence"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unresolved_evidence",
+          "source_id": "message_03",
+          "detail": "source unavailable or not cached; no value imputed",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_05",
+      "used": [],
+      "skipped": [],
+      "issues": []
+    },
+    {
+      "request_id": "request_06",
+      "used": [],
+      "skipped": [
+        {
+          "source_id": "message_04",
+          "reason": "unresolved_evidence"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unresolved_evidence",
+          "source_id": "message_04",
+          "detail": "source unavailable or not cached; no value imputed",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_07",
+      "used": [],
+      "skipped": [
+        {
+          "source_id": "message_05",
+          "reason": "unresolved_evidence"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unresolved_evidence",
+          "source_id": "message_05",
+          "detail": "source unavailable or not cached; no value imputed",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_08",
+      "used": [],
+      "skipped": [
+        {
+          "source_id": "message_06",
+          "reason": "unresolved_evidence"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unresolved_evidence",
+          "source_id": "message_06",
+          "detail": "source unavailable or not cached; no value imputed",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_09",
+      "used": [],
+      "skipped": [],
+      "issues": []
+    },
+    {
+      "request_id": "request_10",
+      "used": [],
+      "skipped": [
+        {
+          "source_id": "message_07",
+          "reason": "unresolved_evidence"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unresolved_evidence",
+          "source_id": "message_07",
+          "detail": "source unavailable or not cached; no value imputed",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_11",
+      "used": [],
+      "skipped": [
+        {
+          "source_id": "message_08",
+          "reason": "unresolved_evidence"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unresolved_evidence",
+          "source_id": "message_08",
+          "detail": "source unavailable or not cached; no value imputed",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_12",
+      "used": [],
+      "skipped": [
+        {
+          "source_id": "message_09",
+          "reason": "unresolved_evidence"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unresolved_evidence",
+          "source_id": "message_09",
+          "detail": "source unavailable or not cached; no value imputed",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_13",
+      "used": [],
+      "skipped": [],
+      "issues": []
+    },
+    {
+      "request_id": "request_14",
+      "used": [],
+      "skipped": [
+        {
+          "source_id": "message_10",
+          "reason": "unresolved_evidence"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unresolved_evidence",
+          "source_id": "message_10",
+          "detail": "source unavailable or not cached; no value imputed",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_15",
+      "used": [],
+      "skipped": [
+        {
+          "source_id": "message_11",
+          "reason": "unresolved_evidence"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unresolved_evidence",
+          "source_id": "message_11",
+          "detail": "source unavailable or not cached; no value imputed",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_16",
+      "used": [],
+      "skipped": [
+        {
+          "source_id": "image_02",
+          "reason": "unresolved_evidence"
+        },
+        {
+          "source_id": "message_12",
+          "reason": "unresolved_evidence"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unresolved_evidence",
+          "source_id": "image_02",
+          "detail": "source unavailable or not cached; no value imputed",
+          "blocking": false
+        },
+        {
+          "code": "unresolved_evidence",
+          "source_id": "message_12",
+          "detail": "source unavailable or not cached; no value imputed",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_17",
+      "used": [],
+      "skipped": [
+        {
+          "source_id": "image_03",
+          "reason": "unresolved_evidence"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unresolved_evidence",
+          "source_id": "image_03",
+          "detail": "source unavailable or not cached; no value imputed",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_18",
+      "used": [],
+      "skipped": [
+        {
+          "source_id": "message_13",
+          "reason": "unresolved_evidence"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unresolved_evidence",
+          "source_id": "message_13",
+          "detail": "source unavailable or not cached; no value imputed",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_19",
+      "used": [],
+      "skipped": [
+        {
+          "source_id": "image_04",
+          "reason": "unresolved_evidence"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unresolved_evidence",
+          "source_id": "image_04",
+          "detail": "source unavailable or not cached; no value imputed",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_20",
+      "used": [],
+      "skipped": [
+        {
+          "source_id": "image_05",
+          "reason": "unresolved_evidence"
+        },
+        {
+          "source_id": "message_14",
+          "reason": "unresolved_evidence"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unresolved_evidence",
+          "source_id": "image_05",
+          "detail": "source unavailable or not cached; no value imputed",
+          "blocking": false
+        },
+        {
+          "code": "unresolved_evidence",
+          "source_id": "message_14",
+          "detail": "source unavailable or not cached; no value imputed",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_21",
+      "used": [],
+      "skipped": [],
+      "issues": []
+    },
+    {
+      "request_id": "request_22",
+      "used": [],
+      "skipped": [
+        {
+          "source_id": "message_15",
+          "reason": "unresolved_evidence"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unresolved_evidence",
+          "source_id": "message_15",
+          "detail": "source unavailable or not cached; no value imputed",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_23",
+      "used": [],
+      "skipped": [
+        {
+          "source_id": "message_16",
+          "reason": "unresolved_evidence"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unresolved_evidence",
+          "source_id": "message_16",
+          "detail": "source unavailable or not cached; no value imputed",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_24",
+      "used": [],
+      "skipped": [
+        {
+          "source_id": "message_17",
+          "reason": "unresolved_evidence"
+        }
+      ],
+      "issues": [
+        {
+          "code": "unresolved_evidence",
+          "source_id": "message_17",
+          "detail": "source unavailable or not cached; no value imputed",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_25",
+      "used": [],
+      "skipped": [],
+      "issues": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+# Run usage
+
+```json
+{
+  "provider": "cache",
+  "model": "gpt-5.6-terra",
+  "prompt_version": "evidence-v2",
+  "live_calls": 0,
+  "cached_resolutions": 0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "unmetered_calls": 0,
+  "input_rate_per_million": null,
+  "output_rate_per_million": null,
+  "estimated_cost": "0",
+  "cost_status": "estimated",
+  "requests": 25,
+  "run_kind": "evidence extraction only; no predictions",
+  "total_tokens": 0,
+  "average_tokens_per_request": "0",
+  "estimated_cost_per_request": "0"
+}
+```
