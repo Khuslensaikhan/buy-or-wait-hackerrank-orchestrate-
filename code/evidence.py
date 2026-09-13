@@ -4,6 +4,7 @@ from datetime import date, datetime, time, timezone
 from decimal import Decimal
 
 from evidence_schemas import ImageFact, MessageFact
+from evidence_rules import literal_amendment
 from models import Event, Issue, RequestContext
 from providers import EvidenceProvider, EvidenceUnavailable, source_for
 
@@ -56,6 +57,49 @@ def choose_claim(claims: list[Claim], direction: str) -> Claim:
     return max(claims, key=lambda c: (conservative(c), c.source_id))
 
 
+def proves_unresolved_debit(fact: MessageFact, context: RequestContext) -> bool:
+    """Missing optional credit metadata cannot invalidate known cash capacity."""
+    if fact.event_direction != 'debit' or fact.new_status in {'cancelled', 'failed', 'unrealized'}:
+        return False
+    if fact.new_status == 'pending':
+        return True  # An authorization reserves cash even beyond the horizon.
+    if fact.new_date is None:
+        return True
+    if fact.new_status == 'settled' and fact.new_date <= context.request.request_date:
+        return False  # Already reflected in the opening snapshot.
+    return fact.new_date <= context.request.horizon
+
+
+def bind_next_payroll(fact: MessageFact, context: RequestContext) -> MessageFact:
+    """Complete only a uniquely supported next payday; preserve literal amounts."""
+    if not (fact.creates_new_event and fact.event_direction == 'credit' and fact.event_category == 'salary'
+            and fact.new_amount is not None and fact.new_currency is not None
+            and fact.new_date is None and fact.new_status == 'scheduled'
+            and ('next salary' in (fact.event_description or '').casefold()
+                 or 'next payroll' in (fact.evidence_summary or '').casefold())):
+        return fact
+    from reconstruction import REGULAR_PAY, UNCERTAIN_PAY, add_months, recurring_kind
+    groups: dict[str, list[Event]] = {}
+    for e in context.events:
+        if (e.status == 'settled' and e.direction == 'credit' and e.category == 'salary'
+                and e.currency == fact.new_currency and e.settlement_date and e.settlement_date <= context.request.request_date
+                and REGULAR_PAY.search(e.description) and not UNCERTAIN_PAY.search(e.description)):
+            groups.setdefault(e.description.casefold(), []).append(e)
+    candidates = []
+    for history in groups.values():
+        history.sort(key=lambda e: e.settlement_date)
+        kind = recurring_kind(history, salary=True)
+        if kind and kind[0] == 'monthly':
+            day = add_months(history[-1].settlement_date, 1, kind[1])
+            if context.request.request_date <= day <= context.request.horizon:
+                candidates.append((history[-1], day))
+    if len(candidates) != 1:
+        return fact
+    target, day = candidates[0]
+    return fact.model_copy(update={'creates_new_event': False, 'related_event_id': target.event_id,
+                                  'new_date': day, 'action': 'amend'})
+
+
 def resolve_evidence(context: RequestContext, provider: EvidenceProvider) -> EvidenceResolution:
     result = EvidenceResolution(tuple(replace(e) for e in context.events))
     originals = {e.event_id: e for e in context.events}
@@ -69,9 +113,13 @@ def resolve_evidence(context: RequestContext, provider: EvidenceProvider) -> Evi
             facts = provider.resolve(source, context)
         except (EvidenceUnavailable, OSError) as exc:
             code = 'missing_image_file' if isinstance(exc, OSError) else 'unresolved_evidence'
-            result.issues.append(Issue(code, identity, 'source unavailable or not cached; no value imputed'))
-            result.skipped.append({'source_id': identity, 'reason': code})
-            continue
+            facts = literal_amendment(record, context)
+            if facts is None:
+                result.issues.append(Issue(code, identity, 'source unavailable or not cached; no value imputed'))
+                result.skipped.append({'source_id': identity, 'reason': code})
+                continue
+            result.used.append({'source_id': identity, 'action': 'literal_percentage_fallback',
+                                'reason': 'uncached; exact financial sentence and unique monthly lease'})
         extracted = [*facts.images, *facts.messages]
         if not extracted:
             result.skipped.append({'source_id': identity, 'reason': 'no financial facts'})
@@ -94,6 +142,8 @@ def resolve_evidence(context: RequestContext, provider: EvidenceProvider) -> Evi
                 if reason != 'irrelevant':
                     result.issues.append(Issue('rejected_fact', identity, reason))
                 continue
+            if isinstance(fact, MessageFact):
+                fact = bind_next_payroll(fact, context)
             target = originals.get(fact.related_event_id or '')
             if isinstance(fact, MessageFact) and fact.creates_new_event:
                 if target is not None:
@@ -103,11 +153,13 @@ def resolve_evidence(context: RequestContext, provider: EvidenceProvider) -> Evi
                             fact.event_type, fact.new_currency, fact.new_date, fact.new_status)
                 if not all(required):
                     result.issues.append(Issue('incomplete_new_fact', identity,
-                                               'new event requires explicit description/category/direction/type/currency/date/status', True))
+                                               'new event requires explicit description/category/direction/type/currency/date/status',
+                                               proves_unresolved_debit(fact, context)))
                     continue
                 if fact.new_currency not in {'INR', 'EUR', 'USD', 'IDR', 'ZAR'} or fact.event_type not in {
                         'income', 'expense', 'subscription', 'debt_payment', 'refund', 'investment_purchase', 'investment_sale'}:
-                    result.issues.append(Issue('rejected_fact', identity, 'unsupported new event currency/type', True))
+                    result.issues.append(Issue('rejected_fact', identity, 'unsupported new event currency/type',
+                                               proves_unresolved_debit(fact, context)))
                     continue
                 created.append(Event(f'evidence_{identity}_{index}', context.request.user_id,
                     fact.event_type, fact.event_description, fact.event_category, fact.event_direction,

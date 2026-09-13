@@ -10,7 +10,7 @@ from agent import BuyOrWaitAgent
 from audit import trace_markdown, write_trace
 from config import REPO_ROOT
 from data_loader import OUTPUT_FIELDS, load_dataset, read_rows
-from evidence import resolve_evidence
+from extraction import collect_evidence, dry_run_summary, run_extraction
 from output_validation import validate_row, verify_output_row
 from providers import CachedEvidenceProvider, OpenAIEvidenceProvider, sanitize
 from sample_evaluation import run_evaluation
@@ -31,12 +31,31 @@ def build_parser() -> argparse.ArgumentParser:
     group.add_argument('--samples', action='store_true')
     group.add_argument('--all', action='store_true')
     extract.add_argument('--live', action='store_true', help='Explicitly permit billable extraction on cache misses')
+    extract.add_argument('--dry-run', action='store_true', help='List unique sources and cache status; never call a model')
+    extract.add_argument('--limit', type=nonnegative_int, help='Select first N unique sources, including cache hits')
+    extract.add_argument('--source-id', help='Select one evidence ID within the requested scope')
+    extract.add_argument('--timeout-seconds', type=positive_seconds, default=60)
+    extract.add_argument('--max-retries', type=nonnegative_int, default=1)
     prediction = commands.add_parser('predict')
     prediction.add_argument('--offline', action='store_true', help='Default; never silently calls OpenAI')
     prediction.add_argument('--output', type=Path, required=True)
     validation = commands.add_parser('validate-output')
     validation.add_argument('output', type=Path)
     return parser
+
+
+def nonnegative_int(value: str) -> int:
+    number = int(value)
+    if number < 0:
+        raise argparse.ArgumentTypeError('must be nonnegative')
+    return number
+
+
+def positive_seconds(value: str) -> float:
+    number = float(value)
+    if not 0 < number < float('inf'):
+        raise argparse.ArgumentTypeError('must be positive and finite')
+    return number
 
 
 def repo_path(path: Path) -> Path:
@@ -77,7 +96,13 @@ def write_usage(provider, count: int, run_kind: str) -> None:
                                             if count and usage['estimated_cost'] is not None else None)
     content = json.dumps(sanitize(usage), indent=2, default=str)
     (folder / 'usage_report.json').write_text(content + '\n')
-    (folder / 'usage_report.md').write_text('# Run usage\n\n```json\n' + content + '\n```\n')
+    (folder / 'usage_report.md').write_text(
+        '# Run usage\n\n```json\n' + content + '\n```\n\n'
+        'These token and cost totals cover new model calls during the named run. '
+        'Cached resolutions use previously extracted facts from the listed model; '
+        'zero new tokens does not mean their original extraction was free. '
+        'Historical cache usage is cumulative and is not summed as per-source billing. '
+        'Separate extraction attempts and failures are recorded in evidence_extraction.json.\n')
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -91,22 +116,20 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         data = load_dataset()
         if args.command == 'extract-evidence':
-            fallback = OpenAIEvidenceProvider(live=True) if args.live else None
-            provider = CachedEvidenceProvider(fallback=fallback)
             requests = data.samples if args.samples else data.samples + data.requests
-            records = []
-            for request in requests:
-                resolution = resolve_evidence(data.context(request), provider)
-                records.append({'request_id': request.request_id, 'used': resolution.used,
-                                'skipped': resolution.skipped,
-                                'issues': [vars(i) for i in resolution.issues]})
-            report = sanitize({'usage': provider.usage.report(), 'requests': records})
+            items = collect_evidence((data.context(r) for r in requests),
+                                     limit=args.limit, source_id=args.source_id)
+            if args.dry_run:
+                report = dry_run_summary(items, CachedEvidenceProvider(), args.max_retries)
+                print(json.dumps(report, indent=2), flush=True)
+                return 1 if report['unavailable_sources'] else 0
+            fallback = (OpenAIEvidenceProvider(live=True, timeout_seconds=args.timeout_seconds,
+                                              max_retries=args.max_retries) if args.live else None)
+            provider = CachedEvidenceProvider(fallback=fallback)
             folder = REPO_ROOT / 'code' / 'evaluation'
-            folder.mkdir(parents=True, exist_ok=True)
-            (folder / 'evidence_extraction.json').write_text(json.dumps(report, indent=2, default=str) + '\n')
-            print(json.dumps(report, indent=2, default=str))
+            report = run_extraction(items, provider, folder)
             write_usage(provider, len(requests), 'evidence extraction only; no predictions')
-            return 0
+            return 130 if report['summary']['interrupted'] else int(report['summary']['failed'] > 0)
         agent = BuyOrWaitAgent(data, CachedEvidenceProvider())
         if args.command == 'trace':
             requests = data.samples if args.sample else data.requests

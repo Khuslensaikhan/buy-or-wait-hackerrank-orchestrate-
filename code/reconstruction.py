@@ -4,7 +4,7 @@ import re
 from collections import defaultdict
 from dataclasses import replace
 from datetime import date, timedelta
-from decimal import Decimal
+from decimal import Decimal, ROUND_CEILING
 
 from data_loader import convert
 from evidence import unresolved_evidence
@@ -15,6 +15,34 @@ UNCERTAIN_PAY = re.compile(r'bonus|commission|arrears|freelance|contract|platfor
                            r'earnings|payout|seasonal|temporary|prorated|milestone', re.I)
 REGULAR_PAY = re.compile(r'payroll|base salary|household salary|employer salary', re.I)
 FINAL_PAY = re.compile(r'final.*(?:payroll|salary)|(?:payroll|salary).*final', re.I)
+ONE_TIME = re.compile(r'\bone[ -](?:off|time)\b|\boutstanding\b|\bdelivered\b|'
+                      r'\bauthori[sz]ation\b|\brevers(?:ed|al)\b|\brefund\b|\bretry\b', re.I)
+CONTRACTUAL_CATEGORIES = frozenset({'rent', 'housing', 'insurance', 'education', 'debt_repayment'})
+
+
+def expense_kind(event: Event) -> str:
+    """A dated receipt or arrears balance is not the ongoing household budget."""
+    if ONE_TIME.search(event.description):
+        return 'one_time'
+    if event.event_type in {'subscription', 'debt_payment'} or event.category in CONTRACTUAL_CATEGORIES:
+        return 'contractual'
+    return 'variable'
+
+
+def estimate_debit(history: list[Event]) -> Decimal:
+    known = [e.amount for e in history if e.amount is not None]
+    if expense_kind(history[-1]) == 'contractual':
+        return known[-1]
+    # Estimate the repeated budget from all observations, rather than repeating
+    # one recent high purchase for 90 days. Round debits up, capacity down.
+    return (sum(known) / len(known)).quantize(Decimal('.01'), rounding=ROUND_CEILING)
+
+
+def stream_identity(event: Event) -> tuple[str, ...]:
+    """Every observation belongs to exactly one stream, including at merchants."""
+    pooled = event.direction == 'debit' and event.event_type == 'expense' and event.category in VARIABLE_CATEGORIES
+    identity = event.category if pooled else event.description.casefold()
+    return event.direction, event.event_type, event.category, event.currency, identity
 
 
 def add_months(day: date, months: int, anchor_day: int | None = None) -> date:
@@ -46,7 +74,7 @@ def resolve_lifecycle(events: tuple[Event, ...]) -> tuple[Event, ...]:
                  e.direction != 'non_cash')
 
 
-def recurring_kind(events: list[Event]) -> tuple[str, int] | None:
+def recurring_kind(events: list[Event], *, salary: bool = False) -> tuple[str, int] | None:
     days = sorted({e.settlement_date for e in events if e.settlement_date})
     if len(days) < 3:
         return None
@@ -56,6 +84,11 @@ def recurring_kind(events: list[Event]) -> tuple[str, int] | None:
     if all(b - a == 1 for a, b in zip(indices, indices[1:])) and all(
             d.day == min(anchor, calendar.monthrange(d.year, d.month)[1]) for d in days):
         return 'monthly', anchor
+    if salary and all(b - a == 1 for a, b in zip(indices, indices[1:])):
+        # Payroll settlement can shift with weekends or an employer delay. One
+        # observation per consecutive month supports monthly pay, not an exact
+        # elapsed-day interval. Retain the later recent payday conservatively.
+        return 'monthly', max(d.day for d in days[-3:])
     gaps = [(b - a).days for a, b in zip(days, days[1:])]
     if len(set(gaps)) == 1 and 1 <= gaps[0] <= 31:
         return 'interval', gaps[0]
@@ -84,7 +117,7 @@ def reconstruct(context: RequestContext,
             home = convert(amount, event.currency, profile.home_currency, fx_day or day, rates)
         except ValueError as exc:
             result.issues.append(Issue('missing_fx', event.event_id, str(exc),
-                                       blocking=True))
+                                       blocking=event.direction == 'debit'))
             return
         result.flows.append(CashFlow(day, -home if event.direction == 'debit' else home,
                                      event.event_id, inferred,
@@ -121,6 +154,10 @@ def reconstruct(context: RequestContext,
         emit(event, max(start, day), event.amount)
 
     groups: dict[tuple[str, ...], list[Event]] = defaultdict(list)
+    image_transactions = {i.related_event_id for i in context.images}
+    descriptions: dict[tuple[str, ...], int] = defaultdict(int)
+    for event in active:
+        descriptions[(event.direction, event.category, event.currency, event.description.casefold())] += 1
     for event in active:
         if event.status != 'settled' or not event.settlement_date or event.settlement_date > start:
             continue
@@ -129,19 +166,53 @@ def reconstruct(context: RequestContext,
                 continue
         elif event.event_type not in {'expense', 'subscription', 'debt_payment'}:
             continue
-        identity = event.category if event.category in VARIABLE_CATEGORIES else event.description.casefold()
-        groups[(event.direction, event.event_type, event.category, event.currency, identity)].append(event)
+        elif expense_kind(event) == 'one_time':
+            continue
+        elif (event.event_id in image_transactions and event.category in VARIABLE_CATEGORIES
+              and descriptions[(event.direction, event.category, event.currency, event.description.casefold())] == 1):
+            # A separately supplied receipt with no repeated merchant history is
+            # an individual purchase, not another observation of the usual budget.
+            # Its cash state was already handled above, including pending reserves.
+            continue
+        groups[stream_identity(event)].append(event)
+
+    # A prorated first paycheck plus an explicit next regular salary establishes
+    # the monthly employment stream. Neither a lone salary nor an uncertain bonus
+    # is sufficient. The prorated amount is not the ongoing salary estimate.
+    if not any(k[0] == 'credit' for k in groups):
+        starters = [e for e in active if e.status == 'settled' and e.category == 'salary'
+                    and e.direction == 'credit' and 'prorated first salary' in e.description.casefold()]
+        for first in starters:
+            confirmations = [e for e in active if e.status == 'scheduled' and e.category == 'salary'
+                             and e.direction == 'credit' and e.currency == first.currency
+                             and 'confirmed salary' in e.description.casefold() and e.amount is not None
+                             and first.settlement_date and e.settlement_date == add_months(first.settlement_date, 1)]
+            if len(confirmations) == 1:
+                regular = confirmations[0]
+                key = ('credit', 'income', 'salary', regular.currency, regular.description.casefold())
+                groups[key].append(replace(first, description=regular.description, amount=regular.amount))
 
     for key, history in sorted(groups.items()):
         history.sort(key=lambda e: (e.settlement_date, e.event_id))
-        kind = recurring_kind(history)
+        last = history[-1]
+        salary = last.direction == 'credit'
+        salary_streams = sum(k[0] == 'credit' and k[3] == last.currency for k in groups)
+        future_salary = [e for e in active if salary and e.direction == 'credit' and e.category == 'salary'
+                         and e.currency == last.currency and e.status == 'scheduled'
+                         and e.settlement_date and e.settlement_date > start
+                         and not UNCERTAIN_PAY.search(e.description)
+                         and (e.description.casefold() == last.description.casefold() or salary_streams == 1)]
+        observations = history + future_salary
+        kind = recurring_kind(observations, salary=salary) if salary else recurring_kind(history)
+        if salary and len(history) == 1 and len(future_salary) == 1 and any(
+                e.event_id == last.event_id and 'prorated first salary' in e.description.casefold() for e in active):
+            kind = ('monthly', future_salary[0].settlement_date.day)
         if kind is None:
             if len(history) >= 3:
                 result.issues.append(Issue('irregular_history', history[-1].event_id,
                                            f'no supported cadence for {key[-1]}'))
             continue
         mode, cadence = kind
-        last = history[-1]
         assert last.settlement_date is not None
         last_day = last.settlement_date
         next_day = add_months(last_day, 1, cadence) if mode == 'monthly' else last_day + timedelta(days=cadence)
@@ -158,8 +229,16 @@ def reconstruct(context: RequestContext,
             result.issues.append(Issue('unknown_recurring_amount', last.event_id,
                                        f'no known amounts for {key[-1]}', last.direction == 'debit'))
             continue
-        amount = known[-1] if last.direction == 'credit' else max(known[-3:])
-        reason = f'{key[-1]}; {mode}={cadence}; observations={len(history)}; conservative recent amount={amount}'
+        amount = known[-1] if last.direction == 'credit' else estimate_debit(history)
+        if salary and len(future_salary) == 1:
+            confirmed_amount = future_salary[0].amount
+            # A confirmed return to an established rate brackets a temporary dip;
+            # a new, higher one-off figure does not authorize a permanent raise.
+            if confirmed_amount is not None and known.count(confirmed_amount) >= 3:
+                amount = confirmed_amount
+        estimator = 'supported salary rate' if salary else (
+            'latest contractual amount' if expense_kind(last) == 'contractual' else 'mean historical budget, rounded up')
+        reason = f'{key[-1]}; {mode}={cadence}; observations={len(history)}; {estimator}={amount}'
         result.recurrence.append(f'{last.event_id}: {reason}')
         overrides = sorted((e for e in history if e.recurrence_override_date is not None),
                            key=lambda e: (e.recurrence_override_date, e.event_id))
@@ -170,8 +249,8 @@ def reconstruct(context: RequestContext,
             explicit = [e for e in context.events if e.settlement_date and e.settlement_date >= start and
                         e.direction == last.direction and e.category == last.category and
                         e.currency == last.currency and
-                        (e.description.casefold() == last.description.casefold() or
-                         (last.direction == 'credit' and 'confirmed salary' in e.description.casefold())) and
+                        (stream_identity(e) == key or
+                         (salary and salary_streams == 1 and not UNCERTAIN_PAY.search(e.description))) and
                         (e.settlement_date == next_day or (mode == 'monthly' and
                          (e.settlement_date.year, e.settlement_date.month) == (next_day.year, next_day.month)))]
             projected = last

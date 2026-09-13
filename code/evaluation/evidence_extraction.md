@@ -1,0 +1,2795 @@
+# Evidence extraction audit
+
+```json
+{
+  "summary": {
+    "selected": 231,
+    "completed": 0,
+    "cached": 224,
+    "failed": 7,
+    "interrupted": false,
+    "unprocessed": 0
+  },
+  "usage": {
+    "provider": "openai",
+    "model": "gpt-5.6-terra",
+    "prompt_version": "evidence-v2",
+    "live_calls": 7,
+    "cached_resolutions": 224,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "unmetered_calls": 7,
+    "input_rate_per_million": null,
+    "output_rate_per_million": null,
+    "estimated_cost": null,
+    "cost_status": "unconfigured"
+  },
+  "sources": [
+    {
+      "source_id": "message_01",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_02"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "image_01",
+      "source_type": "image",
+      "related_event_id": "event_253",
+      "request_ids": [
+        "request_03"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_02",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_03"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_03",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_04"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_04",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_06"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_05",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_07"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_06",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_08"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_07",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_10"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_08",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_11"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_09",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_12"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_10",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_14"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_11",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_15"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.006,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "image_02",
+      "source_type": "image",
+      "related_event_id": "event_1442",
+      "request_ids": [
+        "request_16"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_12",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_16"
+      ],
+      "status": "ERROR",
+      "error_type": "RateLimitError",
+      "sanitized_message": "extraction failed (RateLimitError)"
+    },
+    {
+      "source_id": "image_03",
+      "source_type": "image",
+      "related_event_id": "event_1545",
+      "request_ids": [
+        "request_17"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.006,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_13",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_18"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "image_04",
+      "source_type": "image",
+      "related_event_id": "event_1700",
+      "request_ids": [
+        "request_19"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "image_05",
+      "source_type": "image",
+      "related_event_id": "event_1786",
+      "request_ids": [
+        "request_20"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.009,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_14",
+      "source_type": "message",
+      "related_event_id": "event_1785",
+      "request_ids": [
+        "request_20"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.011,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_15",
+      "source_type": "message",
+      "related_event_id": "event_1960",
+      "request_ids": [
+        "request_22"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.015,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_16",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_23"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_17",
+      "source_type": "message",
+      "related_event_id": "event_2165",
+      "request_ids": [
+        "request_24"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.108,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_18",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_26"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_19",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_27"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_20",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_28"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_21",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_29"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_22",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_32"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "image_06",
+      "source_type": "image",
+      "related_event_id": "event_3051",
+      "request_ids": [
+        "request_33"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_23",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_33"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_24",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_34"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "image_07",
+      "source_type": "image",
+      "related_event_id": "event_3231",
+      "request_ids": [
+        "request_35"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_25",
+      "source_type": "message",
+      "related_event_id": "event_3230",
+      "request_ids": [
+        "request_35"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_26",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_36"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_27",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_37"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_28",
+      "source_type": "message",
+      "related_event_id": "event_3491",
+      "request_ids": [
+        "request_38"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_29",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_40"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_30",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_42"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_31",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_43"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_32",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_44"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_33",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_45"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_34",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_47"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "image_08",
+      "source_type": "image",
+      "related_event_id": "event_4535",
+      "request_ids": [
+        "request_48"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_35",
+      "source_type": "message",
+      "related_event_id": "event_4535",
+      "request_ids": [
+        "request_48"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_36",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_49"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_37",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_50"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_38",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_52"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_39",
+      "source_type": "message",
+      "related_event_id": "event_4994",
+      "request_ids": [
+        "request_53"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_40",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_54"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "image_09",
+      "source_type": "image",
+      "related_event_id": "event_5170",
+      "request_ids": [
+        "request_55"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_41",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_57"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_42",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_58"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_43",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_59"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_44",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_60"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_45",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_61"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.001,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_46",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_62"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "image_10",
+      "source_type": "image",
+      "related_event_id": "event_6033",
+      "request_ids": [
+        "request_64"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_47",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_64"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_48",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_65"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_49",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_66"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_50",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_68"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_51",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_69"
+      ],
+      "status": "ERROR",
+      "error_type": "RateLimitError",
+      "sanitized_message": "extraction failed (RateLimitError)"
+    },
+    {
+      "source_id": "message_52",
+      "source_type": "message",
+      "related_event_id": "event_6532",
+      "request_ids": [
+        "request_70"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_53",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_71"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_54",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_72"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "image_11",
+      "source_type": "image",
+      "related_event_id": "event_6859",
+      "request_ids": [
+        "request_73"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.007,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_55",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_73"
+      ],
+      "status": "ERROR",
+      "error_type": "RateLimitError",
+      "sanitized_message": "extraction failed (RateLimitError)"
+    },
+    {
+      "source_id": "message_56",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_74"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_57",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_75"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_58",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_76"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_59",
+      "source_type": "message",
+      "related_event_id": "event_7186",
+      "request_ids": [
+        "request_77"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "image_12",
+      "source_type": "image",
+      "related_event_id": "event_7307",
+      "request_ids": [
+        "request_78"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.006,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_60",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_80"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_61",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_81"
+      ],
+      "status": "ERROR",
+      "error_type": "RateLimitError",
+      "sanitized_message": "extraction failed (RateLimitError)"
+    },
+    {
+      "source_id": "message_62",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_82"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.006,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_63",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_83"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "image_13",
+      "source_type": "image",
+      "related_event_id": "event_7941",
+      "request_ids": [
+        "request_84"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_64",
+      "source_type": "message",
+      "related_event_id": "event_7941",
+      "request_ids": [
+        "request_84"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_65",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_85"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_66",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_87"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_67",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_88"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_68",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_90"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_69",
+      "source_type": "message",
+      "related_event_id": "event_8575",
+      "request_ids": [
+        "request_91"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_70",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_92"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_71",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_93"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_72",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_94"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_73",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_95"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_74",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_98"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.006,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "image_14",
+      "source_type": "image",
+      "related_event_id": "event_9421",
+      "request_ids": [
+        "request_101"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_75",
+      "source_type": "message",
+      "related_event_id": "event_9420",
+      "request_ids": [
+        "request_101"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_76",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_102"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_77",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_103"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_78",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_104"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "image_15",
+      "source_type": "image",
+      "related_event_id": "event_9806",
+      "request_ids": [
+        "request_105"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.007,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_79",
+      "source_type": "message",
+      "related_event_id": "event_9805",
+      "request_ids": [
+        "request_105"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_80",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_106"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_81",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_107"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_82",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_108"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_83",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_110"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_84",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_111"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_85",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_112"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "image_16",
+      "source_type": "image",
+      "related_event_id": "event_10521",
+      "request_ids": [
+        "request_113"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_86",
+      "source_type": "message",
+      "related_event_id": "event_10521",
+      "request_ids": [
+        "request_113"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_87",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_114"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_88",
+      "source_type": "message",
+      "related_event_id": "event_10699",
+      "request_ids": [
+        "request_115"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_89",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_117"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_90",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_118"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.006,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_91",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_119"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_92",
+      "source_type": "message",
+      "related_event_id": "event_11129",
+      "request_ids": [
+        "request_120"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_93",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_122"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_94",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_123"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_95",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_125"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_96",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_126"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_97",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_127"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.006,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_98",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_128"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_99",
+      "source_type": "message",
+      "related_event_id": "event_11925",
+      "request_ids": [
+        "request_129"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_100",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_130"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_101",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_131"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_102",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_132"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_103",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_133"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_104",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_135"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_105",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_137"
+      ],
+      "status": "ERROR",
+      "error_type": "RateLimitError",
+      "sanitized_message": "extraction failed (RateLimitError)"
+    },
+    {
+      "source_id": "message_106",
+      "source_type": "message",
+      "related_event_id": "event_12709",
+      "request_ids": [
+        "request_138"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_107",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_140"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_108",
+      "source_type": "message",
+      "related_event_id": "event_13032",
+      "request_ids": [
+        "request_141"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.006,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_109",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_142"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_110",
+      "source_type": "message",
+      "related_event_id": "event_13207",
+      "request_ids": [
+        "request_143"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.006,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_111",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_144"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_112",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_145"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.006,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_113",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_147"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_114",
+      "source_type": "message",
+      "related_event_id": "event_13663",
+      "request_ids": [
+        "request_148"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_115",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_150"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.006,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_116",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_151"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_117",
+      "source_type": "message",
+      "related_event_id": "event_14026",
+      "request_ids": [
+        "request_152"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_118",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_153"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.006,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_119",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_154"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_120",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_155"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_121",
+      "source_type": "message",
+      "related_event_id": "event_14399",
+      "request_ids": [
+        "request_156"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_122",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_157"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.007,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_123",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_159"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.006,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_124",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_160"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_125",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_161"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_126",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_162"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_127",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_163"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_128",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_164"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_129",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_165"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_130",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_166"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_131",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_167"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_132",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_168"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.008,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_133",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_169"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_134",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_170"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_135",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_171"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_136",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_172"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_137",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_173"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_138",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_175"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_139",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_176"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_140",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_177"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_141",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_178"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_142",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_179"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_143",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_180"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_144",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_182"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_145",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_183"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_146",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_184"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_147",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_185"
+      ],
+      "status": "ERROR",
+      "error_type": "RateLimitError",
+      "sanitized_message": "extraction failed (RateLimitError)"
+    },
+    {
+      "source_id": "message_148",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_186"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.007,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_149",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_187"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_150",
+      "source_type": "message",
+      "related_event_id": "event_17401",
+      "request_ids": [
+        "request_188"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.006,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_151",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_189"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_152",
+      "source_type": "message",
+      "related_event_id": "event_17662",
+      "request_ids": [
+        "request_191"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_153",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_193"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_154",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_194"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_155",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_195"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.006,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_156",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_197"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.008,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_157",
+      "source_type": "message",
+      "related_event_id": "event_18269",
+      "request_ids": [
+        "request_198"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_158",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_199"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.007,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_159",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_200"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_160",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_201"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_161",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_202"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_162",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_204"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.006,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_163",
+      "source_type": "message",
+      "related_event_id": "event_19182",
+      "request_ids": [
+        "request_208"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.006,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_164",
+      "source_type": "message",
+      "related_event_id": "event_19334",
+      "request_ids": [
+        "request_210"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.006,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_165",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_212"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_166",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_213"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_167",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_214"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.007,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_168",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_215"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.007,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_169",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_216"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_170",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_219"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_171",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_220"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_172",
+      "source_type": "message",
+      "related_event_id": "event_20379",
+      "request_ids": [
+        "request_221"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_173",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_222"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_174",
+      "source_type": "message",
+      "related_event_id": "event_20615",
+      "request_ids": [
+        "request_224"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_175",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_225"
+      ],
+      "status": "ERROR",
+      "error_type": "RateLimitError",
+      "sanitized_message": "extraction failed (RateLimitError)"
+    },
+    {
+      "source_id": "message_176",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_226"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.006,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_177",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_227"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_178",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_228"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.006,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_179",
+      "source_type": "message",
+      "related_event_id": "event_21101",
+      "request_ids": [
+        "request_229"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.006,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_180",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_230"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_181",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_232"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_182",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_233"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_183",
+      "source_type": "message",
+      "related_event_id": "event_21582",
+      "request_ids": [
+        "request_234"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_184",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_235"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.007,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_185",
+      "source_type": "message",
+      "related_event_id": "event_21785",
+      "request_ids": [
+        "request_236"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_186",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_237"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_187",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_238"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_188",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_240"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_189",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_241"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_190",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_242"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_191",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_245"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.007,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_192",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_246"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_193",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_247"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_194",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_248"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_195",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_249"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.007,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_196",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_250"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_197",
+      "source_type": "message",
+      "related_event_id": "event_23203",
+      "request_ids": [
+        "request_252"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_198",
+      "source_type": "message",
+      "related_event_id": "event_23306",
+      "request_ids": [
+        "request_253"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_199",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_254"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_200",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_256"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_201",
+      "source_type": "message",
+      "related_event_id": "event_23855",
+      "request_ids": [
+        "request_259"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_202",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_261"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_203",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_262"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_204",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_263"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.007,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_205",
+      "source_type": "message",
+      "related_event_id": "event_24352",
+      "request_ids": [
+        "request_264"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_206",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_265"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.006,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_207",
+      "source_type": "message",
+      "related_event_id": "event_24534",
+      "request_ids": [
+        "request_266"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_208",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_267"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_209",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_268"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.002,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_210",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_269"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_211",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_271"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.004,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_212",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_272"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_213",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_273"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.003,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_214",
+      "source_type": "message",
+      "related_event_id": null,
+      "request_ids": [
+        "request_274"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    {
+      "source_id": "message_215",
+      "source_type": "message",
+      "related_event_id": "event_25342",
+      "request_ids": [
+        "request_275"
+      ],
+      "status": "CACHE_HIT",
+      "duration_seconds": 0.005,
+      "input_tokens": 0,
+      "output_tokens": 0
+    }
+  ]
+}
+```

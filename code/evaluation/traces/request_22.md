@@ -6,8 +6,7 @@
 
 ## Evidence
 
-* Skipped: {"source_id": "message_15", "reason": "unresolved_evidence"}
-* Issue: {"code": "unresolved_evidence", "source_id": "message_15", "detail": "source unavailable or not cached; no value imputed", "blocking": false}
+* Used: {"source_id": "message_15", "event_id": "event_1960", "action": "confirm"}
 
 ## Resolved events
 
@@ -114,102 +113,71 @@
 | event_1957 | 2024-11-15 | 15.84 | EUR | settled |  |
 | event_1958 | 2024-11-29 | 18.41 | EUR | settled |  |
 | event_1959 | 2024-09-01 | 184.8 | EUR | settled |  |
-| event_1960 | None | 369.6 | EUR | unrealized |  |
+| event_1960 | None | 369.6 | EUR | unrealized | message_15 |
 | event_1961 | 2024-12-08 | 43 | EUR | pending |  |
 
 ## Projected recurrence
 
-* event_1887: payroll credit; monthly=15; observations=5; conservative recent amount=616
-* event_1958: dining; interval=14; observations=13; conservative recent amount=18.41
-* event_1893: weekend entertainment; monthly=15; observations=5; conservative recent amount=23.29
-* event_1920: groceries; interval=7; observations=26; conservative recent amount=26.82
-* event_1894: apartment rent transfer; monthly=3; observations=6; conservative recent amount=178.2
-* event_1945: transport; interval=7; observations=25; conservative recent amount=15.87
-* event_1889: electricity and water bill; monthly=7; observations=5; conservative recent amount=31.52
-* event_1891: food delivery membership; monthly=14; observations=5; conservative recent amount=5
-* event_1892: gym membership; monthly=11; observations=5; conservative recent amount=17
-* event_1890: music service subscription; monthly=12; observations=5; conservative recent amount=6
+* event_1887: payroll credit; monthly=15; observations=5; supported salary rate=616
+* event_1958: dining; interval=14; observations=13; mean historical budget, rounded up=16.08
+* event_1893: weekend entertainment; monthly=15; observations=5; mean historical budget, rounded up=20.87
+* event_1920: groceries; interval=7; observations=26; mean historical budget, rounded up=23.96
+* event_1894: apartment rent transfer; monthly=3; observations=6; latest contractual amount=178.2
+* event_1945: transport; interval=7; observations=25; mean historical budget, rounded up=13.14
+* event_1889: electricity and water bill; monthly=7; observations=5; mean historical budget, rounded up=30.56
+* event_1891: food delivery membership; monthly=14; observations=5; latest contractual amount=5
+* event_1892: gym membership; monthly=11; observations=5; latest contractual amount=17
+* event_1890: music service subscription; monthly=12; observations=5; latest contractual amount=6
 
 ## Capacity
 
-Baseline minimum: 929.68 on 2024-12-15.
-{"amount": "429.68", "verified_by_simulation": true, "blocked": false, "algorithm": "maximum cent amount via monotone binary search"}
+Baseline minimum: 943.71 on 2024-12-15.
+{"amount": "443.71", "verified_by_simulation": true, "blocked": false, "algorithm": "maximum cent amount via monotone binary search"}
 
 ## Earliest full-payment tests
 
-* {"date": "2024-12-05", "safe": false, "minimum_balance": "198.18", "breach_date": "2024-12-05"}
-* {"date": "2024-12-06", "safe": false, "minimum_balance": "198.18", "breach_date": "2024-12-06"}
-* {"date": "2024-12-07", "safe": false, "minimum_balance": "198.18", "breach_date": "2024-12-07"}
-* {"date": "2024-12-08", "safe": false, "minimum_balance": "198.18", "breach_date": "2024-12-08"}
-* {"date": "2024-12-09", "safe": false, "minimum_balance": "198.18", "breach_date": "2024-12-09"}
-* {"date": "2024-12-10", "safe": false, "minimum_balance": "198.18", "breach_date": "2024-12-10"}
-* {"date": "2024-12-11", "safe": false, "minimum_balance": "198.18", "breach_date": "2024-12-11"}
-* {"date": "2024-12-12", "safe": false, "minimum_balance": "198.18", "breach_date": "2024-12-12"}
-* {"date": "2024-12-13", "safe": false, "minimum_balance": "198.18", "breach_date": "2024-12-13"}
-* {"date": "2024-12-14", "safe": false, "minimum_balance": "198.18", "breach_date": "2024-12-14"}
-* {"date": "2024-12-15", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-03"}
-* {"date": "2024-12-16", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-03"}
-* {"date": "2024-12-17", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-03"}
-* {"date": "2024-12-18", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-03"}
-* {"date": "2024-12-19", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-03"}
-* {"date": "2024-12-20", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-03"}
-* {"date": "2024-12-21", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-03"}
-* {"date": "2024-12-22", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-03"}
-* {"date": "2024-12-23", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-03"}
-* {"date": "2024-12-24", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-03"}
-* {"date": "2024-12-25", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-03"}
-* {"date": "2024-12-26", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-03"}
-* {"date": "2024-12-27", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-03"}
-* {"date": "2024-12-28", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-03"}
-* {"date": "2024-12-29", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-03"}
-* {"date": "2024-12-30", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-03"}
-* {"date": "2024-12-31", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-03"}
-* {"date": "2025-01-01", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-03"}
-* {"date": "2025-01-02", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-03"}
-* {"date": "2025-01-03", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-03"}
-* {"date": "2025-01-04", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-04"}
-* {"date": "2025-01-05", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-05"}
-* {"date": "2025-01-06", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-06"}
-* {"date": "2025-01-07", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-07"}
-* {"date": "2025-01-08", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-08"}
-* {"date": "2025-01-09", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-09"}
-* {"date": "2025-01-10", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-10"}
-* {"date": "2025-01-11", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-11"}
-* {"date": "2025-01-12", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-12"}
-* {"date": "2025-01-13", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-13"}
-* {"date": "2025-01-14", "safe": false, "minimum_balance": "318.77", "breach_date": "2025-01-14"}
-* {"date": "2025-01-15", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-01-16", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-01-17", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-01-18", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-01-19", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-01-20", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-01-21", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-01-22", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-01-23", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-01-24", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-01-25", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-01-26", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-01-27", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-01-28", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-01-29", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-01-30", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-01-31", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-02-01", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-02-02", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-02-03", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-02-04", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-02-05", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-02-06", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-02-07", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-02-08", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-02-09", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-02-10", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-02-11", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-02-12", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-12"}
-* {"date": "2025-02-13", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-13"}
-* {"date": "2025-02-14", "safe": false, "minimum_balance": "450.31", "breach_date": "2025-02-14"}
-* {"date": "2025-02-15", "safe": true, "minimum_balance": "757.50", "breach_date": null}
+* {"date": "2024-12-05", "safe": false, "minimum_balance": "212.21", "breach_date": "2024-12-05"}
+* {"date": "2024-12-06", "safe": false, "minimum_balance": "212.21", "breach_date": "2024-12-06"}
+* {"date": "2024-12-07", "safe": false, "minimum_balance": "212.21", "breach_date": "2024-12-07"}
+* {"date": "2024-12-08", "safe": false, "minimum_balance": "212.21", "breach_date": "2024-12-08"}
+* {"date": "2024-12-09", "safe": false, "minimum_balance": "212.21", "breach_date": "2024-12-09"}
+* {"date": "2024-12-10", "safe": false, "minimum_balance": "212.21", "breach_date": "2024-12-10"}
+* {"date": "2024-12-11", "safe": false, "minimum_balance": "212.21", "breach_date": "2024-12-11"}
+* {"date": "2024-12-12", "safe": false, "minimum_balance": "212.21", "breach_date": "2024-12-12"}
+* {"date": "2024-12-13", "safe": false, "minimum_balance": "212.21", "breach_date": "2024-12-13"}
+* {"date": "2024-12-14", "safe": false, "minimum_balance": "212.21", "breach_date": "2024-12-14"}
+* {"date": "2024-12-15", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-07"}
+* {"date": "2024-12-16", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-07"}
+* {"date": "2024-12-17", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-07"}
+* {"date": "2024-12-18", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-07"}
+* {"date": "2024-12-19", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-07"}
+* {"date": "2024-12-20", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-07"}
+* {"date": "2024-12-21", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-07"}
+* {"date": "2024-12-22", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-07"}
+* {"date": "2024-12-23", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-07"}
+* {"date": "2024-12-24", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-07"}
+* {"date": "2024-12-25", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-07"}
+* {"date": "2024-12-26", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-07"}
+* {"date": "2024-12-27", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-07"}
+* {"date": "2024-12-28", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-07"}
+* {"date": "2024-12-29", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-07"}
+* {"date": "2024-12-30", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-07"}
+* {"date": "2024-12-31", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-07"}
+* {"date": "2025-01-01", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-07"}
+* {"date": "2025-01-02", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-07"}
+* {"date": "2025-01-03", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-07"}
+* {"date": "2025-01-04", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-07"}
+* {"date": "2025-01-05", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-07"}
+* {"date": "2025-01-06", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-07"}
+* {"date": "2025-01-07", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-07"}
+* {"date": "2025-01-08", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-08"}
+* {"date": "2025-01-09", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-09"}
+* {"date": "2025-01-10", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-10"}
+* {"date": "2025-01-11", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-11"}
+* {"date": "2025-01-12", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-12"}
+* {"date": "2025-01-13", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-13"}
+* {"date": "2025-01-14", "safe": false, "minimum_balance": "366.06", "breach_date": "2025-01-14"}
+* {"date": "2025-01-15", "safe": true, "minimum_balance": "530.73", "breach_date": null}
 
 ## Every candidate
 
@@ -242,10 +210,10 @@ Baseline minimum: 929.68 on 2024-12-15.
   },
   "errors": [
     "payment method excluded by user",
-    "minimum balance breached on 2024-12-05: 198.18"
+    "minimum balance breached on 2024-12-05: 212.21"
   ],
   "valid": false,
-  "minimum_balance": "198.18",
+  "minimum_balance": "212.21",
   "ranking_key": null
 }
 ```
@@ -258,7 +226,7 @@ Baseline minimum: 929.68 on 2024-12-15.
     "method": "wait",
     "payments": [
       {
-        "day": "2025-02-15",
+        "day": "2025-01-15",
         "amount": "731.5"
       }
     ],
@@ -271,18 +239,17 @@ Baseline minimum: 929.68 on 2024-12-15.
     "method_accepted": false,
     "every_payment_possible": true,
     "full_commitment_completed": true,
-    "deadline_met": false,
+    "deadline_met": true,
     "minimum_maintained": true,
     "plan_format_valid": true,
     "installment_option_matches": true,
     "spending_changes_valid": true
   },
   "errors": [
-    "payment outside request/deadline/forecast bounds",
     "payment method excluded by user"
   ],
   "valid": false,
-  "minimum_balance": "757.50",
+  "minimum_balance": "530.73",
   "ranking_key": null
 }
 ```
@@ -296,11 +263,11 @@ Baseline minimum: 929.68 on 2024-12-15.
     "payments": [
       {
         "day": "2024-12-05",
-        "amount": "429.68"
+        "amount": "443.71"
       },
       {
-        "day": "2025-02-15",
-        "amount": "301.82"
+        "day": "2025-01-15",
+        "amount": "287.79"
       }
     ],
     "total_cost": "731.5",
@@ -312,14 +279,13 @@ Baseline minimum: 929.68 on 2024-12-15.
     "method_accepted": false,
     "every_payment_possible": true,
     "full_commitment_completed": true,
-    "deadline_met": false,
+    "deadline_met": true,
     "minimum_maintained": true,
     "plan_format_valid": true,
     "installment_option_matches": true,
     "spending_changes_valid": true
   },
   "errors": [
-    "payment outside request/deadline/forecast bounds",
     "payment method excluded by user"
   ],
   "valid": false,
@@ -355,20 +321,25 @@ Baseline minimum: 929.68 on 2024-12-15.
   },
   "checks": {
     "method_accepted": true,
-    "every_payment_possible": false,
+    "every_payment_possible": true,
     "full_commitment_completed": true,
     "deadline_met": true,
-    "minimum_maintained": false,
+    "minimum_maintained": true,
     "plan_format_valid": true,
     "installment_option_matches": true,
     "spending_changes_valid": true
   },
-  "errors": [
-    "minimum balance breached on 2025-02-11: 421.04"
-  ],
-  "valid": false,
-  "minimum_balance": "421.04",
-  "ranking_key": null
+  "errors": [],
+  "valid": true,
+  "minimum_balance": "501.46",
+  "ranking_key": [
+    false,
+    0,
+    "760.77",
+    "2024-12-08",
+    3,
+    "payment_option_61"
+  ]
 }
 ```
 
@@ -470,13 +441,13 @@ Baseline minimum: 929.68 on 2024-12-15.
 ```json
 {
   "request_id": "request_22",
-  "amount_safe_to_pay": "429.68",
-  "affordability_status": "not_affordable",
-  "recommended_payment_method": "not_recommended",
-  "payment_plan": "none",
-  "earliest_date_for_full_payment": "2025-02-15",
+  "amount_safe_to_pay": "443.71",
+  "affordability_status": "affordable_with_plan",
+  "recommended_payment_method": "installments",
+  "payment_plan": "2024-12-08:253.59|2025-01-05:253.59|2025-02-02:253.59",
+  "earliest_date_for_full_payment": "2025-01-15",
   "spending_changes_needed": "none",
-  "decision_explanation": "Safe today before changes: 429.68 EUR; protected minimum: 500. No safe eligible plan completes by the deadline under the resolved forecast. Baseline full payment first becomes safe on 2025-02-15, after the deadline. Limiting expense: event_1893 (23.29 on 2024-12-15). Unresolved evidence/forecast assumptions remain; see audit."
+  "decision_explanation": "Safe today before changes: 443.71 EUR; protected minimum: 500. Use installments, total 760.77, completing 2025-02-02. Lowest projected balance: 501.46 on 2025-02-15. Limiting expense: event_1893 (20.87 on 2025-02-15). Projected income includes event_1887: 616 on 2024-12-15."
 }
 ```
 
@@ -484,94 +455,94 @@ Baseline minimum: 929.68 on 2024-12-15.
 
 | Date | Opening | Credits | Essential/protected debits | Other debits | Request payments | Closing | Required | Surplus | Lowest |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 2024-12-05 | 1132.46 | 0 | 15.87 | 43 | 0 | 1073.59 | 500 | 573.59 | 1073.59 |
-| 2024-12-06 | 1073.59 | 0 | 0 | 0 | 0 | 1073.59 | 500 | 573.59 | 1073.59 |
-| 2024-12-07 | 1073.59 | 0 | 31.52 | 0 | 0 | 1042.07 | 500 | 542.07 | 1042.07 |
-| 2024-12-08 | 1042.07 | 0 | 0 | 0 | 0 | 1042.07 | 500 | 542.07 | 1042.07 |
-| 2024-12-09 | 1042.07 | 0 | 0 | 0 | 0 | 1042.07 | 500 | 542.07 | 1042.07 |
-| 2024-12-10 | 1042.07 | 0 | 0 | 0 | 0 | 1042.07 | 500 | 542.07 | 1042.07 |
-| 2024-12-11 | 1042.07 | 0 | 26.82 | 17 | 0 | 998.25 | 500 | 498.25 | 998.25 |
-| 2024-12-12 | 998.25 | 0 | 15.87 | 6 | 0 | 976.38 | 500 | 476.38 | 976.38 |
-| 2024-12-13 | 976.38 | 0 | 0 | 18.41 | 0 | 957.97 | 500 | 457.97 | 957.97 |
-| 2024-12-14 | 957.97 | 0 | 0 | 5 | 0 | 952.97 | 500 | 452.97 | 952.97 |
-| 2024-12-15 | 952.97 | 616 | 0 | 23.29 | 0 | 1545.68 | 500 | 1045.68 | 929.68 |
-| 2024-12-16 | 1545.68 | 0 | 0 | 0 | 0 | 1545.68 | 500 | 1045.68 | 1545.68 |
-| 2024-12-17 | 1545.68 | 0 | 0 | 0 | 0 | 1545.68 | 500 | 1045.68 | 1545.68 |
-| 2024-12-18 | 1545.68 | 0 | 26.82 | 0 | 0 | 1518.86 | 500 | 1018.86 | 1518.86 |
-| 2024-12-19 | 1518.86 | 0 | 15.87 | 0 | 0 | 1502.99 | 500 | 1002.99 | 1502.99 |
-| 2024-12-20 | 1502.99 | 0 | 0 | 0 | 0 | 1502.99 | 500 | 1002.99 | 1502.99 |
-| 2024-12-21 | 1502.99 | 0 | 0 | 0 | 0 | 1502.99 | 500 | 1002.99 | 1502.99 |
-| 2024-12-22 | 1502.99 | 0 | 0 | 0 | 0 | 1502.99 | 500 | 1002.99 | 1502.99 |
-| 2024-12-23 | 1502.99 | 0 | 0 | 0 | 0 | 1502.99 | 500 | 1002.99 | 1502.99 |
-| 2024-12-24 | 1502.99 | 0 | 0 | 0 | 0 | 1502.99 | 500 | 1002.99 | 1502.99 |
-| 2024-12-25 | 1502.99 | 0 | 26.82 | 0 | 0 | 1476.17 | 500 | 976.17 | 1476.17 |
-| 2024-12-26 | 1476.17 | 0 | 15.87 | 0 | 0 | 1460.30 | 500 | 960.30 | 1460.30 |
-| 2024-12-27 | 1460.30 | 0 | 0 | 18.41 | 0 | 1441.89 | 500 | 941.89 | 1441.89 |
-| 2024-12-28 | 1441.89 | 0 | 0 | 0 | 0 | 1441.89 | 500 | 941.89 | 1441.89 |
-| 2024-12-29 | 1441.89 | 0 | 0 | 0 | 0 | 1441.89 | 500 | 941.89 | 1441.89 |
-| 2024-12-30 | 1441.89 | 0 | 0 | 0 | 0 | 1441.89 | 500 | 941.89 | 1441.89 |
-| 2024-12-31 | 1441.89 | 0 | 0 | 0 | 0 | 1441.89 | 500 | 941.89 | 1441.89 |
-| 2025-01-01 | 1441.89 | 0 | 26.82 | 0 | 0 | 1415.07 | 500 | 915.07 | 1415.07 |
-| 2025-01-02 | 1415.07 | 0 | 15.87 | 0 | 0 | 1399.20 | 500 | 899.20 | 1399.20 |
-| 2025-01-03 | 1399.20 | 0 | 178.2 | 0 | 0 | 1221.00 | 500 | 721.00 | 1221.00 |
-| 2025-01-04 | 1221.00 | 0 | 0 | 0 | 0 | 1221.00 | 500 | 721.00 | 1221.00 |
-| 2025-01-05 | 1221.00 | 0 | 0 | 0 | 0 | 1221.00 | 500 | 721.00 | 1221.00 |
-| 2025-01-06 | 1221.00 | 0 | 0 | 0 | 0 | 1221.00 | 500 | 721.00 | 1221.00 |
-| 2025-01-07 | 1221.00 | 0 | 31.52 | 0 | 0 | 1189.48 | 500 | 689.48 | 1189.48 |
-| 2025-01-08 | 1189.48 | 0 | 26.82 | 0 | 0 | 1162.66 | 500 | 662.66 | 1162.66 |
-| 2025-01-09 | 1162.66 | 0 | 15.87 | 0 | 0 | 1146.79 | 500 | 646.79 | 1146.79 |
-| 2025-01-10 | 1146.79 | 0 | 0 | 18.41 | 0 | 1128.38 | 500 | 628.38 | 1128.38 |
-| 2025-01-11 | 1128.38 | 0 | 0 | 17 | 0 | 1111.38 | 500 | 611.38 | 1111.38 |
-| 2025-01-12 | 1111.38 | 0 | 0 | 6 | 0 | 1105.38 | 500 | 605.38 | 1105.38 |
-| 2025-01-13 | 1105.38 | 0 | 0 | 0 | 0 | 1105.38 | 500 | 605.38 | 1105.38 |
-| 2025-01-14 | 1105.38 | 0 | 0 | 5 | 0 | 1100.38 | 500 | 600.38 | 1100.38 |
-| 2025-01-15 | 1100.38 | 616 | 26.82 | 23.29 | 0 | 1666.27 | 500 | 1166.27 | 1050.27 |
-| 2025-01-16 | 1666.27 | 0 | 15.87 | 0 | 0 | 1650.40 | 500 | 1150.40 | 1650.40 |
-| 2025-01-17 | 1650.40 | 0 | 0 | 0 | 0 | 1650.40 | 500 | 1150.40 | 1650.40 |
-| 2025-01-18 | 1650.40 | 0 | 0 | 0 | 0 | 1650.40 | 500 | 1150.40 | 1650.40 |
-| 2025-01-19 | 1650.40 | 0 | 0 | 0 | 0 | 1650.40 | 500 | 1150.40 | 1650.40 |
-| 2025-01-20 | 1650.40 | 0 | 0 | 0 | 0 | 1650.40 | 500 | 1150.40 | 1650.40 |
-| 2025-01-21 | 1650.40 | 0 | 0 | 0 | 0 | 1650.40 | 500 | 1150.40 | 1650.40 |
-| 2025-01-22 | 1650.40 | 0 | 26.82 | 0 | 0 | 1623.58 | 500 | 1123.58 | 1623.58 |
-| 2025-01-23 | 1623.58 | 0 | 15.87 | 0 | 0 | 1607.71 | 500 | 1107.71 | 1607.71 |
-| 2025-01-24 | 1607.71 | 0 | 0 | 18.41 | 0 | 1589.30 | 500 | 1089.30 | 1589.30 |
-| 2025-01-25 | 1589.30 | 0 | 0 | 0 | 0 | 1589.30 | 500 | 1089.30 | 1589.30 |
-| 2025-01-26 | 1589.30 | 0 | 0 | 0 | 0 | 1589.30 | 500 | 1089.30 | 1589.30 |
-| 2025-01-27 | 1589.30 | 0 | 0 | 0 | 0 | 1589.30 | 500 | 1089.30 | 1589.30 |
-| 2025-01-28 | 1589.30 | 0 | 0 | 0 | 0 | 1589.30 | 500 | 1089.30 | 1589.30 |
-| 2025-01-29 | 1589.30 | 0 | 26.82 | 0 | 0 | 1562.48 | 500 | 1062.48 | 1562.48 |
-| 2025-01-30 | 1562.48 | 0 | 15.87 | 0 | 0 | 1546.61 | 500 | 1046.61 | 1546.61 |
-| 2025-01-31 | 1546.61 | 0 | 0 | 0 | 0 | 1546.61 | 500 | 1046.61 | 1546.61 |
-| 2025-02-01 | 1546.61 | 0 | 0 | 0 | 0 | 1546.61 | 500 | 1046.61 | 1546.61 |
-| 2025-02-02 | 1546.61 | 0 | 0 | 0 | 0 | 1546.61 | 500 | 1046.61 | 1546.61 |
-| 2025-02-03 | 1546.61 | 0 | 178.2 | 0 | 0 | 1368.41 | 500 | 868.41 | 1368.41 |
-| 2025-02-04 | 1368.41 | 0 | 0 | 0 | 0 | 1368.41 | 500 | 868.41 | 1368.41 |
-| 2025-02-05 | 1368.41 | 0 | 26.82 | 0 | 0 | 1341.59 | 500 | 841.59 | 1341.59 |
-| 2025-02-06 | 1341.59 | 0 | 15.87 | 0 | 0 | 1325.72 | 500 | 825.72 | 1325.72 |
-| 2025-02-07 | 1325.72 | 0 | 31.52 | 18.41 | 0 | 1275.79 | 500 | 775.79 | 1275.79 |
-| 2025-02-08 | 1275.79 | 0 | 0 | 0 | 0 | 1275.79 | 500 | 775.79 | 1275.79 |
-| 2025-02-09 | 1275.79 | 0 | 0 | 0 | 0 | 1275.79 | 500 | 775.79 | 1275.79 |
-| 2025-02-10 | 1275.79 | 0 | 0 | 0 | 0 | 1275.79 | 500 | 775.79 | 1275.79 |
-| 2025-02-11 | 1275.79 | 0 | 0 | 17 | 0 | 1258.79 | 500 | 758.79 | 1258.79 |
-| 2025-02-12 | 1258.79 | 0 | 26.82 | 6 | 0 | 1225.97 | 500 | 725.97 | 1225.97 |
-| 2025-02-13 | 1225.97 | 0 | 15.87 | 0 | 0 | 1210.10 | 500 | 710.10 | 1210.10 |
-| 2025-02-14 | 1210.10 | 0 | 0 | 5 | 0 | 1205.10 | 500 | 705.10 | 1205.10 |
-| 2025-02-15 | 1205.10 | 616 | 0 | 23.29 | 0 | 1797.81 | 500 | 1297.81 | 1181.81 |
-| 2025-02-16 | 1797.81 | 0 | 0 | 0 | 0 | 1797.81 | 500 | 1297.81 | 1797.81 |
-| 2025-02-17 | 1797.81 | 0 | 0 | 0 | 0 | 1797.81 | 500 | 1297.81 | 1797.81 |
-| 2025-02-18 | 1797.81 | 0 | 0 | 0 | 0 | 1797.81 | 500 | 1297.81 | 1797.81 |
-| 2025-02-19 | 1797.81 | 0 | 26.82 | 0 | 0 | 1770.99 | 500 | 1270.99 | 1770.99 |
-| 2025-02-20 | 1770.99 | 0 | 15.87 | 0 | 0 | 1755.12 | 500 | 1255.12 | 1755.12 |
-| 2025-02-21 | 1755.12 | 0 | 0 | 18.41 | 0 | 1736.71 | 500 | 1236.71 | 1736.71 |
-| 2025-02-22 | 1736.71 | 0 | 0 | 0 | 0 | 1736.71 | 500 | 1236.71 | 1736.71 |
-| 2025-02-23 | 1736.71 | 0 | 0 | 0 | 0 | 1736.71 | 500 | 1236.71 | 1736.71 |
-| 2025-02-24 | 1736.71 | 0 | 0 | 0 | 0 | 1736.71 | 500 | 1236.71 | 1736.71 |
-| 2025-02-25 | 1736.71 | 0 | 0 | 0 | 0 | 1736.71 | 500 | 1236.71 | 1736.71 |
-| 2025-02-26 | 1736.71 | 0 | 26.82 | 0 | 0 | 1709.89 | 500 | 1209.89 | 1709.89 |
-| 2025-02-27 | 1709.89 | 0 | 15.87 | 0 | 0 | 1694.02 | 500 | 1194.02 | 1694.02 |
-| 2025-02-28 | 1694.02 | 0 | 0 | 0 | 0 | 1694.02 | 500 | 1194.02 | 1694.02 |
-| 2025-03-01 | 1694.02 | 0 | 0 | 0 | 0 | 1694.02 | 500 | 1194.02 | 1694.02 |
-| 2025-03-02 | 1694.02 | 0 | 0 | 0 | 0 | 1694.02 | 500 | 1194.02 | 1694.02 |
-| 2025-03-03 | 1694.02 | 0 | 178.2 | 0 | 0 | 1515.82 | 500 | 1015.82 | 1515.82 |
-| 2025-03-04 | 1515.82 | 0 | 0 | 0 | 0 | 1515.82 | 500 | 1015.82 | 1515.82 |
-| 2025-03-05 | 1515.82 | 0 | 26.82 | 0 | 0 | 1489.00 | 500 | 989.00 | 1489.00 |
+| 2024-12-05 | 1132.46 | 0 | 13.14 | 43 | 0 | 1076.32 | 500 | 576.32 | 1076.32 |
+| 2024-12-06 | 1076.32 | 0 | 0 | 0 | 0 | 1076.32 | 500 | 576.32 | 1076.32 |
+| 2024-12-07 | 1076.32 | 0 | 30.56 | 0 | 0 | 1045.76 | 500 | 545.76 | 1045.76 |
+| 2024-12-08 | 1045.76 | 0 | 0 | 0 | 253.59 | 792.17 | 500 | 292.17 | 792.17 |
+| 2024-12-09 | 792.17 | 0 | 0 | 0 | 0 | 792.17 | 500 | 292.17 | 792.17 |
+| 2024-12-10 | 792.17 | 0 | 0 | 0 | 0 | 792.17 | 500 | 292.17 | 792.17 |
+| 2024-12-11 | 792.17 | 0 | 23.96 | 17 | 0 | 751.21 | 500 | 251.21 | 751.21 |
+| 2024-12-12 | 751.21 | 0 | 13.14 | 6 | 0 | 732.07 | 500 | 232.07 | 732.07 |
+| 2024-12-13 | 732.07 | 0 | 0 | 16.08 | 0 | 715.99 | 500 | 215.99 | 715.99 |
+| 2024-12-14 | 715.99 | 0 | 0 | 5 | 0 | 710.99 | 500 | 210.99 | 710.99 |
+| 2024-12-15 | 710.99 | 616 | 0 | 20.87 | 0 | 1306.12 | 500 | 806.12 | 690.12 |
+| 2024-12-16 | 1306.12 | 0 | 0 | 0 | 0 | 1306.12 | 500 | 806.12 | 1306.12 |
+| 2024-12-17 | 1306.12 | 0 | 0 | 0 | 0 | 1306.12 | 500 | 806.12 | 1306.12 |
+| 2024-12-18 | 1306.12 | 0 | 23.96 | 0 | 0 | 1282.16 | 500 | 782.16 | 1282.16 |
+| 2024-12-19 | 1282.16 | 0 | 13.14 | 0 | 0 | 1269.02 | 500 | 769.02 | 1269.02 |
+| 2024-12-20 | 1269.02 | 0 | 0 | 0 | 0 | 1269.02 | 500 | 769.02 | 1269.02 |
+| 2024-12-21 | 1269.02 | 0 | 0 | 0 | 0 | 1269.02 | 500 | 769.02 | 1269.02 |
+| 2024-12-22 | 1269.02 | 0 | 0 | 0 | 0 | 1269.02 | 500 | 769.02 | 1269.02 |
+| 2024-12-23 | 1269.02 | 0 | 0 | 0 | 0 | 1269.02 | 500 | 769.02 | 1269.02 |
+| 2024-12-24 | 1269.02 | 0 | 0 | 0 | 0 | 1269.02 | 500 | 769.02 | 1269.02 |
+| 2024-12-25 | 1269.02 | 0 | 23.96 | 0 | 0 | 1245.06 | 500 | 745.06 | 1245.06 |
+| 2024-12-26 | 1245.06 | 0 | 13.14 | 0 | 0 | 1231.92 | 500 | 731.92 | 1231.92 |
+| 2024-12-27 | 1231.92 | 0 | 0 | 16.08 | 0 | 1215.84 | 500 | 715.84 | 1215.84 |
+| 2024-12-28 | 1215.84 | 0 | 0 | 0 | 0 | 1215.84 | 500 | 715.84 | 1215.84 |
+| 2024-12-29 | 1215.84 | 0 | 0 | 0 | 0 | 1215.84 | 500 | 715.84 | 1215.84 |
+| 2024-12-30 | 1215.84 | 0 | 0 | 0 | 0 | 1215.84 | 500 | 715.84 | 1215.84 |
+| 2024-12-31 | 1215.84 | 0 | 0 | 0 | 0 | 1215.84 | 500 | 715.84 | 1215.84 |
+| 2025-01-01 | 1215.84 | 0 | 23.96 | 0 | 0 | 1191.88 | 500 | 691.88 | 1191.88 |
+| 2025-01-02 | 1191.88 | 0 | 13.14 | 0 | 0 | 1178.74 | 500 | 678.74 | 1178.74 |
+| 2025-01-03 | 1178.74 | 0 | 178.2 | 0 | 0 | 1000.54 | 500 | 500.54 | 1000.54 |
+| 2025-01-04 | 1000.54 | 0 | 0 | 0 | 0 | 1000.54 | 500 | 500.54 | 1000.54 |
+| 2025-01-05 | 1000.54 | 0 | 0 | 0 | 253.59 | 746.95 | 500 | 246.95 | 746.95 |
+| 2025-01-06 | 746.95 | 0 | 0 | 0 | 0 | 746.95 | 500 | 246.95 | 746.95 |
+| 2025-01-07 | 746.95 | 0 | 30.56 | 0 | 0 | 716.39 | 500 | 216.39 | 716.39 |
+| 2025-01-08 | 716.39 | 0 | 23.96 | 0 | 0 | 692.43 | 500 | 192.43 | 692.43 |
+| 2025-01-09 | 692.43 | 0 | 13.14 | 0 | 0 | 679.29 | 500 | 179.29 | 679.29 |
+| 2025-01-10 | 679.29 | 0 | 0 | 16.08 | 0 | 663.21 | 500 | 163.21 | 663.21 |
+| 2025-01-11 | 663.21 | 0 | 0 | 17 | 0 | 646.21 | 500 | 146.21 | 646.21 |
+| 2025-01-12 | 646.21 | 0 | 0 | 6 | 0 | 640.21 | 500 | 140.21 | 640.21 |
+| 2025-01-13 | 640.21 | 0 | 0 | 0 | 0 | 640.21 | 500 | 140.21 | 640.21 |
+| 2025-01-14 | 640.21 | 0 | 0 | 5 | 0 | 635.21 | 500 | 135.21 | 635.21 |
+| 2025-01-15 | 635.21 | 616 | 23.96 | 20.87 | 0 | 1206.38 | 500 | 706.38 | 590.38 |
+| 2025-01-16 | 1206.38 | 0 | 13.14 | 0 | 0 | 1193.24 | 500 | 693.24 | 1193.24 |
+| 2025-01-17 | 1193.24 | 0 | 0 | 0 | 0 | 1193.24 | 500 | 693.24 | 1193.24 |
+| 2025-01-18 | 1193.24 | 0 | 0 | 0 | 0 | 1193.24 | 500 | 693.24 | 1193.24 |
+| 2025-01-19 | 1193.24 | 0 | 0 | 0 | 0 | 1193.24 | 500 | 693.24 | 1193.24 |
+| 2025-01-20 | 1193.24 | 0 | 0 | 0 | 0 | 1193.24 | 500 | 693.24 | 1193.24 |
+| 2025-01-21 | 1193.24 | 0 | 0 | 0 | 0 | 1193.24 | 500 | 693.24 | 1193.24 |
+| 2025-01-22 | 1193.24 | 0 | 23.96 | 0 | 0 | 1169.28 | 500 | 669.28 | 1169.28 |
+| 2025-01-23 | 1169.28 | 0 | 13.14 | 0 | 0 | 1156.14 | 500 | 656.14 | 1156.14 |
+| 2025-01-24 | 1156.14 | 0 | 0 | 16.08 | 0 | 1140.06 | 500 | 640.06 | 1140.06 |
+| 2025-01-25 | 1140.06 | 0 | 0 | 0 | 0 | 1140.06 | 500 | 640.06 | 1140.06 |
+| 2025-01-26 | 1140.06 | 0 | 0 | 0 | 0 | 1140.06 | 500 | 640.06 | 1140.06 |
+| 2025-01-27 | 1140.06 | 0 | 0 | 0 | 0 | 1140.06 | 500 | 640.06 | 1140.06 |
+| 2025-01-28 | 1140.06 | 0 | 0 | 0 | 0 | 1140.06 | 500 | 640.06 | 1140.06 |
+| 2025-01-29 | 1140.06 | 0 | 23.96 | 0 | 0 | 1116.10 | 500 | 616.10 | 1116.10 |
+| 2025-01-30 | 1116.10 | 0 | 13.14 | 0 | 0 | 1102.96 | 500 | 602.96 | 1102.96 |
+| 2025-01-31 | 1102.96 | 0 | 0 | 0 | 0 | 1102.96 | 500 | 602.96 | 1102.96 |
+| 2025-02-01 | 1102.96 | 0 | 0 | 0 | 0 | 1102.96 | 500 | 602.96 | 1102.96 |
+| 2025-02-02 | 1102.96 | 0 | 0 | 0 | 253.59 | 849.37 | 500 | 349.37 | 849.37 |
+| 2025-02-03 | 849.37 | 0 | 178.2 | 0 | 0 | 671.17 | 500 | 171.17 | 671.17 |
+| 2025-02-04 | 671.17 | 0 | 0 | 0 | 0 | 671.17 | 500 | 171.17 | 671.17 |
+| 2025-02-05 | 671.17 | 0 | 23.96 | 0 | 0 | 647.21 | 500 | 147.21 | 647.21 |
+| 2025-02-06 | 647.21 | 0 | 13.14 | 0 | 0 | 634.07 | 500 | 134.07 | 634.07 |
+| 2025-02-07 | 634.07 | 0 | 30.56 | 16.08 | 0 | 587.43 | 500 | 87.43 | 587.43 |
+| 2025-02-08 | 587.43 | 0 | 0 | 0 | 0 | 587.43 | 500 | 87.43 | 587.43 |
+| 2025-02-09 | 587.43 | 0 | 0 | 0 | 0 | 587.43 | 500 | 87.43 | 587.43 |
+| 2025-02-10 | 587.43 | 0 | 0 | 0 | 0 | 587.43 | 500 | 87.43 | 587.43 |
+| 2025-02-11 | 587.43 | 0 | 0 | 17 | 0 | 570.43 | 500 | 70.43 | 570.43 |
+| 2025-02-12 | 570.43 | 0 | 23.96 | 6 | 0 | 540.47 | 500 | 40.47 | 540.47 |
+| 2025-02-13 | 540.47 | 0 | 13.14 | 0 | 0 | 527.33 | 500 | 27.33 | 527.33 |
+| 2025-02-14 | 527.33 | 0 | 0 | 5 | 0 | 522.33 | 500 | 22.33 | 522.33 |
+| 2025-02-15 | 522.33 | 616 | 0 | 20.87 | 0 | 1117.46 | 500 | 617.46 | 501.46 |
+| 2025-02-16 | 1117.46 | 0 | 0 | 0 | 0 | 1117.46 | 500 | 617.46 | 1117.46 |
+| 2025-02-17 | 1117.46 | 0 | 0 | 0 | 0 | 1117.46 | 500 | 617.46 | 1117.46 |
+| 2025-02-18 | 1117.46 | 0 | 0 | 0 | 0 | 1117.46 | 500 | 617.46 | 1117.46 |
+| 2025-02-19 | 1117.46 | 0 | 23.96 | 0 | 0 | 1093.50 | 500 | 593.50 | 1093.50 |
+| 2025-02-20 | 1093.50 | 0 | 13.14 | 0 | 0 | 1080.36 | 500 | 580.36 | 1080.36 |
+| 2025-02-21 | 1080.36 | 0 | 0 | 16.08 | 0 | 1064.28 | 500 | 564.28 | 1064.28 |
+| 2025-02-22 | 1064.28 | 0 | 0 | 0 | 0 | 1064.28 | 500 | 564.28 | 1064.28 |
+| 2025-02-23 | 1064.28 | 0 | 0 | 0 | 0 | 1064.28 | 500 | 564.28 | 1064.28 |
+| 2025-02-24 | 1064.28 | 0 | 0 | 0 | 0 | 1064.28 | 500 | 564.28 | 1064.28 |
+| 2025-02-25 | 1064.28 | 0 | 0 | 0 | 0 | 1064.28 | 500 | 564.28 | 1064.28 |
+| 2025-02-26 | 1064.28 | 0 | 23.96 | 0 | 0 | 1040.32 | 500 | 540.32 | 1040.32 |
+| 2025-02-27 | 1040.32 | 0 | 13.14 | 0 | 0 | 1027.18 | 500 | 527.18 | 1027.18 |
+| 2025-02-28 | 1027.18 | 0 | 0 | 0 | 0 | 1027.18 | 500 | 527.18 | 1027.18 |
+| 2025-03-01 | 1027.18 | 0 | 0 | 0 | 0 | 1027.18 | 500 | 527.18 | 1027.18 |
+| 2025-03-02 | 1027.18 | 0 | 0 | 0 | 0 | 1027.18 | 500 | 527.18 | 1027.18 |
+| 2025-03-03 | 1027.18 | 0 | 178.2 | 0 | 0 | 848.98 | 500 | 348.98 | 848.98 |
+| 2025-03-04 | 848.98 | 0 | 0 | 0 | 0 | 848.98 | 500 | 348.98 | 848.98 |
+| 2025-03-05 | 848.98 | 0 | 23.96 | 0 | 0 | 825.02 | 500 | 325.02 | 825.02 |

@@ -6,8 +6,7 @@
 
 ## Evidence
 
-* Skipped: {"source_id": "message_16", "reason": "unresolved_evidence"}
-* Issue: {"code": "unresolved_evidence", "source_id": "message_16", "detail": "source unavailable or not cached; no value imputed", "blocking": false}
+* Issue: {"code": "incomplete_new_fact", "source_id": "message_16", "detail": "new event requires explicit description/category/direction/type/currency/date/status", "blocking": false}
 
 ## Resolved events
 
@@ -97,115 +96,94 @@
 
 ## Projected recurrence
 
-* event_1994: payroll credit; monthly=15; observations=5; conservative recent amount=45760
-* event_1997: education loan instalment; monthly=13; observations=5; conservative recent amount=5852
-* event_1999: childcare contribution; monthly=15; observations=5; conservative recent amount=4270.2
-* event_2027: groceries; interval=7; observations=25; conservative recent amount=1678.37
-* event_1998: clinic payment; monthly=12; observations=5; conservative recent amount=1439.91
-* event_2002: shared housing rent; monthly=4; observations=6; conservative recent amount=15312
-* event_2001: personal shopping; monthly=14; observations=5; conservative recent amount=1389.39
-* event_2040: transport; interval=14; observations=13; conservative recent amount=1092.98
-* event_1996: electricity bill; monthly=8; observations=5; conservative recent amount=2915.67
-* event_2000: cloud storage plan; monthly=14; observations=5; conservative recent amount=295.9
+* event_1994: payroll credit; monthly=15; observations=5; supported salary rate=45760
+* event_1997: education loan instalment; monthly=13; observations=5; latest contractual amount=5852
+* event_1999: childcare contribution; monthly=15; observations=5; mean historical budget, rounded up=4270.20
+* event_2027: groceries; interval=7; observations=25; mean historical budget, rounded up=1732.48
+* event_1998: clinic payment; monthly=12; observations=5; mean historical budget, rounded up=1361.55
+* event_2002: shared housing rent; monthly=4; observations=6; latest contractual amount=15312
+* event_2001: personal shopping; monthly=14; observations=5; mean historical budget, rounded up=1315.74
+* event_2040: transport; interval=14; observations=13; mean historical budget, rounded up=888.44
+* event_1996: electricity bill; monthly=8; observations=5; mean historical budget, rounded up=2754.39
+* event_2000: cloud storage plan; monthly=14; observations=5; latest contractual amount=295.9
 
 ## Capacity
 
-Baseline minimum: 29791.91 on 2025-05-15.
-{"amount": "2791.91", "verified_by_simulation": true, "blocked": false, "algorithm": "maximum cent amount via monotone binary search"}
+Baseline minimum: 30201.52 on 2025-05-15.
+{"amount": "3201.52", "verified_by_simulation": true, "blocked": false, "algorithm": "maximum cent amount via monotone binary search"}
 
 ## Earliest full-payment tests
 
-* {"date": "2025-05-07", "safe": false, "minimum_balance": "-8224.09", "breach_date": "2025-05-07"}
-* {"date": "2025-05-08", "safe": false, "minimum_balance": "-8224.09", "breach_date": "2025-05-08"}
-* {"date": "2025-05-09", "safe": false, "minimum_balance": "-8224.09", "breach_date": "2025-05-09"}
-* {"date": "2025-05-10", "safe": false, "minimum_balance": "-8224.09", "breach_date": "2025-05-10"}
-* {"date": "2025-05-11", "safe": false, "minimum_balance": "-8224.09", "breach_date": "2025-05-11"}
-* {"date": "2025-05-12", "safe": false, "minimum_balance": "-8224.09", "breach_date": "2025-05-12"}
-* {"date": "2025-05-13", "safe": false, "minimum_balance": "-8224.09", "breach_date": "2025-05-13"}
-* {"date": "2025-05-14", "safe": false, "minimum_balance": "-8224.09", "breach_date": "2025-05-14"}
-* {"date": "2025-05-15", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-04"}
-* {"date": "2025-05-16", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-04"}
-* {"date": "2025-05-17", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-04"}
-* {"date": "2025-05-18", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-04"}
-* {"date": "2025-05-19", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-04"}
-* {"date": "2025-05-20", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-04"}
-* {"date": "2025-05-21", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-04"}
-* {"date": "2025-05-22", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-04"}
-* {"date": "2025-05-23", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-04"}
-* {"date": "2025-05-24", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-04"}
-* {"date": "2025-05-25", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-04"}
-* {"date": "2025-05-26", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-04"}
-* {"date": "2025-05-27", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-04"}
-* {"date": "2025-05-28", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-04"}
-* {"date": "2025-05-29", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-04"}
-* {"date": "2025-05-30", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-04"}
-* {"date": "2025-05-31", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-04"}
-* {"date": "2025-06-01", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-04"}
-* {"date": "2025-06-02", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-04"}
-* {"date": "2025-06-03", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-04"}
-* {"date": "2025-06-04", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-04"}
-* {"date": "2025-06-05", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-05"}
-* {"date": "2025-06-06", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-06"}
-* {"date": "2025-06-07", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-07"}
-* {"date": "2025-06-08", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-08"}
-* {"date": "2025-06-09", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-09"}
-* {"date": "2025-06-10", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-10"}
-* {"date": "2025-06-11", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-11"}
-* {"date": "2025-06-12", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-12"}
-* {"date": "2025-06-13", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-13"}
-* {"date": "2025-06-14", "safe": false, "minimum_balance": "-2838.60", "breach_date": "2025-06-14"}
-* {"date": "2025-06-15", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-04"}
-* {"date": "2025-06-16", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-04"}
-* {"date": "2025-06-17", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-04"}
-* {"date": "2025-06-18", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-04"}
-* {"date": "2025-06-19", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-04"}
-* {"date": "2025-06-20", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-04"}
-* {"date": "2025-06-21", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-04"}
-* {"date": "2025-06-22", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-04"}
-* {"date": "2025-06-23", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-04"}
-* {"date": "2025-06-24", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-04"}
-* {"date": "2025-06-25", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-04"}
-* {"date": "2025-06-26", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-04"}
-* {"date": "2025-06-27", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-04"}
-* {"date": "2025-06-28", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-04"}
-* {"date": "2025-06-29", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-04"}
-* {"date": "2025-06-30", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-04"}
-* {"date": "2025-07-01", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-04"}
-* {"date": "2025-07-02", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-04"}
-* {"date": "2025-07-03", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-04"}
-* {"date": "2025-07-04", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-04"}
-* {"date": "2025-07-05", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-05"}
-* {"date": "2025-07-06", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-06"}
-* {"date": "2025-07-07", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-07"}
-* {"date": "2025-07-08", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-08"}
-* {"date": "2025-07-09", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-09"}
-* {"date": "2025-07-10", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-10"}
-* {"date": "2025-07-11", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-11"}
-* {"date": "2025-07-12", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-12"}
-* {"date": "2025-07-13", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-13"}
-* {"date": "2025-07-14", "safe": false, "minimum_balance": "2546.89", "breach_date": "2025-07-14"}
-* {"date": "2025-07-15", "safe": false, "minimum_balance": "26866.80", "breach_date": "2025-08-04"}
-* {"date": "2025-07-16", "safe": false, "minimum_balance": "26866.80", "breach_date": "2025-08-04"}
-* {"date": "2025-07-17", "safe": false, "minimum_balance": "26866.80", "breach_date": "2025-08-04"}
-* {"date": "2025-07-18", "safe": false, "minimum_balance": "26866.80", "breach_date": "2025-08-04"}
-* {"date": "2025-07-19", "safe": false, "minimum_balance": "26866.80", "breach_date": "2025-08-04"}
-* {"date": "2025-07-20", "safe": false, "minimum_balance": "26866.80", "breach_date": "2025-08-04"}
-* {"date": "2025-07-21", "safe": false, "minimum_balance": "26866.80", "breach_date": "2025-08-04"}
-* {"date": "2025-07-22", "safe": false, "minimum_balance": "26866.80", "breach_date": "2025-08-04"}
-* {"date": "2025-07-23", "safe": false, "minimum_balance": "26866.80", "breach_date": "2025-08-04"}
-* {"date": "2025-07-24", "safe": false, "minimum_balance": "26866.80", "breach_date": "2025-08-04"}
-* {"date": "2025-07-25", "safe": false, "minimum_balance": "26866.80", "breach_date": "2025-08-04"}
-* {"date": "2025-07-26", "safe": false, "minimum_balance": "26866.80", "breach_date": "2025-08-04"}
-* {"date": "2025-07-27", "safe": false, "minimum_balance": "26866.80", "breach_date": "2025-08-04"}
-* {"date": "2025-07-28", "safe": false, "minimum_balance": "26866.80", "breach_date": "2025-08-04"}
-* {"date": "2025-07-29", "safe": false, "minimum_balance": "26866.80", "breach_date": "2025-08-04"}
-* {"date": "2025-07-30", "safe": false, "minimum_balance": "26866.80", "breach_date": "2025-08-04"}
-* {"date": "2025-07-31", "safe": false, "minimum_balance": "26866.80", "breach_date": "2025-08-04"}
-* {"date": "2025-08-01", "safe": false, "minimum_balance": "26866.80", "breach_date": "2025-08-04"}
-* {"date": "2025-08-02", "safe": false, "minimum_balance": "26866.80", "breach_date": "2025-08-04"}
-* {"date": "2025-08-03", "safe": false, "minimum_balance": "26866.80", "breach_date": "2025-08-04"}
-* {"date": "2025-08-04", "safe": false, "minimum_balance": "26866.80", "breach_date": "2025-08-04"}
-* {"date": "2025-08-05", "safe": false, "minimum_balance": "26866.80", "breach_date": "2025-08-05"}
+* {"date": "2025-05-07", "safe": false, "minimum_balance": "-7814.48", "breach_date": "2025-05-07"}
+* {"date": "2025-05-08", "safe": false, "minimum_balance": "-7814.48", "breach_date": "2025-05-08"}
+* {"date": "2025-05-09", "safe": false, "minimum_balance": "-7814.48", "breach_date": "2025-05-09"}
+* {"date": "2025-05-10", "safe": false, "minimum_balance": "-7814.48", "breach_date": "2025-05-10"}
+* {"date": "2025-05-11", "safe": false, "minimum_balance": "-7814.48", "breach_date": "2025-05-11"}
+* {"date": "2025-05-12", "safe": false, "minimum_balance": "-7814.48", "breach_date": "2025-05-12"}
+* {"date": "2025-05-13", "safe": false, "minimum_balance": "-7814.48", "breach_date": "2025-05-13"}
+* {"date": "2025-05-14", "safe": false, "minimum_balance": "-7814.48", "breach_date": "2025-05-14"}
+* {"date": "2025-05-15", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-04"}
+* {"date": "2025-05-16", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-04"}
+* {"date": "2025-05-17", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-04"}
+* {"date": "2025-05-18", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-04"}
+* {"date": "2025-05-19", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-04"}
+* {"date": "2025-05-20", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-04"}
+* {"date": "2025-05-21", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-04"}
+* {"date": "2025-05-22", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-04"}
+* {"date": "2025-05-23", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-04"}
+* {"date": "2025-05-24", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-04"}
+* {"date": "2025-05-25", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-04"}
+* {"date": "2025-05-26", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-04"}
+* {"date": "2025-05-27", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-04"}
+* {"date": "2025-05-28", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-04"}
+* {"date": "2025-05-29", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-04"}
+* {"date": "2025-05-30", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-04"}
+* {"date": "2025-05-31", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-04"}
+* {"date": "2025-06-01", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-04"}
+* {"date": "2025-06-02", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-04"}
+* {"date": "2025-06-03", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-04"}
+* {"date": "2025-06-04", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-04"}
+* {"date": "2025-06-05", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-05"}
+* {"date": "2025-06-06", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-06"}
+* {"date": "2025-06-07", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-07"}
+* {"date": "2025-06-08", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-08"}
+* {"date": "2025-06-09", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-09"}
+* {"date": "2025-06-10", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-10"}
+* {"date": "2025-06-11", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-11"}
+* {"date": "2025-06-12", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-12"}
+* {"date": "2025-06-13", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-13"}
+* {"date": "2025-06-14", "safe": false, "minimum_balance": "-1923.06", "breach_date": "2025-06-14"}
+* {"date": "2025-06-15", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-04"}
+* {"date": "2025-06-16", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-04"}
+* {"date": "2025-06-17", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-04"}
+* {"date": "2025-06-18", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-04"}
+* {"date": "2025-06-19", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-04"}
+* {"date": "2025-06-20", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-04"}
+* {"date": "2025-06-21", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-04"}
+* {"date": "2025-06-22", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-04"}
+* {"date": "2025-06-23", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-04"}
+* {"date": "2025-06-24", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-04"}
+* {"date": "2025-06-25", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-04"}
+* {"date": "2025-06-26", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-04"}
+* {"date": "2025-06-27", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-04"}
+* {"date": "2025-06-28", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-04"}
+* {"date": "2025-06-29", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-04"}
+* {"date": "2025-06-30", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-04"}
+* {"date": "2025-07-01", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-04"}
+* {"date": "2025-07-02", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-04"}
+* {"date": "2025-07-03", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-04"}
+* {"date": "2025-07-04", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-04"}
+* {"date": "2025-07-05", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-05"}
+* {"date": "2025-07-06", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-06"}
+* {"date": "2025-07-07", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-07"}
+* {"date": "2025-07-08", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-08"}
+* {"date": "2025-07-09", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-09"}
+* {"date": "2025-07-10", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-10"}
+* {"date": "2025-07-11", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-11"}
+* {"date": "2025-07-12", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-12"}
+* {"date": "2025-07-13", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-13"}
+* {"date": "2025-07-14", "safe": false, "minimum_balance": "3968.36", "breach_date": "2025-07-14"}
+* {"date": "2025-07-15", "safe": true, "minimum_balance": "28330.48", "breach_date": null}
 
 ## Every candidate
 
@@ -237,15 +215,96 @@ Baseline minimum: 29791.91 on 2025-05-15.
     "spending_changes_valid": true
   },
   "errors": [
-    "minimum balance breached on 2025-05-07: -8224.09"
+    "minimum balance breached on 2025-05-07: -7814.48"
   ],
   "valid": false,
-  "minimum_balance": "-8224.09",
+  "minimum_balance": "-7814.48",
   "ranking_key": null
 }
 ```
 
 ### Candidate 2
+
+```json
+{
+  "candidate": {
+    "method": "wait",
+    "payments": [
+      {
+        "day": "2025-07-15",
+        "amount": "38016"
+      }
+    ],
+    "total_cost": "38016",
+    "option_id": "payment_option_64",
+    "changes": [],
+    "change_reasons": []
+  },
+  "checks": {
+    "method_accepted": true,
+    "every_payment_possible": true,
+    "full_commitment_completed": true,
+    "deadline_met": true,
+    "minimum_maintained": true,
+    "plan_format_valid": true,
+    "installment_option_matches": true,
+    "spending_changes_valid": true
+  },
+  "errors": [],
+  "valid": true,
+  "minimum_balance": "28330.48",
+  "ranking_key": [
+    false,
+    0,
+    "38016",
+    "2025-07-15",
+    1,
+    "payment_option_64"
+  ]
+}
+```
+
+### Candidate 3
+
+```json
+{
+  "candidate": {
+    "method": "partial_payment",
+    "payments": [
+      {
+        "day": "2025-05-07",
+        "amount": "3201.52"
+      },
+      {
+        "day": "2025-07-15",
+        "amount": "34814.48"
+      }
+    ],
+    "total_cost": "38016",
+    "option_id": "",
+    "changes": [],
+    "change_reasons": []
+  },
+  "checks": {
+    "method_accepted": true,
+    "every_payment_possible": true,
+    "full_commitment_completed": true,
+    "deadline_met": true,
+    "minimum_maintained": true,
+    "plan_format_valid": true,
+    "installment_option_matches": true,
+    "spending_changes_valid": true
+  },
+  "errors": [
+    "partial payment not permitted or no strictly partial capacity"
+  ],
+  "valid": false,
+  "minimum_balance": "27000.00",
+  "ranking_key": null
+}
+```
+
+### Candidate 4
 
 ```json
 {
@@ -350,7 +409,7 @@ Baseline minimum: 29791.91 on 2025-05-15.
 }
 ```
 
-### Candidate 3
+### Candidate 5
 
 ```json
 {
@@ -479,116 +538,18 @@ Baseline minimum: 29791.91 on 2025-05-15.
 }
 ```
 
-### Candidate 4
-
-```json
-{
-  "candidate": {
-    "method": "wait",
-    "payments": [
-      {
-        "day": "2025-07-15",
-        "amount": "38016"
-      }
-    ],
-    "total_cost": "38016",
-    "option_id": "payment_option_64",
-    "changes": [
-      {
-        "action": "stop",
-        "event_id": "event_2000",
-        "amount": null
-      }
-    ],
-    "change_reasons": [
-      "stop:event_2000: without this change, minimum 26866.80 breaches reserve on 2025-08-04"
-    ]
-  },
-  "checks": {
-    "method_accepted": true,
-    "every_payment_possible": true,
-    "full_commitment_completed": true,
-    "deadline_met": true,
-    "minimum_maintained": true,
-    "plan_format_valid": true,
-    "installment_option_matches": true,
-    "spending_changes_valid": true
-  },
-  "errors": [],
-  "valid": true,
-  "minimum_balance": "27754.50",
-  "ranking_key": [
-    false,
-    1,
-    "38016",
-    "2025-07-15",
-    1,
-    "payment_option_64"
-  ]
-}
-```
-
-### Candidate 5
-
-```json
-{
-  "candidate": {
-    "method": "wait",
-    "payments": [
-      {
-        "day": "2025-07-15",
-        "amount": "38016"
-      }
-    ],
-    "total_cost": "38016",
-    "option_id": "payment_option_64",
-    "changes": [
-      {
-        "action": "reduce_to",
-        "event_id": "event_2001",
-        "amount": "1281.32"
-      }
-    ],
-    "change_reasons": [
-      "reduce_to:event_2001: without this change, minimum 26866.80 breaches reserve on 2025-08-04"
-    ]
-  },
-  "checks": {
-    "method_accepted": true,
-    "every_payment_possible": true,
-    "full_commitment_completed": true,
-    "deadline_met": true,
-    "minimum_maintained": true,
-    "plan_format_valid": true,
-    "installment_option_matches": true,
-    "spending_changes_valid": true
-  },
-  "errors": [],
-  "valid": true,
-  "minimum_balance": "27191.01",
-  "ranking_key": [
-    false,
-    1,
-    "38016",
-    "2025-07-15",
-    1,
-    "payment_option_64"
-  ]
-}
-```
-
 ## Selected recommendation
 
 ```json
 {
   "request_id": "request_23",
-  "amount_safe_to_pay": "2791.91",
-  "affordability_status": "affordable_with_plan",
+  "amount_safe_to_pay": "3201.52",
+  "affordability_status": "affordable_later",
   "recommended_payment_method": "wait",
   "payment_plan": "2025-07-15:38016",
-  "earliest_date_for_full_payment": "",
-  "spending_changes_needed": "stop:event_2000",
-  "decision_explanation": "Safe today before changes: 2791.91 ZAR; protected minimum: 27000. Use wait, total 38016, completing 2025-07-15. Lowest projected balance: 27754.50 on 2025-08-04. Required changes: stop:event_2000. Earlier full payment would not preserve the reserve under this forecast. Limiting expense: event_2002 (15312 on 2025-08-04). Projected income includes event_1994: 45760 on 2025-05-15. Unresolved evidence/forecast assumptions remain; see audit."
+  "earliest_date_for_full_payment": "2025-07-15",
+  "spending_changes_needed": "none",
+  "decision_explanation": "Safe today before changes: 3201.52 ZAR; protected minimum: 27000. Use wait, total 38016, completing 2025-07-15. Lowest projected balance: 28330.48 on 2025-08-04. Earlier full payment would not preserve the reserve under this forecast. Limiting expense: event_2002 (15312 on 2025-08-04). Projected income includes event_1994: 45760 on 2025-05-15. Unresolved evidence/forecast assumptions remain; see audit."
 }
 ```
 
@@ -596,94 +557,94 @@ Baseline minimum: 29791.91 on 2025-05-15.
 
 | Date | Opening | Credits | Essential/protected debits | Other debits | Request payments | Closing | Required | Surplus | Lowest |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 2025-05-07 | 51957.9 | 0 | 3231.57 | 0 | 0 | 48726.33 | 27000 | 21726.33 | 48726.33 |
-| 2025-05-08 | 48726.33 | 0 | 2915.67 | 0 | 0 | 45810.66 | 27000 | 18810.66 | 45810.66 |
-| 2025-05-09 | 45810.66 | 0 | 0 | 0 | 0 | 45810.66 | 27000 | 18810.66 | 45810.66 |
-| 2025-05-10 | 45810.66 | 0 | 0 | 0 | 0 | 45810.66 | 27000 | 18810.66 | 45810.66 |
-| 2025-05-11 | 45810.66 | 0 | 0 | 0 | 0 | 45810.66 | 27000 | 18810.66 | 45810.66 |
-| 2025-05-12 | 45810.66 | 0 | 1439.91 | 0 | 0 | 44370.75 | 27000 | 17370.75 | 44370.75 |
-| 2025-05-13 | 44370.75 | 0 | 5852 | 0 | 0 | 38518.75 | 27000 | 11518.75 | 38518.75 |
-| 2025-05-14 | 38518.75 | 0 | 1678.37 | 1389.39 | 0 | 35450.99 | 27000 | 8450.99 | 35450.99 |
-| 2025-05-15 | 35450.99 | 45760 | 5363.18 | 0 | 0 | 75847.81 | 27000 | 48847.81 | 30087.81 |
-| 2025-05-16 | 75847.81 | 0 | 0 | 0 | 0 | 75847.81 | 27000 | 48847.81 | 75847.81 |
-| 2025-05-17 | 75847.81 | 0 | 0 | 0 | 0 | 75847.81 | 27000 | 48847.81 | 75847.81 |
-| 2025-05-18 | 75847.81 | 0 | 0 | 0 | 0 | 75847.81 | 27000 | 48847.81 | 75847.81 |
-| 2025-05-19 | 75847.81 | 0 | 0 | 0 | 0 | 75847.81 | 27000 | 48847.81 | 75847.81 |
-| 2025-05-20 | 75847.81 | 0 | 0 | 0 | 0 | 75847.81 | 27000 | 48847.81 | 75847.81 |
-| 2025-05-21 | 75847.81 | 0 | 1678.37 | 0 | 0 | 74169.44 | 27000 | 47169.44 | 74169.44 |
-| 2025-05-22 | 74169.44 | 0 | 0 | 0 | 0 | 74169.44 | 27000 | 47169.44 | 74169.44 |
-| 2025-05-23 | 74169.44 | 0 | 0 | 0 | 0 | 74169.44 | 27000 | 47169.44 | 74169.44 |
-| 2025-05-24 | 74169.44 | 0 | 0 | 0 | 0 | 74169.44 | 27000 | 47169.44 | 74169.44 |
-| 2025-05-25 | 74169.44 | 0 | 0 | 0 | 0 | 74169.44 | 27000 | 47169.44 | 74169.44 |
-| 2025-05-26 | 74169.44 | 0 | 0 | 0 | 0 | 74169.44 | 27000 | 47169.44 | 74169.44 |
-| 2025-05-27 | 74169.44 | 0 | 0 | 0 | 0 | 74169.44 | 27000 | 47169.44 | 74169.44 |
-| 2025-05-28 | 74169.44 | 0 | 1678.37 | 0 | 0 | 72491.07 | 27000 | 45491.07 | 72491.07 |
-| 2025-05-29 | 72491.07 | 0 | 1092.98 | 0 | 0 | 71398.09 | 27000 | 44398.09 | 71398.09 |
-| 2025-05-30 | 71398.09 | 0 | 0 | 0 | 0 | 71398.09 | 27000 | 44398.09 | 71398.09 |
-| 2025-05-31 | 71398.09 | 0 | 0 | 0 | 0 | 71398.09 | 27000 | 44398.09 | 71398.09 |
-| 2025-06-01 | 71398.09 | 0 | 0 | 0 | 0 | 71398.09 | 27000 | 44398.09 | 71398.09 |
-| 2025-06-02 | 71398.09 | 0 | 0 | 0 | 0 | 71398.09 | 27000 | 44398.09 | 71398.09 |
-| 2025-06-03 | 71398.09 | 0 | 0 | 0 | 0 | 71398.09 | 27000 | 44398.09 | 71398.09 |
-| 2025-06-04 | 71398.09 | 0 | 16990.37 | 0 | 0 | 54407.72 | 27000 | 27407.72 | 54407.72 |
-| 2025-06-05 | 54407.72 | 0 | 0 | 0 | 0 | 54407.72 | 27000 | 27407.72 | 54407.72 |
-| 2025-06-06 | 54407.72 | 0 | 0 | 0 | 0 | 54407.72 | 27000 | 27407.72 | 54407.72 |
-| 2025-06-07 | 54407.72 | 0 | 0 | 0 | 0 | 54407.72 | 27000 | 27407.72 | 54407.72 |
-| 2025-06-08 | 54407.72 | 0 | 2915.67 | 0 | 0 | 51492.05 | 27000 | 24492.05 | 51492.05 |
-| 2025-06-09 | 51492.05 | 0 | 0 | 0 | 0 | 51492.05 | 27000 | 24492.05 | 51492.05 |
-| 2025-06-10 | 51492.05 | 0 | 0 | 0 | 0 | 51492.05 | 27000 | 24492.05 | 51492.05 |
-| 2025-06-11 | 51492.05 | 0 | 1678.37 | 0 | 0 | 49813.68 | 27000 | 22813.68 | 49813.68 |
-| 2025-06-12 | 49813.68 | 0 | 2532.89 | 0 | 0 | 47280.79 | 27000 | 20280.79 | 47280.79 |
-| 2025-06-13 | 47280.79 | 0 | 5852 | 0 | 0 | 41428.79 | 27000 | 14428.79 | 41428.79 |
-| 2025-06-14 | 41428.79 | 0 | 0 | 1389.39 | 0 | 40039.40 | 27000 | 13039.40 | 40039.40 |
-| 2025-06-15 | 40039.40 | 45760 | 4270.2 | 0 | 0 | 81529.20 | 27000 | 54529.20 | 35769.20 |
-| 2025-06-16 | 81529.20 | 0 | 0 | 0 | 0 | 81529.20 | 27000 | 54529.20 | 81529.20 |
-| 2025-06-17 | 81529.20 | 0 | 0 | 0 | 0 | 81529.20 | 27000 | 54529.20 | 81529.20 |
-| 2025-06-18 | 81529.20 | 0 | 1678.37 | 0 | 0 | 79850.83 | 27000 | 52850.83 | 79850.83 |
-| 2025-06-19 | 79850.83 | 0 | 0 | 0 | 0 | 79850.83 | 27000 | 52850.83 | 79850.83 |
-| 2025-06-20 | 79850.83 | 0 | 0 | 0 | 0 | 79850.83 | 27000 | 52850.83 | 79850.83 |
-| 2025-06-21 | 79850.83 | 0 | 0 | 0 | 0 | 79850.83 | 27000 | 52850.83 | 79850.83 |
-| 2025-06-22 | 79850.83 | 0 | 0 | 0 | 0 | 79850.83 | 27000 | 52850.83 | 79850.83 |
-| 2025-06-23 | 79850.83 | 0 | 0 | 0 | 0 | 79850.83 | 27000 | 52850.83 | 79850.83 |
-| 2025-06-24 | 79850.83 | 0 | 0 | 0 | 0 | 79850.83 | 27000 | 52850.83 | 79850.83 |
-| 2025-06-25 | 79850.83 | 0 | 1678.37 | 0 | 0 | 78172.46 | 27000 | 51172.46 | 78172.46 |
-| 2025-06-26 | 78172.46 | 0 | 1092.98 | 0 | 0 | 77079.48 | 27000 | 50079.48 | 77079.48 |
-| 2025-06-27 | 77079.48 | 0 | 0 | 0 | 0 | 77079.48 | 27000 | 50079.48 | 77079.48 |
-| 2025-06-28 | 77079.48 | 0 | 0 | 0 | 0 | 77079.48 | 27000 | 50079.48 | 77079.48 |
-| 2025-06-29 | 77079.48 | 0 | 0 | 0 | 0 | 77079.48 | 27000 | 50079.48 | 77079.48 |
-| 2025-06-30 | 77079.48 | 0 | 0 | 0 | 0 | 77079.48 | 27000 | 50079.48 | 77079.48 |
-| 2025-07-01 | 77079.48 | 0 | 0 | 0 | 0 | 77079.48 | 27000 | 50079.48 | 77079.48 |
-| 2025-07-02 | 77079.48 | 0 | 1678.37 | 0 | 0 | 75401.11 | 27000 | 48401.11 | 75401.11 |
-| 2025-07-03 | 75401.11 | 0 | 0 | 0 | 0 | 75401.11 | 27000 | 48401.11 | 75401.11 |
-| 2025-07-04 | 75401.11 | 0 | 15312 | 0 | 0 | 60089.11 | 27000 | 33089.11 | 60089.11 |
-| 2025-07-05 | 60089.11 | 0 | 0 | 0 | 0 | 60089.11 | 27000 | 33089.11 | 60089.11 |
-| 2025-07-06 | 60089.11 | 0 | 0 | 0 | 0 | 60089.11 | 27000 | 33089.11 | 60089.11 |
-| 2025-07-07 | 60089.11 | 0 | 0 | 0 | 0 | 60089.11 | 27000 | 33089.11 | 60089.11 |
-| 2025-07-08 | 60089.11 | 0 | 2915.67 | 0 | 0 | 57173.44 | 27000 | 30173.44 | 57173.44 |
-| 2025-07-09 | 57173.44 | 0 | 1678.37 | 0 | 0 | 55495.07 | 27000 | 28495.07 | 55495.07 |
-| 2025-07-10 | 55495.07 | 0 | 1092.98 | 0 | 0 | 54402.09 | 27000 | 27402.09 | 54402.09 |
-| 2025-07-11 | 54402.09 | 0 | 0 | 0 | 0 | 54402.09 | 27000 | 27402.09 | 54402.09 |
-| 2025-07-12 | 54402.09 | 0 | 1439.91 | 0 | 0 | 52962.18 | 27000 | 25962.18 | 52962.18 |
-| 2025-07-13 | 52962.18 | 0 | 5852 | 0 | 0 | 47110.18 | 27000 | 20110.18 | 47110.18 |
-| 2025-07-14 | 47110.18 | 0 | 0 | 1389.39 | 0 | 45720.79 | 27000 | 18720.79 | 45720.79 |
-| 2025-07-15 | 45720.79 | 45760 | 4270.2 | 0 | 38016 | 49194.59 | 27000 | 22194.59 | 41450.59 |
-| 2025-07-16 | 49194.59 | 0 | 1678.37 | 0 | 0 | 47516.22 | 27000 | 20516.22 | 47516.22 |
-| 2025-07-17 | 47516.22 | 0 | 0 | 0 | 0 | 47516.22 | 27000 | 20516.22 | 47516.22 |
-| 2025-07-18 | 47516.22 | 0 | 0 | 0 | 0 | 47516.22 | 27000 | 20516.22 | 47516.22 |
-| 2025-07-19 | 47516.22 | 0 | 0 | 0 | 0 | 47516.22 | 27000 | 20516.22 | 47516.22 |
-| 2025-07-20 | 47516.22 | 0 | 0 | 0 | 0 | 47516.22 | 27000 | 20516.22 | 47516.22 |
-| 2025-07-21 | 47516.22 | 0 | 0 | 0 | 0 | 47516.22 | 27000 | 20516.22 | 47516.22 |
-| 2025-07-22 | 47516.22 | 0 | 0 | 0 | 0 | 47516.22 | 27000 | 20516.22 | 47516.22 |
-| 2025-07-23 | 47516.22 | 0 | 1678.37 | 0 | 0 | 45837.85 | 27000 | 18837.85 | 45837.85 |
-| 2025-07-24 | 45837.85 | 0 | 1092.98 | 0 | 0 | 44744.87 | 27000 | 17744.87 | 44744.87 |
-| 2025-07-25 | 44744.87 | 0 | 0 | 0 | 0 | 44744.87 | 27000 | 17744.87 | 44744.87 |
-| 2025-07-26 | 44744.87 | 0 | 0 | 0 | 0 | 44744.87 | 27000 | 17744.87 | 44744.87 |
-| 2025-07-27 | 44744.87 | 0 | 0 | 0 | 0 | 44744.87 | 27000 | 17744.87 | 44744.87 |
-| 2025-07-28 | 44744.87 | 0 | 0 | 0 | 0 | 44744.87 | 27000 | 17744.87 | 44744.87 |
-| 2025-07-29 | 44744.87 | 0 | 0 | 0 | 0 | 44744.87 | 27000 | 17744.87 | 44744.87 |
-| 2025-07-30 | 44744.87 | 0 | 1678.37 | 0 | 0 | 43066.50 | 27000 | 16066.50 | 43066.50 |
-| 2025-07-31 | 43066.50 | 0 | 0 | 0 | 0 | 43066.50 | 27000 | 16066.50 | 43066.50 |
-| 2025-08-01 | 43066.50 | 0 | 0 | 0 | 0 | 43066.50 | 27000 | 16066.50 | 43066.50 |
-| 2025-08-02 | 43066.50 | 0 | 0 | 0 | 0 | 43066.50 | 27000 | 16066.50 | 43066.50 |
-| 2025-08-03 | 43066.50 | 0 | 0 | 0 | 0 | 43066.50 | 27000 | 16066.50 | 43066.50 |
-| 2025-08-04 | 43066.50 | 0 | 15312 | 0 | 0 | 27754.50 | 27000 | 754.50 | 27754.50 |
-| 2025-08-05 | 27754.50 | 0 | 0 | 0 | 0 | 27754.50 | 27000 | 754.50 | 27754.50 |
+| 2025-05-07 | 51957.9 | 0 | 3285.68 | 0 | 0 | 48672.22 | 27000 | 21672.22 | 48672.22 |
+| 2025-05-08 | 48672.22 | 0 | 2754.39 | 0 | 0 | 45917.83 | 27000 | 18917.83 | 45917.83 |
+| 2025-05-09 | 45917.83 | 0 | 0 | 0 | 0 | 45917.83 | 27000 | 18917.83 | 45917.83 |
+| 2025-05-10 | 45917.83 | 0 | 0 | 0 | 0 | 45917.83 | 27000 | 18917.83 | 45917.83 |
+| 2025-05-11 | 45917.83 | 0 | 0 | 0 | 0 | 45917.83 | 27000 | 18917.83 | 45917.83 |
+| 2025-05-12 | 45917.83 | 0 | 1361.55 | 0 | 0 | 44556.28 | 27000 | 17556.28 | 44556.28 |
+| 2025-05-13 | 44556.28 | 0 | 5852 | 0 | 0 | 38704.28 | 27000 | 11704.28 | 38704.28 |
+| 2025-05-14 | 38704.28 | 0 | 1732.48 | 1611.64 | 0 | 35360.16 | 27000 | 8360.16 | 35360.16 |
+| 2025-05-15 | 35360.16 | 45760 | 5158.64 | 0 | 0 | 75961.52 | 27000 | 48961.52 | 30201.52 |
+| 2025-05-16 | 75961.52 | 0 | 0 | 0 | 0 | 75961.52 | 27000 | 48961.52 | 75961.52 |
+| 2025-05-17 | 75961.52 | 0 | 0 | 0 | 0 | 75961.52 | 27000 | 48961.52 | 75961.52 |
+| 2025-05-18 | 75961.52 | 0 | 0 | 0 | 0 | 75961.52 | 27000 | 48961.52 | 75961.52 |
+| 2025-05-19 | 75961.52 | 0 | 0 | 0 | 0 | 75961.52 | 27000 | 48961.52 | 75961.52 |
+| 2025-05-20 | 75961.52 | 0 | 0 | 0 | 0 | 75961.52 | 27000 | 48961.52 | 75961.52 |
+| 2025-05-21 | 75961.52 | 0 | 1732.48 | 0 | 0 | 74229.04 | 27000 | 47229.04 | 74229.04 |
+| 2025-05-22 | 74229.04 | 0 | 0 | 0 | 0 | 74229.04 | 27000 | 47229.04 | 74229.04 |
+| 2025-05-23 | 74229.04 | 0 | 0 | 0 | 0 | 74229.04 | 27000 | 47229.04 | 74229.04 |
+| 2025-05-24 | 74229.04 | 0 | 0 | 0 | 0 | 74229.04 | 27000 | 47229.04 | 74229.04 |
+| 2025-05-25 | 74229.04 | 0 | 0 | 0 | 0 | 74229.04 | 27000 | 47229.04 | 74229.04 |
+| 2025-05-26 | 74229.04 | 0 | 0 | 0 | 0 | 74229.04 | 27000 | 47229.04 | 74229.04 |
+| 2025-05-27 | 74229.04 | 0 | 0 | 0 | 0 | 74229.04 | 27000 | 47229.04 | 74229.04 |
+| 2025-05-28 | 74229.04 | 0 | 1732.48 | 0 | 0 | 72496.56 | 27000 | 45496.56 | 72496.56 |
+| 2025-05-29 | 72496.56 | 0 | 888.44 | 0 | 0 | 71608.12 | 27000 | 44608.12 | 71608.12 |
+| 2025-05-30 | 71608.12 | 0 | 0 | 0 | 0 | 71608.12 | 27000 | 44608.12 | 71608.12 |
+| 2025-05-31 | 71608.12 | 0 | 0 | 0 | 0 | 71608.12 | 27000 | 44608.12 | 71608.12 |
+| 2025-06-01 | 71608.12 | 0 | 0 | 0 | 0 | 71608.12 | 27000 | 44608.12 | 71608.12 |
+| 2025-06-02 | 71608.12 | 0 | 0 | 0 | 0 | 71608.12 | 27000 | 44608.12 | 71608.12 |
+| 2025-06-03 | 71608.12 | 0 | 0 | 0 | 0 | 71608.12 | 27000 | 44608.12 | 71608.12 |
+| 2025-06-04 | 71608.12 | 0 | 17044.48 | 0 | 0 | 54563.64 | 27000 | 27563.64 | 54563.64 |
+| 2025-06-05 | 54563.64 | 0 | 0 | 0 | 0 | 54563.64 | 27000 | 27563.64 | 54563.64 |
+| 2025-06-06 | 54563.64 | 0 | 0 | 0 | 0 | 54563.64 | 27000 | 27563.64 | 54563.64 |
+| 2025-06-07 | 54563.64 | 0 | 0 | 0 | 0 | 54563.64 | 27000 | 27563.64 | 54563.64 |
+| 2025-06-08 | 54563.64 | 0 | 2754.39 | 0 | 0 | 51809.25 | 27000 | 24809.25 | 51809.25 |
+| 2025-06-09 | 51809.25 | 0 | 0 | 0 | 0 | 51809.25 | 27000 | 24809.25 | 51809.25 |
+| 2025-06-10 | 51809.25 | 0 | 0 | 0 | 0 | 51809.25 | 27000 | 24809.25 | 51809.25 |
+| 2025-06-11 | 51809.25 | 0 | 1732.48 | 0 | 0 | 50076.77 | 27000 | 23076.77 | 50076.77 |
+| 2025-06-12 | 50076.77 | 0 | 2249.99 | 0 | 0 | 47826.78 | 27000 | 20826.78 | 47826.78 |
+| 2025-06-13 | 47826.78 | 0 | 5852 | 0 | 0 | 41974.78 | 27000 | 14974.78 | 41974.78 |
+| 2025-06-14 | 41974.78 | 0 | 0 | 1611.64 | 0 | 40363.14 | 27000 | 13363.14 | 40363.14 |
+| 2025-06-15 | 40363.14 | 45760 | 4270.20 | 0 | 0 | 81852.94 | 27000 | 54852.94 | 36092.94 |
+| 2025-06-16 | 81852.94 | 0 | 0 | 0 | 0 | 81852.94 | 27000 | 54852.94 | 81852.94 |
+| 2025-06-17 | 81852.94 | 0 | 0 | 0 | 0 | 81852.94 | 27000 | 54852.94 | 81852.94 |
+| 2025-06-18 | 81852.94 | 0 | 1732.48 | 0 | 0 | 80120.46 | 27000 | 53120.46 | 80120.46 |
+| 2025-06-19 | 80120.46 | 0 | 0 | 0 | 0 | 80120.46 | 27000 | 53120.46 | 80120.46 |
+| 2025-06-20 | 80120.46 | 0 | 0 | 0 | 0 | 80120.46 | 27000 | 53120.46 | 80120.46 |
+| 2025-06-21 | 80120.46 | 0 | 0 | 0 | 0 | 80120.46 | 27000 | 53120.46 | 80120.46 |
+| 2025-06-22 | 80120.46 | 0 | 0 | 0 | 0 | 80120.46 | 27000 | 53120.46 | 80120.46 |
+| 2025-06-23 | 80120.46 | 0 | 0 | 0 | 0 | 80120.46 | 27000 | 53120.46 | 80120.46 |
+| 2025-06-24 | 80120.46 | 0 | 0 | 0 | 0 | 80120.46 | 27000 | 53120.46 | 80120.46 |
+| 2025-06-25 | 80120.46 | 0 | 1732.48 | 0 | 0 | 78387.98 | 27000 | 51387.98 | 78387.98 |
+| 2025-06-26 | 78387.98 | 0 | 888.44 | 0 | 0 | 77499.54 | 27000 | 50499.54 | 77499.54 |
+| 2025-06-27 | 77499.54 | 0 | 0 | 0 | 0 | 77499.54 | 27000 | 50499.54 | 77499.54 |
+| 2025-06-28 | 77499.54 | 0 | 0 | 0 | 0 | 77499.54 | 27000 | 50499.54 | 77499.54 |
+| 2025-06-29 | 77499.54 | 0 | 0 | 0 | 0 | 77499.54 | 27000 | 50499.54 | 77499.54 |
+| 2025-06-30 | 77499.54 | 0 | 0 | 0 | 0 | 77499.54 | 27000 | 50499.54 | 77499.54 |
+| 2025-07-01 | 77499.54 | 0 | 0 | 0 | 0 | 77499.54 | 27000 | 50499.54 | 77499.54 |
+| 2025-07-02 | 77499.54 | 0 | 1732.48 | 0 | 0 | 75767.06 | 27000 | 48767.06 | 75767.06 |
+| 2025-07-03 | 75767.06 | 0 | 0 | 0 | 0 | 75767.06 | 27000 | 48767.06 | 75767.06 |
+| 2025-07-04 | 75767.06 | 0 | 15312 | 0 | 0 | 60455.06 | 27000 | 33455.06 | 60455.06 |
+| 2025-07-05 | 60455.06 | 0 | 0 | 0 | 0 | 60455.06 | 27000 | 33455.06 | 60455.06 |
+| 2025-07-06 | 60455.06 | 0 | 0 | 0 | 0 | 60455.06 | 27000 | 33455.06 | 60455.06 |
+| 2025-07-07 | 60455.06 | 0 | 0 | 0 | 0 | 60455.06 | 27000 | 33455.06 | 60455.06 |
+| 2025-07-08 | 60455.06 | 0 | 2754.39 | 0 | 0 | 57700.67 | 27000 | 30700.67 | 57700.67 |
+| 2025-07-09 | 57700.67 | 0 | 1732.48 | 0 | 0 | 55968.19 | 27000 | 28968.19 | 55968.19 |
+| 2025-07-10 | 55968.19 | 0 | 888.44 | 0 | 0 | 55079.75 | 27000 | 28079.75 | 55079.75 |
+| 2025-07-11 | 55079.75 | 0 | 0 | 0 | 0 | 55079.75 | 27000 | 28079.75 | 55079.75 |
+| 2025-07-12 | 55079.75 | 0 | 1361.55 | 0 | 0 | 53718.20 | 27000 | 26718.20 | 53718.20 |
+| 2025-07-13 | 53718.20 | 0 | 5852 | 0 | 0 | 47866.20 | 27000 | 20866.20 | 47866.20 |
+| 2025-07-14 | 47866.20 | 0 | 0 | 1611.64 | 0 | 46254.56 | 27000 | 19254.56 | 46254.56 |
+| 2025-07-15 | 46254.56 | 45760 | 4270.20 | 0 | 38016 | 49728.36 | 27000 | 22728.36 | 41984.36 |
+| 2025-07-16 | 49728.36 | 0 | 1732.48 | 0 | 0 | 47995.88 | 27000 | 20995.88 | 47995.88 |
+| 2025-07-17 | 47995.88 | 0 | 0 | 0 | 0 | 47995.88 | 27000 | 20995.88 | 47995.88 |
+| 2025-07-18 | 47995.88 | 0 | 0 | 0 | 0 | 47995.88 | 27000 | 20995.88 | 47995.88 |
+| 2025-07-19 | 47995.88 | 0 | 0 | 0 | 0 | 47995.88 | 27000 | 20995.88 | 47995.88 |
+| 2025-07-20 | 47995.88 | 0 | 0 | 0 | 0 | 47995.88 | 27000 | 20995.88 | 47995.88 |
+| 2025-07-21 | 47995.88 | 0 | 0 | 0 | 0 | 47995.88 | 27000 | 20995.88 | 47995.88 |
+| 2025-07-22 | 47995.88 | 0 | 0 | 0 | 0 | 47995.88 | 27000 | 20995.88 | 47995.88 |
+| 2025-07-23 | 47995.88 | 0 | 1732.48 | 0 | 0 | 46263.40 | 27000 | 19263.40 | 46263.40 |
+| 2025-07-24 | 46263.40 | 0 | 888.44 | 0 | 0 | 45374.96 | 27000 | 18374.96 | 45374.96 |
+| 2025-07-25 | 45374.96 | 0 | 0 | 0 | 0 | 45374.96 | 27000 | 18374.96 | 45374.96 |
+| 2025-07-26 | 45374.96 | 0 | 0 | 0 | 0 | 45374.96 | 27000 | 18374.96 | 45374.96 |
+| 2025-07-27 | 45374.96 | 0 | 0 | 0 | 0 | 45374.96 | 27000 | 18374.96 | 45374.96 |
+| 2025-07-28 | 45374.96 | 0 | 0 | 0 | 0 | 45374.96 | 27000 | 18374.96 | 45374.96 |
+| 2025-07-29 | 45374.96 | 0 | 0 | 0 | 0 | 45374.96 | 27000 | 18374.96 | 45374.96 |
+| 2025-07-30 | 45374.96 | 0 | 1732.48 | 0 | 0 | 43642.48 | 27000 | 16642.48 | 43642.48 |
+| 2025-07-31 | 43642.48 | 0 | 0 | 0 | 0 | 43642.48 | 27000 | 16642.48 | 43642.48 |
+| 2025-08-01 | 43642.48 | 0 | 0 | 0 | 0 | 43642.48 | 27000 | 16642.48 | 43642.48 |
+| 2025-08-02 | 43642.48 | 0 | 0 | 0 | 0 | 43642.48 | 27000 | 16642.48 | 43642.48 |
+| 2025-08-03 | 43642.48 | 0 | 0 | 0 | 0 | 43642.48 | 27000 | 16642.48 | 43642.48 |
+| 2025-08-04 | 43642.48 | 0 | 15312 | 0 | 0 | 28330.48 | 27000 | 1330.48 | 28330.48 |
+| 2025-08-05 | 28330.48 | 0 | 0 | 0 | 0 | 28330.48 | 27000 | 1330.48 | 28330.48 |

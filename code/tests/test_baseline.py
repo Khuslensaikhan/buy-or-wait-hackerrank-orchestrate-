@@ -125,12 +125,12 @@ class ReconstructionTests(unittest.TestCase):
         self.assertFalse(state.blocked)
         self.assertTrue(any(i.code == 'missing_historical_amount' for i in state.issues))
 
-    def test_three_monthly_observations_and_max_variable_debit(self):
+    def test_three_monthly_observations_and_latest_contractual_debit(self):
         events = [event(str(i), date(2025, month, 10), amount) for i, (month, amount) in
                   enumerate([(10, '100'), (11, '120'), (12, '90')])]
         state = reconstruct(context(events), {})
         self.assertEqual([f.day for f in state.flows], [date(2026, 1, 10), date(2026, 2, 10), date(2026, 3, 10)])
-        self.assertEqual({f.amount for f in state.flows}, {D('-120')})
+        self.assertEqual({f.amount for f in state.flows}, {D('-90')})
         self.assertEqual(reconstruct(context(events[:2]), {}).flows, [])
 
     def test_category_recurrence_across_merchants(self):
@@ -139,7 +139,7 @@ class ReconstructionTests(unittest.TestCase):
         state = reconstruct(context(events), {})
         self.assertTrue(state.flows)
         self.assertEqual(state.flows[0].day, DAY)
-        self.assertEqual(state.flows[0].amount, D('-22'))
+        self.assertEqual(state.flows[0].amount, D('-21'))
 
     def test_salary_one_offs_and_confirmed_override(self):
         history = [event(str(m), date(2025, m, 15), '500', direction='credit',
@@ -152,11 +152,11 @@ class ReconstructionTests(unittest.TestCase):
         bonuses = [replace(e, description='Performance commission') for e in history]
         self.assertEqual(reconstruct(context(bonuses), {}).flows, [])
 
-    def test_missing_future_fx_is_auditable_and_blocks_certification(self):
+    def test_missing_future_fx_omits_credit_but_blocks_unknown_debit(self):
         credit = event('fx', DAY + timedelta(days=1), '100', 'scheduled', 'credit',
                        currency='EUR', category='salary', description='Next confirmed salary')
         state = reconstruct(context([credit]), {})
-        self.assertTrue(state.blocked)
+        self.assertFalse(state.blocked)
         self.assertTrue(any(i.code == 'missing_fx' for i in state.issues))
         self.assertEqual(state.flows, [])
         state = reconstruct(context([replace(credit, direction='debit')]), {})

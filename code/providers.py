@@ -4,6 +4,7 @@ import hashlib
 import json
 import os
 import re
+import tempfile
 from dataclasses import asdict, dataclass
 from decimal import Decimal
 from pathlib import Path
@@ -98,7 +99,35 @@ def cache_key(source: EvidenceSource, context: RequestContext, model: str,
 
 
 class EvidenceUnavailable(ValueError):
-    pass
+    def __init__(self, message: str, error_type: str = 'EvidenceUnavailable'):
+        super().__init__(message)
+        self.error_type = error_type
+
+
+def atomic_json_write(path: Path, entry: dict) -> None:
+    """Commit one response atomically; never reuse an interrupted writer's file."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    payload = json.dumps(sanitize(entry), default=str, indent=2) + '\n'
+    # A distinct temporary file leaves existing .tmp artifacts untouched.
+    handle = tempfile.NamedTemporaryFile(mode='w', encoding='utf-8', newline='\n',
+                                        dir=path.parent, prefix=path.stem + '.',
+                                        suffix='.tmp', delete=False)
+    temporary = Path(handle.name)
+    try:
+        with handle:
+            handle.write(payload)
+            handle.flush()
+            os.fsync(handle.fileno())
+        temporary.replace(path)
+    except KeyboardInterrupt:
+        # Finish this already received response, including interruption on close.
+        if temporary.exists():
+            with temporary.open('w', encoding='utf-8', newline='\n') as recovery:
+                recovery.write(payload)
+                recovery.flush()
+                os.fsync(recovery.fileno())
+            temporary.replace(path)
+        raise
 
 
 class EvidenceProvider(Protocol):
@@ -145,7 +174,8 @@ class CachedEvidenceProvider:
         self.fallback = fallback
         self.usage = fallback.usage if fallback else Usage('cache', self.model)
 
-    def resolve(self, source: EvidenceSource, context: RequestContext) -> ExtractedFacts:
+    def lookup(self, source: EvidenceSource, context: RequestContext) -> ExtractedFacts | None:
+        """Read and validate without invoking fallback or changing usage."""
         key = cache_key(source, context, self.model, self.usage.prompt_version)
         path = self.cache_dir / f'{key}.json'
         if path.is_file():
@@ -154,30 +184,40 @@ class CachedEvidenceProvider:
                 if entry['key'] != key or entry['model'] != self.model or entry['prompt_version'] != self.usage.prompt_version:
                     raise ValueError('cache identity mismatch')
                 facts = ExtractedFacts.model_validate(entry['facts'])
-            except (ValueError, KeyError) as exc:
+            except (ValueError, KeyError, TypeError) as exc:
                 raise EvidenceUnavailable('invalid cached evidence; regenerate explicitly') from exc
-            self.usage.cached_resolutions += 1
             return facts
+        return None
+
+    def resolve(self, source: EvidenceSource, context: RequestContext) -> ExtractedFacts:
+        cached = self.lookup(source, context)
+        if cached is not None:
+            self.usage.cached_resolutions += 1
+            return cached
         if self.fallback is None:
             raise EvidenceUnavailable('offline cache miss')
         facts = self.fallback.resolve(source, context)
+        key = cache_key(source, context, self.model, self.usage.prompt_version)
+        path = self.cache_dir / f'{key}.json'
         entry = {'key': key, 'content_sha256': hashlib.sha256(source.content).hexdigest(),
                  'model': self.model, 'prompt_version': self.usage.prompt_version,
                  'facts': facts.model_dump(mode='json'), 'usage': self.usage.report()}
-        self.cache_dir.mkdir(parents=True, exist_ok=True)
-        temporary = path.with_suffix('.tmp')
-        temporary.write_text(json.dumps(sanitize(entry), default=str, indent=2) + '\n')
-        temporary.replace(path)
+        atomic_json_write(path, entry)
         return facts
 
 
 class OpenAIEvidenceProvider:
-    def __init__(self, *, live: bool = False, model: str | None = None, client=None):
+    def __init__(self, *, live: bool = False, model: str | None = None, client=None,
+                 timeout_seconds: float = 60, max_retries: int = 1):
         if not live:
             raise PermissionError('Live extraction requires explicit --live authorization')
         self.live = live
         self.model = model or model_name()
         self._client = client
+        if not 0 < timeout_seconds < float('inf') or max_retries < 0:
+            raise ValueError('timeout must be positive and finite; retries must be nonnegative')
+        self.timeout_seconds = timeout_seconds
+        self.max_retries = max_retries
         self.usage = Usage('openai', self.model,
                            input_rate_per_million=token_rate('EVIDENCE_INPUT_COST_PER_MILLION'),
                            output_rate_per_million=token_rate('EVIDENCE_OUTPUT_COST_PER_MILLION'))
@@ -187,7 +227,7 @@ class OpenAIEvidenceProvider:
             raise PermissionError('Live extraction disabled')
         if self._client is None:
             from openai import OpenAI
-            self._client = OpenAI(max_retries=0)  # Every attempted request is counted once.
+            self._client = OpenAI(timeout=self.timeout_seconds, max_retries=self.max_retries)
         content = [{'type': 'input_text', 'text': json.dumps({
             'source_id': source.source_id, 'related_event_id': source.related_event_id,
             'metadata': source.metadata, 'context': relevant_context(context)}, default=str)}]
@@ -201,16 +241,23 @@ class OpenAIEvidenceProvider:
         try:
             response = self._client.responses.parse(model=self.model,
                 input=[{'role': 'system', 'content': PROMPT}, {'role': 'user', 'content': content}],
-                text_format=ExtractedFacts, store=False)
+                text_format=ExtractedFacts, store=False, reasoning={'effort': 'none'})
             if response.usage:
                 metered = True
                 self.usage.input_tokens += response.usage.input_tokens
                 self.usage.output_tokens += response.usage.output_tokens
             if response.output_parsed is None or response.status != 'completed':
-                raise EvidenceUnavailable('extraction refused or incomplete')
+                raise EvidenceUnavailable('extraction refused or incomplete', 'StructuredOutputError')
             return ExtractedFacts.model_validate(response.output_parsed)
+        except KeyboardInterrupt:
+            if not metered:
+                self.usage.unmetered_calls += 1
+            raise
         except Exception as exc:
             if not metered:
                 self.usage.unmetered_calls += 1
             # SDK errors can contain headers/bodies. Never persist or print them.
-            raise EvidenceUnavailable(f'extraction failed ({type(exc).__name__})') from None
+            category = getattr(exc, 'error_type', type(exc).__name__)
+            if isinstance(exc, ValueError) and not isinstance(exc, EvidenceUnavailable):
+                category = 'StructuredOutputError'
+            raise EvidenceUnavailable(f'extraction failed ({category})', category) from None

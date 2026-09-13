@@ -16,21 +16,15 @@
     "options": 2,
     "exchange_rates": 25
   },
-  "evidence_used": [],
-  "evidence_skipped": [
+  "evidence_used": [
     {
       "source_id": "message_06",
-      "reason": "unresolved_evidence"
+      "event_id": "event_643",
+      "action": "amend"
     }
   ],
-  "issues": [
-    {
-      "code": "unresolved_evidence",
-      "source_id": "message_06",
-      "detail": "source unavailable or not cached; no value imputed",
-      "blocking": false
-    }
-  ],
+  "evidence_skipped": [],
+  "issues": [],
   "resolved_events": [
     {
       "event_id": "event_615",
@@ -692,6 +686,31 @@
       "flexibility": "fixed",
       "minimum_allowed_amount": null,
       "evidence_ids": [],
+      "recurrence_override_amount": null,
+      "recurrence_override_date": null,
+      "recurrence_override_currency": null,
+      "recurrence_override_day": null,
+      "recurrence_cancelled": false,
+      "recurrence_reason": ""
+    },
+    {
+      "event_id": "event_643_next",
+      "user_id": "user_08",
+      "event_type": "income",
+      "description": "Payroll credit",
+      "category": "salary",
+      "direction": "credit",
+      "amount": "1422.85",
+      "currency": "EUR",
+      "event_date": "2025-01-15",
+      "settlement_date": "2025-02-15",
+      "status": "scheduled",
+      "linked_event_id": null,
+      "flexibility": "fixed",
+      "minimum_allowed_amount": null,
+      "evidence_ids": [
+        "message_06"
+      ],
       "recurrence_override_amount": null,
       "recurrence_override_date": null,
       "recurrence_override_currency": null,
@@ -2380,16 +2399,16 @@
     }
   ],
   "projected_recurrence": [
-    "event_643: payroll credit; monthly=15; observations=5; conservative recent amount=782.57",
-    "event_647: personal loan payment; monthly=10; observations=5; conservative recent amount=177",
-    "event_716: dining; interval=14; observations=13; conservative recent amount=56.05",
-    "event_646: school fee payment; monthly=7; observations=5; conservative recent amount=89",
-    "event_677: groceries; interval=7; observations=26; conservative recent amount=72.38",
-    "event_650: apartment rent transfer; monthly=1; observations=6; conservative recent amount=467.5",
-    "event_703: transport; interval=7; observations=26; conservative recent amount=47.21",
-    "event_651: municipal utilities; monthly=5; observations=6; conservative recent amount=82.61",
-    "event_649: grocery delivery membership; monthly=12; observations=5; conservative recent amount=24",
-    "event_648: music subscription; monthly=10; observations=5; conservative recent amount=14"
+    "event_643: payroll credit; monthly=15; observations=5; supported salary rate=1422.85",
+    "event_647: personal loan payment; monthly=10; observations=5; latest contractual amount=177",
+    "event_716: dining; interval=14; observations=13; mean historical budget, rounded up=50.85",
+    "event_646: school fee payment; monthly=7; observations=5; latest contractual amount=89",
+    "event_677: groceries; interval=7; observations=26; mean historical budget, rounded up=59.05",
+    "event_650: apartment rent transfer; monthly=1; observations=6; latest contractual amount=467.5",
+    "event_703: transport; interval=7; observations=26; mean historical budget, rounded up=37.49",
+    "event_651: municipal utilities; monthly=5; observations=6; mean historical budget, rounded up=76.83",
+    "event_649: grocery delivery membership; monthly=12; observations=5; latest contractual amount=24",
+    "event_648: music subscription; monthly=10; observations=5; latest contractual amount=14"
   ],
   "cash_flows": [
     {
@@ -2402,7 +2421,7 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "school fee payment; monthly=7; observations=5; conservative recent amount=89",
+      "recurrence_reason": "school fee payment; monthly=7; observations=5; latest contractual amount=89",
       "evidence_ids": [],
       "original_amount": "89",
       "original_currency": "EUR",
@@ -2418,7 +2437,7 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "personal loan payment; monthly=10; observations=5; conservative recent amount=177",
+      "recurrence_reason": "personal loan payment; monthly=10; observations=5; latest contractual amount=177",
       "evidence_ids": [],
       "original_amount": "177",
       "original_currency": "EUR",
@@ -2434,7 +2453,7 @@
       "essential": false,
       "protected": false,
       "flexibility": "stoppable",
-      "recurrence_reason": "music subscription; monthly=10; observations=5; conservative recent amount=14",
+      "recurrence_reason": "music subscription; monthly=10; observations=5; latest contractual amount=14",
       "evidence_ids": [],
       "original_amount": "14",
       "original_currency": "EUR",
@@ -2442,7 +2461,7 @@
     },
     {
       "day": "2025-02-11",
-      "amount": "-72.38",
+      "amount": "-59.05",
       "source_id": "event_677",
       "inferred": true,
       "direction": "debit",
@@ -2450,9 +2469,9 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "groceries; interval=7; observations=26; conservative recent amount=72.38",
+      "recurrence_reason": "groceries; interval=7; observations=26; mean historical budget, rounded up=59.05",
       "evidence_ids": [],
-      "original_amount": "72.38",
+      "original_amount": "59.05",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
@@ -2466,7 +2485,7 @@
       "essential": false,
       "protected": false,
       "flexibility": "stoppable",
-      "recurrence_reason": "grocery delivery membership; monthly=12; observations=5; conservative recent amount=24",
+      "recurrence_reason": "grocery delivery membership; monthly=12; observations=5; latest contractual amount=24",
       "evidence_ids": [],
       "original_amount": "24",
       "original_currency": "EUR",
@@ -2474,7 +2493,7 @@
     },
     {
       "day": "2025-02-12",
-      "amount": "-47.21",
+      "amount": "-37.49",
       "source_id": "event_703",
       "inferred": true,
       "direction": "debit",
@@ -2482,15 +2501,15 @@
       "essential": true,
       "protected": false,
       "flexibility": "fixed",
-      "recurrence_reason": "transport; interval=7; observations=26; conservative recent amount=47.21",
+      "recurrence_reason": "transport; interval=7; observations=26; mean historical budget, rounded up=37.49",
       "evidence_ids": [],
-      "original_amount": "47.21",
+      "original_amount": "37.49",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-02-13",
-      "amount": "-56.05",
+      "amount": "-50.85",
       "source_id": "event_716",
       "inferred": true,
       "direction": "debit",
@@ -2498,31 +2517,33 @@
       "essential": false,
       "protected": false,
       "flexibility": "reducible",
-      "recurrence_reason": "dining; interval=14; observations=13; conservative recent amount=56.05",
+      "recurrence_reason": "dining; interval=14; observations=13; mean historical budget, rounded up=50.85",
       "evidence_ids": [],
-      "original_amount": "56.05",
+      "original_amount": "50.85",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-02-15",
-      "amount": "782.57",
-      "source_id": "event_643",
-      "inferred": true,
+      "amount": "1422.85",
+      "source_id": "event_643_next",
+      "inferred": false,
       "direction": "credit",
-      "classification": "projected",
+      "classification": "original",
       "essential": false,
       "protected": false,
       "flexibility": "fixed",
-      "recurrence_reason": "payroll credit; monthly=15; observations=5; conservative recent amount=782.57",
-      "evidence_ids": [],
-      "original_amount": "782.57",
+      "recurrence_reason": "Explicit cash event; no recurrence expansion",
+      "evidence_ids": [
+        "message_06"
+      ],
+      "original_amount": "1422.85",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-02-18",
-      "amount": "-72.38",
+      "amount": "-59.05",
       "source_id": "event_677",
       "inferred": true,
       "direction": "debit",
@@ -2530,15 +2551,15 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "groceries; interval=7; observations=26; conservative recent amount=72.38",
+      "recurrence_reason": "groceries; interval=7; observations=26; mean historical budget, rounded up=59.05",
       "evidence_ids": [],
-      "original_amount": "72.38",
+      "original_amount": "59.05",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-02-19",
-      "amount": "-47.21",
+      "amount": "-37.49",
       "source_id": "event_703",
       "inferred": true,
       "direction": "debit",
@@ -2546,15 +2567,15 @@
       "essential": true,
       "protected": false,
       "flexibility": "fixed",
-      "recurrence_reason": "transport; interval=7; observations=26; conservative recent amount=47.21",
+      "recurrence_reason": "transport; interval=7; observations=26; mean historical budget, rounded up=37.49",
       "evidence_ids": [],
-      "original_amount": "47.21",
+      "original_amount": "37.49",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-02-25",
-      "amount": "-72.38",
+      "amount": "-59.05",
       "source_id": "event_677",
       "inferred": true,
       "direction": "debit",
@@ -2562,15 +2583,15 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "groceries; interval=7; observations=26; conservative recent amount=72.38",
+      "recurrence_reason": "groceries; interval=7; observations=26; mean historical budget, rounded up=59.05",
       "evidence_ids": [],
-      "original_amount": "72.38",
+      "original_amount": "59.05",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-02-26",
-      "amount": "-47.21",
+      "amount": "-37.49",
       "source_id": "event_703",
       "inferred": true,
       "direction": "debit",
@@ -2578,15 +2599,15 @@
       "essential": true,
       "protected": false,
       "flexibility": "fixed",
-      "recurrence_reason": "transport; interval=7; observations=26; conservative recent amount=47.21",
+      "recurrence_reason": "transport; interval=7; observations=26; mean historical budget, rounded up=37.49",
       "evidence_ids": [],
-      "original_amount": "47.21",
+      "original_amount": "37.49",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-02-27",
-      "amount": "-56.05",
+      "amount": "-50.85",
       "source_id": "event_716",
       "inferred": true,
       "direction": "debit",
@@ -2594,9 +2615,9 @@
       "essential": false,
       "protected": false,
       "flexibility": "reducible",
-      "recurrence_reason": "dining; interval=14; observations=13; conservative recent amount=56.05",
+      "recurrence_reason": "dining; interval=14; observations=13; mean historical budget, rounded up=50.85",
       "evidence_ids": [],
-      "original_amount": "56.05",
+      "original_amount": "50.85",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
@@ -2610,7 +2631,7 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "apartment rent transfer; monthly=1; observations=6; conservative recent amount=467.5",
+      "recurrence_reason": "apartment rent transfer; monthly=1; observations=6; latest contractual amount=467.5",
       "evidence_ids": [],
       "original_amount": "467.5",
       "original_currency": "EUR",
@@ -2618,7 +2639,7 @@
     },
     {
       "day": "2025-03-04",
-      "amount": "-72.38",
+      "amount": "-59.05",
       "source_id": "event_677",
       "inferred": true,
       "direction": "debit",
@@ -2626,15 +2647,15 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "groceries; interval=7; observations=26; conservative recent amount=72.38",
+      "recurrence_reason": "groceries; interval=7; observations=26; mean historical budget, rounded up=59.05",
       "evidence_ids": [],
-      "original_amount": "72.38",
+      "original_amount": "59.05",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-03-05",
-      "amount": "-82.61",
+      "amount": "-76.83",
       "source_id": "event_651",
       "inferred": true,
       "direction": "debit",
@@ -2642,15 +2663,15 @@
       "essential": true,
       "protected": false,
       "flexibility": "fixed",
-      "recurrence_reason": "municipal utilities; monthly=5; observations=6; conservative recent amount=82.61",
+      "recurrence_reason": "municipal utilities; monthly=5; observations=6; mean historical budget, rounded up=76.83",
       "evidence_ids": [],
-      "original_amount": "82.61",
+      "original_amount": "76.83",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-03-05",
-      "amount": "-47.21",
+      "amount": "-37.49",
       "source_id": "event_703",
       "inferred": true,
       "direction": "debit",
@@ -2658,9 +2679,9 @@
       "essential": true,
       "protected": false,
       "flexibility": "fixed",
-      "recurrence_reason": "transport; interval=7; observations=26; conservative recent amount=47.21",
+      "recurrence_reason": "transport; interval=7; observations=26; mean historical budget, rounded up=37.49",
       "evidence_ids": [],
-      "original_amount": "47.21",
+      "original_amount": "37.49",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
@@ -2674,7 +2695,7 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "school fee payment; monthly=7; observations=5; conservative recent amount=89",
+      "recurrence_reason": "school fee payment; monthly=7; observations=5; latest contractual amount=89",
       "evidence_ids": [],
       "original_amount": "89",
       "original_currency": "EUR",
@@ -2690,7 +2711,7 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "personal loan payment; monthly=10; observations=5; conservative recent amount=177",
+      "recurrence_reason": "personal loan payment; monthly=10; observations=5; latest contractual amount=177",
       "evidence_ids": [],
       "original_amount": "177",
       "original_currency": "EUR",
@@ -2706,7 +2727,7 @@
       "essential": false,
       "protected": false,
       "flexibility": "stoppable",
-      "recurrence_reason": "music subscription; monthly=10; observations=5; conservative recent amount=14",
+      "recurrence_reason": "music subscription; monthly=10; observations=5; latest contractual amount=14",
       "evidence_ids": [],
       "original_amount": "14",
       "original_currency": "EUR",
@@ -2714,7 +2735,7 @@
     },
     {
       "day": "2025-03-11",
-      "amount": "-72.38",
+      "amount": "-59.05",
       "source_id": "event_677",
       "inferred": true,
       "direction": "debit",
@@ -2722,9 +2743,9 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "groceries; interval=7; observations=26; conservative recent amount=72.38",
+      "recurrence_reason": "groceries; interval=7; observations=26; mean historical budget, rounded up=59.05",
       "evidence_ids": [],
-      "original_amount": "72.38",
+      "original_amount": "59.05",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
@@ -2738,7 +2759,7 @@
       "essential": false,
       "protected": false,
       "flexibility": "stoppable",
-      "recurrence_reason": "grocery delivery membership; monthly=12; observations=5; conservative recent amount=24",
+      "recurrence_reason": "grocery delivery membership; monthly=12; observations=5; latest contractual amount=24",
       "evidence_ids": [],
       "original_amount": "24",
       "original_currency": "EUR",
@@ -2746,7 +2767,7 @@
     },
     {
       "day": "2025-03-12",
-      "amount": "-47.21",
+      "amount": "-37.49",
       "source_id": "event_703",
       "inferred": true,
       "direction": "debit",
@@ -2754,15 +2775,15 @@
       "essential": true,
       "protected": false,
       "flexibility": "fixed",
-      "recurrence_reason": "transport; interval=7; observations=26; conservative recent amount=47.21",
+      "recurrence_reason": "transport; interval=7; observations=26; mean historical budget, rounded up=37.49",
       "evidence_ids": [],
-      "original_amount": "47.21",
+      "original_amount": "37.49",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-03-13",
-      "amount": "-56.05",
+      "amount": "-50.85",
       "source_id": "event_716",
       "inferred": true,
       "direction": "debit",
@@ -2770,15 +2791,15 @@
       "essential": false,
       "protected": false,
       "flexibility": "reducible",
-      "recurrence_reason": "dining; interval=14; observations=13; conservative recent amount=56.05",
+      "recurrence_reason": "dining; interval=14; observations=13; mean historical budget, rounded up=50.85",
       "evidence_ids": [],
-      "original_amount": "56.05",
+      "original_amount": "50.85",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-03-15",
-      "amount": "782.57",
+      "amount": "1422.85",
       "source_id": "event_643",
       "inferred": true,
       "direction": "credit",
@@ -2786,15 +2807,15 @@
       "essential": false,
       "protected": false,
       "flexibility": "fixed",
-      "recurrence_reason": "payroll credit; monthly=15; observations=5; conservative recent amount=782.57",
+      "recurrence_reason": "payroll credit; monthly=15; observations=5; supported salary rate=1422.85",
       "evidence_ids": [],
-      "original_amount": "782.57",
+      "original_amount": "1422.85",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-03-18",
-      "amount": "-72.38",
+      "amount": "-59.05",
       "source_id": "event_677",
       "inferred": true,
       "direction": "debit",
@@ -2802,15 +2823,15 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "groceries; interval=7; observations=26; conservative recent amount=72.38",
+      "recurrence_reason": "groceries; interval=7; observations=26; mean historical budget, rounded up=59.05",
       "evidence_ids": [],
-      "original_amount": "72.38",
+      "original_amount": "59.05",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-03-19",
-      "amount": "-47.21",
+      "amount": "-37.49",
       "source_id": "event_703",
       "inferred": true,
       "direction": "debit",
@@ -2818,15 +2839,15 @@
       "essential": true,
       "protected": false,
       "flexibility": "fixed",
-      "recurrence_reason": "transport; interval=7; observations=26; conservative recent amount=47.21",
+      "recurrence_reason": "transport; interval=7; observations=26; mean historical budget, rounded up=37.49",
       "evidence_ids": [],
-      "original_amount": "47.21",
+      "original_amount": "37.49",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-03-25",
-      "amount": "-72.38",
+      "amount": "-59.05",
       "source_id": "event_677",
       "inferred": true,
       "direction": "debit",
@@ -2834,15 +2855,15 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "groceries; interval=7; observations=26; conservative recent amount=72.38",
+      "recurrence_reason": "groceries; interval=7; observations=26; mean historical budget, rounded up=59.05",
       "evidence_ids": [],
-      "original_amount": "72.38",
+      "original_amount": "59.05",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-03-26",
-      "amount": "-47.21",
+      "amount": "-37.49",
       "source_id": "event_703",
       "inferred": true,
       "direction": "debit",
@@ -2850,15 +2871,15 @@
       "essential": true,
       "protected": false,
       "flexibility": "fixed",
-      "recurrence_reason": "transport; interval=7; observations=26; conservative recent amount=47.21",
+      "recurrence_reason": "transport; interval=7; observations=26; mean historical budget, rounded up=37.49",
       "evidence_ids": [],
-      "original_amount": "47.21",
+      "original_amount": "37.49",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-03-27",
-      "amount": "-56.05",
+      "amount": "-50.85",
       "source_id": "event_716",
       "inferred": true,
       "direction": "debit",
@@ -2866,9 +2887,9 @@
       "essential": false,
       "protected": false,
       "flexibility": "reducible",
-      "recurrence_reason": "dining; interval=14; observations=13; conservative recent amount=56.05",
+      "recurrence_reason": "dining; interval=14; observations=13; mean historical budget, rounded up=50.85",
       "evidence_ids": [],
-      "original_amount": "56.05",
+      "original_amount": "50.85",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
@@ -2882,7 +2903,7 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "apartment rent transfer; monthly=1; observations=6; conservative recent amount=467.5",
+      "recurrence_reason": "apartment rent transfer; monthly=1; observations=6; latest contractual amount=467.5",
       "evidence_ids": [],
       "original_amount": "467.5",
       "original_currency": "EUR",
@@ -2890,7 +2911,7 @@
     },
     {
       "day": "2025-04-01",
-      "amount": "-72.38",
+      "amount": "-59.05",
       "source_id": "event_677",
       "inferred": true,
       "direction": "debit",
@@ -2898,15 +2919,15 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "groceries; interval=7; observations=26; conservative recent amount=72.38",
+      "recurrence_reason": "groceries; interval=7; observations=26; mean historical budget, rounded up=59.05",
       "evidence_ids": [],
-      "original_amount": "72.38",
+      "original_amount": "59.05",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-04-02",
-      "amount": "-47.21",
+      "amount": "-37.49",
       "source_id": "event_703",
       "inferred": true,
       "direction": "debit",
@@ -2914,15 +2935,15 @@
       "essential": true,
       "protected": false,
       "flexibility": "fixed",
-      "recurrence_reason": "transport; interval=7; observations=26; conservative recent amount=47.21",
+      "recurrence_reason": "transport; interval=7; observations=26; mean historical budget, rounded up=37.49",
       "evidence_ids": [],
-      "original_amount": "47.21",
+      "original_amount": "37.49",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-04-05",
-      "amount": "-82.61",
+      "amount": "-76.83",
       "source_id": "event_651",
       "inferred": true,
       "direction": "debit",
@@ -2930,9 +2951,9 @@
       "essential": true,
       "protected": false,
       "flexibility": "fixed",
-      "recurrence_reason": "municipal utilities; monthly=5; observations=6; conservative recent amount=82.61",
+      "recurrence_reason": "municipal utilities; monthly=5; observations=6; mean historical budget, rounded up=76.83",
       "evidence_ids": [],
-      "original_amount": "82.61",
+      "original_amount": "76.83",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
@@ -2946,7 +2967,7 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "school fee payment; monthly=7; observations=5; conservative recent amount=89",
+      "recurrence_reason": "school fee payment; monthly=7; observations=5; latest contractual amount=89",
       "evidence_ids": [],
       "original_amount": "89",
       "original_currency": "EUR",
@@ -2954,7 +2975,7 @@
     },
     {
       "day": "2025-04-08",
-      "amount": "-72.38",
+      "amount": "-59.05",
       "source_id": "event_677",
       "inferred": true,
       "direction": "debit",
@@ -2962,15 +2983,15 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "groceries; interval=7; observations=26; conservative recent amount=72.38",
+      "recurrence_reason": "groceries; interval=7; observations=26; mean historical budget, rounded up=59.05",
       "evidence_ids": [],
-      "original_amount": "72.38",
+      "original_amount": "59.05",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-04-09",
-      "amount": "-47.21",
+      "amount": "-37.49",
       "source_id": "event_703",
       "inferred": true,
       "direction": "debit",
@@ -2978,9 +2999,9 @@
       "essential": true,
       "protected": false,
       "flexibility": "fixed",
-      "recurrence_reason": "transport; interval=7; observations=26; conservative recent amount=47.21",
+      "recurrence_reason": "transport; interval=7; observations=26; mean historical budget, rounded up=37.49",
       "evidence_ids": [],
-      "original_amount": "47.21",
+      "original_amount": "37.49",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
@@ -2994,7 +3015,7 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "personal loan payment; monthly=10; observations=5; conservative recent amount=177",
+      "recurrence_reason": "personal loan payment; monthly=10; observations=5; latest contractual amount=177",
       "evidence_ids": [],
       "original_amount": "177",
       "original_currency": "EUR",
@@ -3010,7 +3031,7 @@
       "essential": false,
       "protected": false,
       "flexibility": "stoppable",
-      "recurrence_reason": "music subscription; monthly=10; observations=5; conservative recent amount=14",
+      "recurrence_reason": "music subscription; monthly=10; observations=5; latest contractual amount=14",
       "evidence_ids": [],
       "original_amount": "14",
       "original_currency": "EUR",
@@ -3018,7 +3039,7 @@
     },
     {
       "day": "2025-04-10",
-      "amount": "-56.05",
+      "amount": "-50.85",
       "source_id": "event_716",
       "inferred": true,
       "direction": "debit",
@@ -3026,9 +3047,9 @@
       "essential": false,
       "protected": false,
       "flexibility": "reducible",
-      "recurrence_reason": "dining; interval=14; observations=13; conservative recent amount=56.05",
+      "recurrence_reason": "dining; interval=14; observations=13; mean historical budget, rounded up=50.85",
       "evidence_ids": [],
-      "original_amount": "56.05",
+      "original_amount": "50.85",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
@@ -3042,7 +3063,7 @@
       "essential": false,
       "protected": false,
       "flexibility": "stoppable",
-      "recurrence_reason": "grocery delivery membership; monthly=12; observations=5; conservative recent amount=24",
+      "recurrence_reason": "grocery delivery membership; monthly=12; observations=5; latest contractual amount=24",
       "evidence_ids": [],
       "original_amount": "24",
       "original_currency": "EUR",
@@ -3050,7 +3071,7 @@
     },
     {
       "day": "2025-04-15",
-      "amount": "-72.38",
+      "amount": "-59.05",
       "source_id": "event_677",
       "inferred": true,
       "direction": "debit",
@@ -3058,15 +3079,15 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "groceries; interval=7; observations=26; conservative recent amount=72.38",
+      "recurrence_reason": "groceries; interval=7; observations=26; mean historical budget, rounded up=59.05",
       "evidence_ids": [],
-      "original_amount": "72.38",
+      "original_amount": "59.05",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-04-15",
-      "amount": "782.57",
+      "amount": "1422.85",
       "source_id": "event_643",
       "inferred": true,
       "direction": "credit",
@@ -3074,15 +3095,15 @@
       "essential": false,
       "protected": false,
       "flexibility": "fixed",
-      "recurrence_reason": "payroll credit; monthly=15; observations=5; conservative recent amount=782.57",
+      "recurrence_reason": "payroll credit; monthly=15; observations=5; supported salary rate=1422.85",
       "evidence_ids": [],
-      "original_amount": "782.57",
+      "original_amount": "1422.85",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-04-16",
-      "amount": "-47.21",
+      "amount": "-37.49",
       "source_id": "event_703",
       "inferred": true,
       "direction": "debit",
@@ -3090,15 +3111,15 @@
       "essential": true,
       "protected": false,
       "flexibility": "fixed",
-      "recurrence_reason": "transport; interval=7; observations=26; conservative recent amount=47.21",
+      "recurrence_reason": "transport; interval=7; observations=26; mean historical budget, rounded up=37.49",
       "evidence_ids": [],
-      "original_amount": "47.21",
+      "original_amount": "37.49",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-04-22",
-      "amount": "-72.38",
+      "amount": "-59.05",
       "source_id": "event_677",
       "inferred": true,
       "direction": "debit",
@@ -3106,15 +3127,15 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "groceries; interval=7; observations=26; conservative recent amount=72.38",
+      "recurrence_reason": "groceries; interval=7; observations=26; mean historical budget, rounded up=59.05",
       "evidence_ids": [],
-      "original_amount": "72.38",
+      "original_amount": "59.05",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-04-23",
-      "amount": "-47.21",
+      "amount": "-37.49",
       "source_id": "event_703",
       "inferred": true,
       "direction": "debit",
@@ -3122,15 +3143,15 @@
       "essential": true,
       "protected": false,
       "flexibility": "fixed",
-      "recurrence_reason": "transport; interval=7; observations=26; conservative recent amount=47.21",
+      "recurrence_reason": "transport; interval=7; observations=26; mean historical budget, rounded up=37.49",
       "evidence_ids": [],
-      "original_amount": "47.21",
+      "original_amount": "37.49",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-04-24",
-      "amount": "-56.05",
+      "amount": "-50.85",
       "source_id": "event_716",
       "inferred": true,
       "direction": "debit",
@@ -3138,15 +3159,15 @@
       "essential": false,
       "protected": false,
       "flexibility": "reducible",
-      "recurrence_reason": "dining; interval=14; observations=13; conservative recent amount=56.05",
+      "recurrence_reason": "dining; interval=14; observations=13; mean historical budget, rounded up=50.85",
       "evidence_ids": [],
-      "original_amount": "56.05",
+      "original_amount": "50.85",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-04-29",
-      "amount": "-72.38",
+      "amount": "-59.05",
       "source_id": "event_677",
       "inferred": true,
       "direction": "debit",
@@ -3154,15 +3175,15 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "groceries; interval=7; observations=26; conservative recent amount=72.38",
+      "recurrence_reason": "groceries; interval=7; observations=26; mean historical budget, rounded up=59.05",
       "evidence_ids": [],
-      "original_amount": "72.38",
+      "original_amount": "59.05",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-04-30",
-      "amount": "-47.21",
+      "amount": "-37.49",
       "source_id": "event_703",
       "inferred": true,
       "direction": "debit",
@@ -3170,9 +3191,9 @@
       "essential": true,
       "protected": false,
       "flexibility": "fixed",
-      "recurrence_reason": "transport; interval=7; observations=26; conservative recent amount=47.21",
+      "recurrence_reason": "transport; interval=7; observations=26; mean historical budget, rounded up=37.49",
       "evidence_ids": [],
-      "original_amount": "47.21",
+      "original_amount": "37.49",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
@@ -3186,7 +3207,7 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "apartment rent transfer; monthly=1; observations=6; conservative recent amount=467.5",
+      "recurrence_reason": "apartment rent transfer; monthly=1; observations=6; latest contractual amount=467.5",
       "evidence_ids": [],
       "original_amount": "467.5",
       "original_currency": "EUR",
@@ -3194,7 +3215,7 @@
     },
     {
       "day": "2025-05-05",
-      "amount": "-82.61",
+      "amount": "-76.83",
       "source_id": "event_651",
       "inferred": true,
       "direction": "debit",
@@ -3202,15 +3223,15 @@
       "essential": true,
       "protected": false,
       "flexibility": "fixed",
-      "recurrence_reason": "municipal utilities; monthly=5; observations=6; conservative recent amount=82.61",
+      "recurrence_reason": "municipal utilities; monthly=5; observations=6; mean historical budget, rounded up=76.83",
       "evidence_ids": [],
-      "original_amount": "82.61",
+      "original_amount": "76.83",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-05-06",
-      "amount": "-72.38",
+      "amount": "-59.05",
       "source_id": "event_677",
       "inferred": true,
       "direction": "debit",
@@ -3218,9 +3239,9 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "groceries; interval=7; observations=26; conservative recent amount=72.38",
+      "recurrence_reason": "groceries; interval=7; observations=26; mean historical budget, rounded up=59.05",
       "evidence_ids": [],
-      "original_amount": "72.38",
+      "original_amount": "59.05",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
@@ -3234,7 +3255,7 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "school fee payment; monthly=7; observations=5; conservative recent amount=89",
+      "recurrence_reason": "school fee payment; monthly=7; observations=5; latest contractual amount=89",
       "evidence_ids": [],
       "original_amount": "89",
       "original_currency": "EUR",
@@ -3242,7 +3263,7 @@
     },
     {
       "day": "2025-05-07",
-      "amount": "-47.21",
+      "amount": "-37.49",
       "source_id": "event_703",
       "inferred": true,
       "direction": "debit",
@@ -3250,15 +3271,15 @@
       "essential": true,
       "protected": false,
       "flexibility": "fixed",
-      "recurrence_reason": "transport; interval=7; observations=26; conservative recent amount=47.21",
+      "recurrence_reason": "transport; interval=7; observations=26; mean historical budget, rounded up=37.49",
       "evidence_ids": [],
-      "original_amount": "47.21",
+      "original_amount": "37.49",
       "original_currency": "EUR",
       "conversion_rate": "1"
     },
     {
       "day": "2025-05-08",
-      "amount": "-56.05",
+      "amount": "-50.85",
       "source_id": "event_716",
       "inferred": true,
       "direction": "debit",
@@ -3266,9 +3287,9 @@
       "essential": false,
       "protected": false,
       "flexibility": "reducible",
-      "recurrence_reason": "dining; interval=14; observations=13; conservative recent amount=56.05",
+      "recurrence_reason": "dining; interval=14; observations=13; mean historical budget, rounded up=50.85",
       "evidence_ids": [],
-      "original_amount": "56.05",
+      "original_amount": "50.85",
       "original_currency": "EUR",
       "conversion_rate": "1"
     }
@@ -3326,1058 +3347,1601 @@
       "day": "2025-02-11",
       "opening_balance": "1256.57",
       "credits": "0",
-      "essential_debits": "72.38",
+      "essential_debits": "59.05",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1184.19",
+      "closing_balance": "1197.52",
       "minimum_required": "800",
-      "surplus": "384.19",
-      "lowest_balance": "1184.19"
+      "surplus": "397.52",
+      "lowest_balance": "1197.52"
     },
     {
       "day": "2025-02-12",
-      "opening_balance": "1184.19",
+      "opening_balance": "1197.52",
       "credits": "0",
-      "essential_debits": "47.21",
+      "essential_debits": "37.49",
       "other_debits": "24",
       "request_payments": "0",
-      "closing_balance": "1112.98",
+      "closing_balance": "1136.03",
       "minimum_required": "800",
-      "surplus": "312.98",
-      "lowest_balance": "1112.98"
+      "surplus": "336.03",
+      "lowest_balance": "1136.03"
     },
     {
       "day": "2025-02-13",
-      "opening_balance": "1112.98",
+      "opening_balance": "1136.03",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "56.05",
+      "other_debits": "50.85",
       "request_payments": "0",
-      "closing_balance": "1056.93",
+      "closing_balance": "1085.18",
       "minimum_required": "800",
-      "surplus": "256.93",
-      "lowest_balance": "1056.93"
+      "surplus": "285.18",
+      "lowest_balance": "1085.18"
     },
     {
       "day": "2025-02-14",
-      "opening_balance": "1056.93",
+      "opening_balance": "1085.18",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1056.93",
+      "closing_balance": "1085.18",
       "minimum_required": "800",
-      "surplus": "256.93",
-      "lowest_balance": "1056.93"
+      "surplus": "285.18",
+      "lowest_balance": "1085.18"
     },
     {
       "day": "2025-02-15",
-      "opening_balance": "1056.93",
-      "credits": "782.57",
+      "opening_balance": "1085.18",
+      "credits": "1422.85",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1839.50",
+      "closing_balance": "2508.03",
       "minimum_required": "800",
-      "surplus": "1039.50",
-      "lowest_balance": "1056.93"
+      "surplus": "1708.03",
+      "lowest_balance": "1085.18"
     },
     {
       "day": "2025-02-16",
-      "opening_balance": "1839.50",
+      "opening_balance": "2508.03",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1839.50",
+      "closing_balance": "2508.03",
       "minimum_required": "800",
-      "surplus": "1039.50",
-      "lowest_balance": "1839.50"
+      "surplus": "1708.03",
+      "lowest_balance": "2508.03"
     },
     {
       "day": "2025-02-17",
-      "opening_balance": "1839.50",
+      "opening_balance": "2508.03",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1839.50",
+      "closing_balance": "2508.03",
       "minimum_required": "800",
-      "surplus": "1039.50",
-      "lowest_balance": "1839.50"
+      "surplus": "1708.03",
+      "lowest_balance": "2508.03"
     },
     {
       "day": "2025-02-18",
-      "opening_balance": "1839.50",
+      "opening_balance": "2508.03",
       "credits": "0",
-      "essential_debits": "72.38",
+      "essential_debits": "59.05",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1767.12",
+      "closing_balance": "2448.98",
       "minimum_required": "800",
-      "surplus": "967.12",
-      "lowest_balance": "1767.12"
+      "surplus": "1648.98",
+      "lowest_balance": "2448.98"
     },
     {
       "day": "2025-02-19",
-      "opening_balance": "1767.12",
+      "opening_balance": "2448.98",
       "credits": "0",
-      "essential_debits": "47.21",
+      "essential_debits": "37.49",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1719.91",
+      "closing_balance": "2411.49",
       "minimum_required": "800",
-      "surplus": "919.91",
-      "lowest_balance": "1719.91"
+      "surplus": "1611.49",
+      "lowest_balance": "2411.49"
     },
     {
       "day": "2025-02-20",
-      "opening_balance": "1719.91",
+      "opening_balance": "2411.49",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1719.91",
+      "closing_balance": "2411.49",
       "minimum_required": "800",
-      "surplus": "919.91",
-      "lowest_balance": "1719.91"
+      "surplus": "1611.49",
+      "lowest_balance": "2411.49"
     },
     {
       "day": "2025-02-21",
-      "opening_balance": "1719.91",
+      "opening_balance": "2411.49",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1719.91",
+      "closing_balance": "2411.49",
       "minimum_required": "800",
-      "surplus": "919.91",
-      "lowest_balance": "1719.91"
+      "surplus": "1611.49",
+      "lowest_balance": "2411.49"
     },
     {
       "day": "2025-02-22",
-      "opening_balance": "1719.91",
+      "opening_balance": "2411.49",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1719.91",
+      "closing_balance": "2411.49",
       "minimum_required": "800",
-      "surplus": "919.91",
-      "lowest_balance": "1719.91"
+      "surplus": "1611.49",
+      "lowest_balance": "2411.49"
     },
     {
       "day": "2025-02-23",
-      "opening_balance": "1719.91",
+      "opening_balance": "2411.49",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1719.91",
+      "closing_balance": "2411.49",
       "minimum_required": "800",
-      "surplus": "919.91",
-      "lowest_balance": "1719.91"
+      "surplus": "1611.49",
+      "lowest_balance": "2411.49"
     },
     {
       "day": "2025-02-24",
-      "opening_balance": "1719.91",
+      "opening_balance": "2411.49",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1719.91",
+      "closing_balance": "2411.49",
       "minimum_required": "800",
-      "surplus": "919.91",
-      "lowest_balance": "1719.91"
+      "surplus": "1611.49",
+      "lowest_balance": "2411.49"
     },
     {
       "day": "2025-02-25",
-      "opening_balance": "1719.91",
+      "opening_balance": "2411.49",
       "credits": "0",
-      "essential_debits": "72.38",
+      "essential_debits": "59.05",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1647.53",
+      "closing_balance": "2352.44",
       "minimum_required": "800",
-      "surplus": "847.53",
-      "lowest_balance": "1647.53"
+      "surplus": "1552.44",
+      "lowest_balance": "2352.44"
     },
     {
       "day": "2025-02-26",
-      "opening_balance": "1647.53",
+      "opening_balance": "2352.44",
       "credits": "0",
-      "essential_debits": "47.21",
+      "essential_debits": "37.49",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1600.32",
+      "closing_balance": "2314.95",
       "minimum_required": "800",
-      "surplus": "800.32",
-      "lowest_balance": "1600.32"
+      "surplus": "1514.95",
+      "lowest_balance": "2314.95"
     },
     {
       "day": "2025-02-27",
-      "opening_balance": "1600.32",
+      "opening_balance": "2314.95",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "56.05",
+      "other_debits": "50.85",
       "request_payments": "0",
-      "closing_balance": "1544.27",
+      "closing_balance": "2264.10",
       "minimum_required": "800",
-      "surplus": "744.27",
-      "lowest_balance": "1544.27"
+      "surplus": "1464.10",
+      "lowest_balance": "2264.10"
     },
     {
       "day": "2025-02-28",
-      "opening_balance": "1544.27",
+      "opening_balance": "2264.10",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1544.27",
+      "closing_balance": "2264.10",
       "minimum_required": "800",
-      "surplus": "744.27",
-      "lowest_balance": "1544.27"
+      "surplus": "1464.10",
+      "lowest_balance": "2264.10"
     },
     {
       "day": "2025-03-01",
-      "opening_balance": "1544.27",
+      "opening_balance": "2264.10",
       "credits": "0",
       "essential_debits": "467.5",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1076.77",
+      "closing_balance": "1796.60",
       "minimum_required": "800",
-      "surplus": "276.77",
-      "lowest_balance": "1076.77"
+      "surplus": "996.60",
+      "lowest_balance": "1796.60"
     },
     {
       "day": "2025-03-02",
-      "opening_balance": "1076.77",
+      "opening_balance": "1796.60",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1076.77",
+      "closing_balance": "1796.60",
       "minimum_required": "800",
-      "surplus": "276.77",
-      "lowest_balance": "1076.77"
+      "surplus": "996.60",
+      "lowest_balance": "1796.60"
     },
     {
       "day": "2025-03-03",
-      "opening_balance": "1076.77",
+      "opening_balance": "1796.60",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1076.77",
+      "closing_balance": "1796.60",
       "minimum_required": "800",
-      "surplus": "276.77",
-      "lowest_balance": "1076.77"
+      "surplus": "996.60",
+      "lowest_balance": "1796.60"
     },
     {
       "day": "2025-03-04",
-      "opening_balance": "1076.77",
+      "opening_balance": "1796.60",
       "credits": "0",
-      "essential_debits": "72.38",
+      "essential_debits": "59.05",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1004.39",
+      "closing_balance": "1737.55",
       "minimum_required": "800",
-      "surplus": "204.39",
-      "lowest_balance": "1004.39"
+      "surplus": "937.55",
+      "lowest_balance": "1737.55"
     },
     {
       "day": "2025-03-05",
-      "opening_balance": "1004.39",
+      "opening_balance": "1737.55",
       "credits": "0",
-      "essential_debits": "129.82",
+      "essential_debits": "114.32",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "874.57",
+      "closing_balance": "1623.23",
       "minimum_required": "800",
-      "surplus": "74.57",
-      "lowest_balance": "874.57"
+      "surplus": "823.23",
+      "lowest_balance": "1623.23"
     },
     {
       "day": "2025-03-06",
-      "opening_balance": "874.57",
+      "opening_balance": "1623.23",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "874.57",
+      "closing_balance": "1623.23",
       "minimum_required": "800",
-      "surplus": "74.57",
-      "lowest_balance": "874.57"
+      "surplus": "823.23",
+      "lowest_balance": "1623.23"
     },
     {
       "day": "2025-03-07",
-      "opening_balance": "874.57",
+      "opening_balance": "1623.23",
       "credits": "0",
       "essential_debits": "89",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "785.57",
+      "closing_balance": "1534.23",
       "minimum_required": "800",
-      "surplus": "-14.43",
-      "lowest_balance": "785.57"
+      "surplus": "734.23",
+      "lowest_balance": "1534.23"
     },
     {
       "day": "2025-03-08",
-      "opening_balance": "785.57",
+      "opening_balance": "1534.23",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "785.57",
+      "closing_balance": "1534.23",
       "minimum_required": "800",
-      "surplus": "-14.43",
-      "lowest_balance": "785.57"
+      "surplus": "734.23",
+      "lowest_balance": "1534.23"
     },
     {
       "day": "2025-03-09",
-      "opening_balance": "785.57",
+      "opening_balance": "1534.23",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "785.57",
+      "closing_balance": "1534.23",
       "minimum_required": "800",
-      "surplus": "-14.43",
-      "lowest_balance": "785.57"
+      "surplus": "734.23",
+      "lowest_balance": "1534.23"
     },
     {
       "day": "2025-03-10",
-      "opening_balance": "785.57",
+      "opening_balance": "1534.23",
       "credits": "0",
       "essential_debits": "177",
       "other_debits": "14",
       "request_payments": "0",
-      "closing_balance": "594.57",
+      "closing_balance": "1343.23",
       "minimum_required": "800",
-      "surplus": "-205.43",
-      "lowest_balance": "594.57"
+      "surplus": "543.23",
+      "lowest_balance": "1343.23"
     },
     {
       "day": "2025-03-11",
-      "opening_balance": "594.57",
+      "opening_balance": "1343.23",
       "credits": "0",
-      "essential_debits": "72.38",
+      "essential_debits": "59.05",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "522.19",
+      "closing_balance": "1284.18",
       "minimum_required": "800",
-      "surplus": "-277.81",
-      "lowest_balance": "522.19"
+      "surplus": "484.18",
+      "lowest_balance": "1284.18"
     },
     {
       "day": "2025-03-12",
-      "opening_balance": "522.19",
+      "opening_balance": "1284.18",
       "credits": "0",
-      "essential_debits": "47.21",
+      "essential_debits": "37.49",
       "other_debits": "24",
       "request_payments": "0",
-      "closing_balance": "450.98",
+      "closing_balance": "1222.69",
       "minimum_required": "800",
-      "surplus": "-349.02",
-      "lowest_balance": "450.98"
+      "surplus": "422.69",
+      "lowest_balance": "1222.69"
     },
     {
       "day": "2025-03-13",
-      "opening_balance": "450.98",
+      "opening_balance": "1222.69",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "56.05",
+      "other_debits": "50.85",
       "request_payments": "0",
-      "closing_balance": "394.93",
+      "closing_balance": "1171.84",
       "minimum_required": "800",
-      "surplus": "-405.07",
-      "lowest_balance": "394.93"
+      "surplus": "371.84",
+      "lowest_balance": "1171.84"
     },
     {
       "day": "2025-03-14",
-      "opening_balance": "394.93",
+      "opening_balance": "1171.84",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "394.93",
+      "closing_balance": "1171.84",
       "minimum_required": "800",
-      "surplus": "-405.07",
-      "lowest_balance": "394.93"
+      "surplus": "371.84",
+      "lowest_balance": "1171.84"
     },
     {
       "day": "2025-03-15",
-      "opening_balance": "394.93",
-      "credits": "782.57",
+      "opening_balance": "1171.84",
+      "credits": "1422.85",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1177.50",
+      "closing_balance": "2594.69",
       "minimum_required": "800",
-      "surplus": "377.50",
-      "lowest_balance": "394.93"
+      "surplus": "1794.69",
+      "lowest_balance": "1171.84"
     },
     {
       "day": "2025-03-16",
-      "opening_balance": "1177.50",
+      "opening_balance": "2594.69",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1177.50",
+      "closing_balance": "2594.69",
       "minimum_required": "800",
-      "surplus": "377.50",
-      "lowest_balance": "1177.50"
+      "surplus": "1794.69",
+      "lowest_balance": "2594.69"
     },
     {
       "day": "2025-03-17",
-      "opening_balance": "1177.50",
+      "opening_balance": "2594.69",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1177.50",
+      "closing_balance": "2594.69",
       "minimum_required": "800",
-      "surplus": "377.50",
-      "lowest_balance": "1177.50"
+      "surplus": "1794.69",
+      "lowest_balance": "2594.69"
     },
     {
       "day": "2025-03-18",
-      "opening_balance": "1177.50",
+      "opening_balance": "2594.69",
       "credits": "0",
-      "essential_debits": "72.38",
+      "essential_debits": "59.05",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1105.12",
+      "closing_balance": "2535.64",
       "minimum_required": "800",
-      "surplus": "305.12",
-      "lowest_balance": "1105.12"
+      "surplus": "1735.64",
+      "lowest_balance": "2535.64"
     },
     {
       "day": "2025-03-19",
-      "opening_balance": "1105.12",
+      "opening_balance": "2535.64",
       "credits": "0",
-      "essential_debits": "47.21",
+      "essential_debits": "37.49",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1057.91",
+      "closing_balance": "2498.15",
       "minimum_required": "800",
-      "surplus": "257.91",
-      "lowest_balance": "1057.91"
+      "surplus": "1698.15",
+      "lowest_balance": "2498.15"
     },
     {
       "day": "2025-03-20",
-      "opening_balance": "1057.91",
+      "opening_balance": "2498.15",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1057.91",
+      "closing_balance": "2498.15",
       "minimum_required": "800",
-      "surplus": "257.91",
-      "lowest_balance": "1057.91"
+      "surplus": "1698.15",
+      "lowest_balance": "2498.15"
     },
     {
       "day": "2025-03-21",
-      "opening_balance": "1057.91",
+      "opening_balance": "2498.15",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1057.91",
+      "closing_balance": "2498.15",
       "minimum_required": "800",
-      "surplus": "257.91",
-      "lowest_balance": "1057.91"
+      "surplus": "1698.15",
+      "lowest_balance": "2498.15"
     },
     {
       "day": "2025-03-22",
-      "opening_balance": "1057.91",
+      "opening_balance": "2498.15",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1057.91",
+      "closing_balance": "2498.15",
       "minimum_required": "800",
-      "surplus": "257.91",
-      "lowest_balance": "1057.91"
+      "surplus": "1698.15",
+      "lowest_balance": "2498.15"
     },
     {
       "day": "2025-03-23",
-      "opening_balance": "1057.91",
+      "opening_balance": "2498.15",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1057.91",
+      "closing_balance": "2498.15",
       "minimum_required": "800",
-      "surplus": "257.91",
-      "lowest_balance": "1057.91"
+      "surplus": "1698.15",
+      "lowest_balance": "2498.15"
     },
     {
       "day": "2025-03-24",
-      "opening_balance": "1057.91",
+      "opening_balance": "2498.15",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1057.91",
+      "closing_balance": "2498.15",
       "minimum_required": "800",
-      "surplus": "257.91",
-      "lowest_balance": "1057.91"
+      "surplus": "1698.15",
+      "lowest_balance": "2498.15"
     },
     {
       "day": "2025-03-25",
-      "opening_balance": "1057.91",
+      "opening_balance": "2498.15",
       "credits": "0",
-      "essential_debits": "72.38",
+      "essential_debits": "59.05",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "985.53",
+      "closing_balance": "2439.10",
       "minimum_required": "800",
-      "surplus": "185.53",
-      "lowest_balance": "985.53"
+      "surplus": "1639.10",
+      "lowest_balance": "2439.10"
     },
     {
       "day": "2025-03-26",
-      "opening_balance": "985.53",
+      "opening_balance": "2439.10",
       "credits": "0",
-      "essential_debits": "47.21",
+      "essential_debits": "37.49",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "938.32",
+      "closing_balance": "2401.61",
       "minimum_required": "800",
-      "surplus": "138.32",
-      "lowest_balance": "938.32"
+      "surplus": "1601.61",
+      "lowest_balance": "2401.61"
     },
     {
       "day": "2025-03-27",
-      "opening_balance": "938.32",
+      "opening_balance": "2401.61",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "56.05",
+      "other_debits": "50.85",
       "request_payments": "0",
-      "closing_balance": "882.27",
+      "closing_balance": "2350.76",
       "minimum_required": "800",
-      "surplus": "82.27",
-      "lowest_balance": "882.27"
+      "surplus": "1550.76",
+      "lowest_balance": "2350.76"
     },
     {
       "day": "2025-03-28",
-      "opening_balance": "882.27",
+      "opening_balance": "2350.76",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "882.27",
+      "closing_balance": "2350.76",
       "minimum_required": "800",
-      "surplus": "82.27",
-      "lowest_balance": "882.27"
+      "surplus": "1550.76",
+      "lowest_balance": "2350.76"
     },
     {
       "day": "2025-03-29",
-      "opening_balance": "882.27",
+      "opening_balance": "2350.76",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "882.27",
+      "closing_balance": "2350.76",
       "minimum_required": "800",
-      "surplus": "82.27",
-      "lowest_balance": "882.27"
+      "surplus": "1550.76",
+      "lowest_balance": "2350.76"
     },
     {
       "day": "2025-03-30",
-      "opening_balance": "882.27",
+      "opening_balance": "2350.76",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "882.27",
+      "closing_balance": "2350.76",
       "minimum_required": "800",
-      "surplus": "82.27",
-      "lowest_balance": "882.27"
+      "surplus": "1550.76",
+      "lowest_balance": "2350.76"
     },
     {
       "day": "2025-03-31",
-      "opening_balance": "882.27",
+      "opening_balance": "2350.76",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "882.27",
+      "closing_balance": "2350.76",
       "minimum_required": "800",
-      "surplus": "82.27",
-      "lowest_balance": "882.27"
+      "surplus": "1550.76",
+      "lowest_balance": "2350.76"
     },
     {
       "day": "2025-04-01",
-      "opening_balance": "882.27",
+      "opening_balance": "2350.76",
       "credits": "0",
-      "essential_debits": "539.88",
+      "essential_debits": "526.55",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "342.39",
+      "closing_balance": "1824.21",
       "minimum_required": "800",
-      "surplus": "-457.61",
-      "lowest_balance": "342.39"
+      "surplus": "1024.21",
+      "lowest_balance": "1824.21"
     },
     {
       "day": "2025-04-02",
-      "opening_balance": "342.39",
+      "opening_balance": "1824.21",
       "credits": "0",
-      "essential_debits": "47.21",
+      "essential_debits": "37.49",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "295.18",
+      "closing_balance": "1786.72",
       "minimum_required": "800",
-      "surplus": "-504.82",
-      "lowest_balance": "295.18"
+      "surplus": "986.72",
+      "lowest_balance": "1786.72"
     },
     {
       "day": "2025-04-03",
-      "opening_balance": "295.18",
+      "opening_balance": "1786.72",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "295.18",
+      "closing_balance": "1786.72",
       "minimum_required": "800",
-      "surplus": "-504.82",
-      "lowest_balance": "295.18"
+      "surplus": "986.72",
+      "lowest_balance": "1786.72"
     },
     {
       "day": "2025-04-04",
-      "opening_balance": "295.18",
+      "opening_balance": "1786.72",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "295.18",
+      "closing_balance": "1786.72",
       "minimum_required": "800",
-      "surplus": "-504.82",
-      "lowest_balance": "295.18"
+      "surplus": "986.72",
+      "lowest_balance": "1786.72"
     },
     {
       "day": "2025-04-05",
-      "opening_balance": "295.18",
+      "opening_balance": "1786.72",
       "credits": "0",
-      "essential_debits": "82.61",
+      "essential_debits": "76.83",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "212.57",
+      "closing_balance": "1709.89",
       "minimum_required": "800",
-      "surplus": "-587.43",
-      "lowest_balance": "212.57"
+      "surplus": "909.89",
+      "lowest_balance": "1709.89"
     },
     {
       "day": "2025-04-06",
-      "opening_balance": "212.57",
+      "opening_balance": "1709.89",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "212.57",
+      "closing_balance": "1709.89",
       "minimum_required": "800",
-      "surplus": "-587.43",
-      "lowest_balance": "212.57"
+      "surplus": "909.89",
+      "lowest_balance": "1709.89"
     },
     {
       "day": "2025-04-07",
-      "opening_balance": "212.57",
+      "opening_balance": "1709.89",
       "credits": "0",
       "essential_debits": "89",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "123.57",
+      "closing_balance": "1620.89",
       "minimum_required": "800",
-      "surplus": "-676.43",
-      "lowest_balance": "123.57"
+      "surplus": "820.89",
+      "lowest_balance": "1620.89"
     },
     {
       "day": "2025-04-08",
-      "opening_balance": "123.57",
+      "opening_balance": "1620.89",
       "credits": "0",
-      "essential_debits": "72.38",
+      "essential_debits": "59.05",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "51.19",
+      "closing_balance": "1561.84",
       "minimum_required": "800",
-      "surplus": "-748.81",
-      "lowest_balance": "51.19"
+      "surplus": "761.84",
+      "lowest_balance": "1561.84"
     },
     {
       "day": "2025-04-09",
-      "opening_balance": "51.19",
+      "opening_balance": "1561.84",
       "credits": "0",
-      "essential_debits": "47.21",
+      "essential_debits": "37.49",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "3.98",
+      "closing_balance": "1524.35",
       "minimum_required": "800",
-      "surplus": "-796.02",
-      "lowest_balance": "3.98"
+      "surplus": "724.35",
+      "lowest_balance": "1524.35"
     },
     {
       "day": "2025-04-10",
-      "opening_balance": "3.98",
+      "opening_balance": "1524.35",
       "credits": "0",
       "essential_debits": "177",
-      "other_debits": "70.05",
+      "other_debits": "64.85",
       "request_payments": "0",
-      "closing_balance": "-243.07",
+      "closing_balance": "1282.50",
       "minimum_required": "800",
-      "surplus": "-1043.07",
-      "lowest_balance": "-243.07"
+      "surplus": "482.50",
+      "lowest_balance": "1282.50"
     },
     {
       "day": "2025-04-11",
-      "opening_balance": "-243.07",
+      "opening_balance": "1282.50",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "-243.07",
+      "closing_balance": "1282.50",
       "minimum_required": "800",
-      "surplus": "-1043.07",
-      "lowest_balance": "-243.07"
+      "surplus": "482.50",
+      "lowest_balance": "1282.50"
     },
     {
       "day": "2025-04-12",
-      "opening_balance": "-243.07",
+      "opening_balance": "1282.50",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "24",
       "request_payments": "0",
-      "closing_balance": "-267.07",
+      "closing_balance": "1258.50",
       "minimum_required": "800",
-      "surplus": "-1067.07",
-      "lowest_balance": "-267.07"
+      "surplus": "458.50",
+      "lowest_balance": "1258.50"
     },
     {
       "day": "2025-04-13",
-      "opening_balance": "-267.07",
+      "opening_balance": "1258.50",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "-267.07",
+      "closing_balance": "1258.50",
       "minimum_required": "800",
-      "surplus": "-1067.07",
-      "lowest_balance": "-267.07"
+      "surplus": "458.50",
+      "lowest_balance": "1258.50"
     },
     {
       "day": "2025-04-14",
-      "opening_balance": "-267.07",
+      "opening_balance": "1258.50",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "-267.07",
+      "closing_balance": "1258.50",
       "minimum_required": "800",
-      "surplus": "-1067.07",
-      "lowest_balance": "-267.07"
+      "surplus": "458.50",
+      "lowest_balance": "1258.50"
     },
     {
       "day": "2025-04-15",
-      "opening_balance": "-267.07",
-      "credits": "782.57",
-      "essential_debits": "72.38",
+      "opening_balance": "1258.50",
+      "credits": "1422.85",
+      "essential_debits": "59.05",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "443.12",
+      "closing_balance": "2622.30",
       "minimum_required": "800",
-      "surplus": "-356.88",
-      "lowest_balance": "-339.45"
+      "surplus": "1822.30",
+      "lowest_balance": "1199.45"
     },
     {
       "day": "2025-04-16",
-      "opening_balance": "443.12",
+      "opening_balance": "2622.30",
       "credits": "0",
-      "essential_debits": "47.21",
+      "essential_debits": "37.49",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "395.91",
+      "closing_balance": "2584.81",
       "minimum_required": "800",
-      "surplus": "-404.09",
-      "lowest_balance": "395.91"
+      "surplus": "1784.81",
+      "lowest_balance": "2584.81"
     },
     {
       "day": "2025-04-17",
-      "opening_balance": "395.91",
+      "opening_balance": "2584.81",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "395.91",
+      "closing_balance": "2584.81",
       "minimum_required": "800",
-      "surplus": "-404.09",
-      "lowest_balance": "395.91"
+      "surplus": "1784.81",
+      "lowest_balance": "2584.81"
     },
     {
       "day": "2025-04-18",
-      "opening_balance": "395.91",
+      "opening_balance": "2584.81",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "395.91",
+      "closing_balance": "2584.81",
       "minimum_required": "800",
-      "surplus": "-404.09",
-      "lowest_balance": "395.91"
+      "surplus": "1784.81",
+      "lowest_balance": "2584.81"
     },
     {
       "day": "2025-04-19",
-      "opening_balance": "395.91",
+      "opening_balance": "2584.81",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "395.91",
+      "closing_balance": "2584.81",
       "minimum_required": "800",
-      "surplus": "-404.09",
-      "lowest_balance": "395.91"
+      "surplus": "1784.81",
+      "lowest_balance": "2584.81"
     },
     {
       "day": "2025-04-20",
-      "opening_balance": "395.91",
+      "opening_balance": "2584.81",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "395.91",
+      "closing_balance": "2584.81",
       "minimum_required": "800",
-      "surplus": "-404.09",
-      "lowest_balance": "395.91"
+      "surplus": "1784.81",
+      "lowest_balance": "2584.81"
     },
     {
       "day": "2025-04-21",
-      "opening_balance": "395.91",
+      "opening_balance": "2584.81",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "395.91",
+      "closing_balance": "2584.81",
       "minimum_required": "800",
-      "surplus": "-404.09",
-      "lowest_balance": "395.91"
+      "surplus": "1784.81",
+      "lowest_balance": "2584.81"
     },
     {
       "day": "2025-04-22",
-      "opening_balance": "395.91",
+      "opening_balance": "2584.81",
       "credits": "0",
-      "essential_debits": "72.38",
+      "essential_debits": "59.05",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "323.53",
+      "closing_balance": "2525.76",
       "minimum_required": "800",
-      "surplus": "-476.47",
-      "lowest_balance": "323.53"
+      "surplus": "1725.76",
+      "lowest_balance": "2525.76"
     },
     {
       "day": "2025-04-23",
-      "opening_balance": "323.53",
+      "opening_balance": "2525.76",
       "credits": "0",
-      "essential_debits": "47.21",
+      "essential_debits": "37.49",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "276.32",
+      "closing_balance": "2488.27",
       "minimum_required": "800",
-      "surplus": "-523.68",
-      "lowest_balance": "276.32"
+      "surplus": "1688.27",
+      "lowest_balance": "2488.27"
     },
     {
       "day": "2025-04-24",
-      "opening_balance": "276.32",
+      "opening_balance": "2488.27",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "56.05",
+      "other_debits": "50.85",
       "request_payments": "0",
-      "closing_balance": "220.27",
+      "closing_balance": "2437.42",
       "minimum_required": "800",
-      "surplus": "-579.73",
-      "lowest_balance": "220.27"
+      "surplus": "1637.42",
+      "lowest_balance": "2437.42"
     },
     {
       "day": "2025-04-25",
-      "opening_balance": "220.27",
+      "opening_balance": "2437.42",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "220.27",
+      "closing_balance": "2437.42",
       "minimum_required": "800",
-      "surplus": "-579.73",
-      "lowest_balance": "220.27"
+      "surplus": "1637.42",
+      "lowest_balance": "2437.42"
     },
     {
       "day": "2025-04-26",
-      "opening_balance": "220.27",
+      "opening_balance": "2437.42",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "220.27",
+      "closing_balance": "2437.42",
       "minimum_required": "800",
-      "surplus": "-579.73",
-      "lowest_balance": "220.27"
+      "surplus": "1637.42",
+      "lowest_balance": "2437.42"
     },
     {
       "day": "2025-04-27",
-      "opening_balance": "220.27",
+      "opening_balance": "2437.42",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "220.27",
+      "closing_balance": "2437.42",
       "minimum_required": "800",
-      "surplus": "-579.73",
-      "lowest_balance": "220.27"
+      "surplus": "1637.42",
+      "lowest_balance": "2437.42"
     },
     {
       "day": "2025-04-28",
-      "opening_balance": "220.27",
+      "opening_balance": "2437.42",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "220.27",
+      "closing_balance": "2437.42",
       "minimum_required": "800",
-      "surplus": "-579.73",
-      "lowest_balance": "220.27"
+      "surplus": "1637.42",
+      "lowest_balance": "2437.42"
     },
     {
       "day": "2025-04-29",
-      "opening_balance": "220.27",
+      "opening_balance": "2437.42",
       "credits": "0",
-      "essential_debits": "72.38",
+      "essential_debits": "59.05",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "147.89",
+      "closing_balance": "2378.37",
       "minimum_required": "800",
-      "surplus": "-652.11",
-      "lowest_balance": "147.89"
+      "surplus": "1578.37",
+      "lowest_balance": "2378.37"
     },
     {
       "day": "2025-04-30",
-      "opening_balance": "147.89",
+      "opening_balance": "2378.37",
       "credits": "0",
-      "essential_debits": "47.21",
+      "essential_debits": "37.49",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "100.68",
+      "closing_balance": "2340.88",
       "minimum_required": "800",
-      "surplus": "-699.32",
-      "lowest_balance": "100.68"
+      "surplus": "1540.88",
+      "lowest_balance": "2340.88"
     },
     {
       "day": "2025-05-01",
-      "opening_balance": "100.68",
+      "opening_balance": "2340.88",
       "credits": "0",
       "essential_debits": "467.5",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "-366.82",
+      "closing_balance": "1873.38",
       "minimum_required": "800",
-      "surplus": "-1166.82",
-      "lowest_balance": "-366.82"
+      "surplus": "1073.38",
+      "lowest_balance": "1873.38"
     },
     {
       "day": "2025-05-02",
-      "opening_balance": "-366.82",
+      "opening_balance": "1873.38",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "-366.82",
+      "closing_balance": "1873.38",
       "minimum_required": "800",
-      "surplus": "-1166.82",
-      "lowest_balance": "-366.82"
+      "surplus": "1073.38",
+      "lowest_balance": "1873.38"
     },
     {
       "day": "2025-05-03",
-      "opening_balance": "-366.82",
+      "opening_balance": "1873.38",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "-366.82",
+      "closing_balance": "1873.38",
       "minimum_required": "800",
-      "surplus": "-1166.82",
-      "lowest_balance": "-366.82"
+      "surplus": "1073.38",
+      "lowest_balance": "1873.38"
     },
     {
       "day": "2025-05-04",
-      "opening_balance": "-366.82",
+      "opening_balance": "1873.38",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "-366.82",
+      "closing_balance": "1873.38",
       "minimum_required": "800",
-      "surplus": "-1166.82",
-      "lowest_balance": "-366.82"
+      "surplus": "1073.38",
+      "lowest_balance": "1873.38"
     },
     {
       "day": "2025-05-05",
-      "opening_balance": "-366.82",
+      "opening_balance": "1873.38",
       "credits": "0",
-      "essential_debits": "82.61",
+      "essential_debits": "76.83",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "-449.43",
+      "closing_balance": "1796.55",
       "minimum_required": "800",
-      "surplus": "-1249.43",
-      "lowest_balance": "-449.43"
+      "surplus": "996.55",
+      "lowest_balance": "1796.55"
     },
     {
       "day": "2025-05-06",
-      "opening_balance": "-449.43",
+      "opening_balance": "1796.55",
       "credits": "0",
-      "essential_debits": "72.38",
+      "essential_debits": "59.05",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "-521.81",
+      "closing_balance": "1737.50",
       "minimum_required": "800",
-      "surplus": "-1321.81",
-      "lowest_balance": "-521.81"
+      "surplus": "937.50",
+      "lowest_balance": "1737.50"
     },
     {
       "day": "2025-05-07",
-      "opening_balance": "-521.81",
+      "opening_balance": "1737.50",
       "credits": "0",
-      "essential_debits": "136.21",
+      "essential_debits": "126.49",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "-658.02",
+      "closing_balance": "1611.01",
       "minimum_required": "800",
-      "surplus": "-1458.02",
-      "lowest_balance": "-658.02"
+      "surplus": "811.01",
+      "lowest_balance": "1611.01"
     },
     {
       "day": "2025-05-08",
-      "opening_balance": "-658.02",
+      "opening_balance": "1611.01",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "56.05",
+      "other_debits": "50.85",
       "request_payments": "0",
-      "closing_balance": "-714.07",
+      "closing_balance": "1560.16",
       "minimum_required": "800",
-      "surplus": "-1514.07",
-      "lowest_balance": "-714.07"
+      "surplus": "760.16",
+      "lowest_balance": "1560.16"
     }
   ],
-  "baseline_lowest_date": "2025-05-08",
-  "baseline_minimum_balance": "-714.07",
+  "baseline_lowest_date": "2025-02-13",
+  "baseline_minimum_balance": "1085.18",
   "amount_safe_calculation": {
-    "amount": "0",
-    "verified_by_simulation": false,
+    "amount": "285.18",
+    "verified_by_simulation": true,
     "blocked": false,
     "algorithm": "maximum cent amount via monotone binary search"
   },
   "earliest_full_payment_tests": [
     {
-      "reason": "baseline already breaches minimum; no payment date is safe"
+      "date": "2025-02-07",
+      "safe": false,
+      "minimum_balance": "88.58",
+      "breach_date": "2025-02-07"
+    },
+    {
+      "date": "2025-02-08",
+      "safe": false,
+      "minimum_balance": "88.58",
+      "breach_date": "2025-02-08"
+    },
+    {
+      "date": "2025-02-09",
+      "safe": false,
+      "minimum_balance": "88.58",
+      "breach_date": "2025-02-09"
+    },
+    {
+      "date": "2025-02-10",
+      "safe": false,
+      "minimum_balance": "88.58",
+      "breach_date": "2025-02-10"
+    },
+    {
+      "date": "2025-02-11",
+      "safe": false,
+      "minimum_balance": "88.58",
+      "breach_date": "2025-02-11"
+    },
+    {
+      "date": "2025-02-12",
+      "safe": false,
+      "minimum_balance": "88.58",
+      "breach_date": "2025-02-12"
+    },
+    {
+      "date": "2025-02-13",
+      "safe": false,
+      "minimum_balance": "88.58",
+      "breach_date": "2025-02-13"
+    },
+    {
+      "date": "2025-02-14",
+      "safe": false,
+      "minimum_balance": "88.58",
+      "breach_date": "2025-02-14"
+    },
+    {
+      "date": "2025-02-15",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-04"
+    },
+    {
+      "date": "2025-02-16",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-04"
+    },
+    {
+      "date": "2025-02-17",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-04"
+    },
+    {
+      "date": "2025-02-18",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-04"
+    },
+    {
+      "date": "2025-02-19",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-04"
+    },
+    {
+      "date": "2025-02-20",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-04"
+    },
+    {
+      "date": "2025-02-21",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-04"
+    },
+    {
+      "date": "2025-02-22",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-04"
+    },
+    {
+      "date": "2025-02-23",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-04"
+    },
+    {
+      "date": "2025-02-24",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-04"
+    },
+    {
+      "date": "2025-02-25",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-04"
+    },
+    {
+      "date": "2025-02-26",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-04"
+    },
+    {
+      "date": "2025-02-27",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-04"
+    },
+    {
+      "date": "2025-02-28",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-04"
+    },
+    {
+      "date": "2025-03-01",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-04"
+    },
+    {
+      "date": "2025-03-02",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-04"
+    },
+    {
+      "date": "2025-03-03",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-04"
+    },
+    {
+      "date": "2025-03-04",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-04"
+    },
+    {
+      "date": "2025-03-05",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-05"
+    },
+    {
+      "date": "2025-03-06",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-06"
+    },
+    {
+      "date": "2025-03-07",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-07"
+    },
+    {
+      "date": "2025-03-08",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-08"
+    },
+    {
+      "date": "2025-03-09",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-09"
+    },
+    {
+      "date": "2025-03-10",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-10"
+    },
+    {
+      "date": "2025-03-11",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-11"
+    },
+    {
+      "date": "2025-03-12",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-12"
+    },
+    {
+      "date": "2025-03-13",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-13"
+    },
+    {
+      "date": "2025-03-14",
+      "safe": false,
+      "minimum_balance": "175.24",
+      "breach_date": "2025-03-14"
+    },
+    {
+      "date": "2025-03-15",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-02"
+    },
+    {
+      "date": "2025-03-16",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-02"
+    },
+    {
+      "date": "2025-03-17",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-02"
+    },
+    {
+      "date": "2025-03-18",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-02"
+    },
+    {
+      "date": "2025-03-19",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-02"
+    },
+    {
+      "date": "2025-03-20",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-02"
+    },
+    {
+      "date": "2025-03-21",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-02"
+    },
+    {
+      "date": "2025-03-22",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-02"
+    },
+    {
+      "date": "2025-03-23",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-02"
+    },
+    {
+      "date": "2025-03-24",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-02"
+    },
+    {
+      "date": "2025-03-25",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-02"
+    },
+    {
+      "date": "2025-03-26",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-02"
+    },
+    {
+      "date": "2025-03-27",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-02"
+    },
+    {
+      "date": "2025-03-28",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-02"
+    },
+    {
+      "date": "2025-03-29",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-02"
+    },
+    {
+      "date": "2025-03-30",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-02"
+    },
+    {
+      "date": "2025-03-31",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-02"
+    },
+    {
+      "date": "2025-04-01",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-02"
+    },
+    {
+      "date": "2025-04-02",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-02"
+    },
+    {
+      "date": "2025-04-03",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-03"
+    },
+    {
+      "date": "2025-04-04",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-04"
+    },
+    {
+      "date": "2025-04-05",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-05"
+    },
+    {
+      "date": "2025-04-06",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-06"
+    },
+    {
+      "date": "2025-04-07",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-07"
+    },
+    {
+      "date": "2025-04-08",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-08"
+    },
+    {
+      "date": "2025-04-09",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-09"
+    },
+    {
+      "date": "2025-04-10",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-10"
+    },
+    {
+      "date": "2025-04-11",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-11"
+    },
+    {
+      "date": "2025-04-12",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-12"
+    },
+    {
+      "date": "2025-04-13",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-13"
+    },
+    {
+      "date": "2025-04-14",
+      "safe": false,
+      "minimum_balance": "202.85",
+      "breach_date": "2025-04-14"
+    },
+    {
+      "date": "2025-04-15",
+      "safe": false,
+      "minimum_balance": "563.56",
+      "breach_date": "2025-05-05"
+    },
+    {
+      "date": "2025-04-16",
+      "safe": false,
+      "minimum_balance": "563.56",
+      "breach_date": "2025-05-05"
+    },
+    {
+      "date": "2025-04-17",
+      "safe": false,
+      "minimum_balance": "563.56",
+      "breach_date": "2025-05-05"
+    },
+    {
+      "date": "2025-04-18",
+      "safe": false,
+      "minimum_balance": "563.56",
+      "breach_date": "2025-05-05"
+    },
+    {
+      "date": "2025-04-19",
+      "safe": false,
+      "minimum_balance": "563.56",
+      "breach_date": "2025-05-05"
+    },
+    {
+      "date": "2025-04-20",
+      "safe": false,
+      "minimum_balance": "563.56",
+      "breach_date": "2025-05-05"
+    },
+    {
+      "date": "2025-04-21",
+      "safe": false,
+      "minimum_balance": "563.56",
+      "breach_date": "2025-05-05"
+    },
+    {
+      "date": "2025-04-22",
+      "safe": false,
+      "minimum_balance": "563.56",
+      "breach_date": "2025-05-05"
+    },
+    {
+      "date": "2025-04-23",
+      "safe": false,
+      "minimum_balance": "563.56",
+      "breach_date": "2025-05-05"
+    },
+    {
+      "date": "2025-04-24",
+      "safe": false,
+      "minimum_balance": "563.56",
+      "breach_date": "2025-05-05"
+    },
+    {
+      "date": "2025-04-25",
+      "safe": false,
+      "minimum_balance": "563.56",
+      "breach_date": "2025-05-05"
+    },
+    {
+      "date": "2025-04-26",
+      "safe": false,
+      "minimum_balance": "563.56",
+      "breach_date": "2025-05-05"
+    },
+    {
+      "date": "2025-04-27",
+      "safe": false,
+      "minimum_balance": "563.56",
+      "breach_date": "2025-05-05"
+    },
+    {
+      "date": "2025-04-28",
+      "safe": false,
+      "minimum_balance": "563.56",
+      "breach_date": "2025-05-05"
+    },
+    {
+      "date": "2025-04-29",
+      "safe": false,
+      "minimum_balance": "563.56",
+      "breach_date": "2025-05-05"
+    },
+    {
+      "date": "2025-04-30",
+      "safe": false,
+      "minimum_balance": "563.56",
+      "breach_date": "2025-05-05"
+    },
+    {
+      "date": "2025-05-01",
+      "safe": false,
+      "minimum_balance": "563.56",
+      "breach_date": "2025-05-05"
+    },
+    {
+      "date": "2025-05-02",
+      "safe": false,
+      "minimum_balance": "563.56",
+      "breach_date": "2025-05-05"
+    },
+    {
+      "date": "2025-05-03",
+      "safe": false,
+      "minimum_balance": "563.56",
+      "breach_date": "2025-05-05"
+    },
+    {
+      "date": "2025-05-04",
+      "safe": false,
+      "minimum_balance": "563.56",
+      "breach_date": "2025-05-05"
+    },
+    {
+      "date": "2025-05-05",
+      "safe": false,
+      "minimum_balance": "563.56",
+      "breach_date": "2025-05-05"
+    },
+    {
+      "date": "2025-05-06",
+      "safe": false,
+      "minimum_balance": "563.56",
+      "breach_date": "2025-05-06"
+    },
+    {
+      "date": "2025-05-07",
+      "safe": false,
+      "minimum_balance": "563.56",
+      "breach_date": "2025-05-07"
+    },
+    {
+      "date": "2025-05-08",
+      "safe": false,
+      "minimum_balance": "563.56",
+      "breach_date": "2025-05-08"
     }
   ],
   "candidates": [
@@ -4406,10 +4970,10 @@
         "spending_changes_valid": true
       },
       "errors": [
-        "minimum balance breached on 2025-02-07: -1710.67"
+        "minimum balance breached on 2025-02-07: 88.58"
       ],
       "valid": false,
-      "minimum_balance": "-1710.67",
+      "minimum_balance": "88.58",
       "ranking_key": null
     },
     {
@@ -4512,9 +5076,85 @@
       "valid": false,
       "minimum_balance": null,
       "ranking_key": null
+    },
+    {
+      "candidate": {
+        "method": "wait",
+        "payments": [
+          {
+            "day": "2025-04-15",
+            "amount": "996.6"
+          }
+        ],
+        "total_cost": "996.6",
+        "option_id": "payment_option_22",
+        "changes": [
+          {
+            "action": "stop",
+            "event_id": "event_649",
+            "amount": null
+          },
+          {
+            "action": "reduce_to",
+            "event_id": "event_716",
+            "amount": "27.35"
+          }
+        ],
+        "change_reasons": [
+          "stop:event_649: without this change, minimum 728.06 breaches reserve on 2025-05-07",
+          "reduce_to:event_716: without this change, minimum 635.56 breaches reserve on 2025-05-07"
+        ]
+      },
+      "checks": {
+        "method_accepted": true,
+        "every_payment_possible": true,
+        "full_commitment_completed": true,
+        "deadline_met": true,
+        "minimum_maintained": true,
+        "plan_format_valid": true,
+        "installment_option_matches": true,
+        "spending_changes_valid": true
+      },
+      "errors": [],
+      "valid": true,
+      "minimum_balance": "800.06",
+      "ranking_key": [
+        false,
+        1,
+        "996.6",
+        "2025-04-15",
+        1,
+        "payment_option_22"
+      ]
     }
   ],
-  "selected": null,
+  "selected": {
+    "method": "wait",
+    "payments": [
+      {
+        "day": "2025-04-15",
+        "amount": "996.6"
+      }
+    ],
+    "total_cost": "996.6",
+    "option_id": "payment_option_22",
+    "changes": [
+      {
+        "action": "stop",
+        "event_id": "event_649",
+        "amount": null
+      },
+      {
+        "action": "reduce_to",
+        "event_id": "event_716",
+        "amount": "27.35"
+      }
+    ],
+    "change_reasons": [
+      "stop:event_649: without this change, minimum 728.06 breaches reserve on 2025-05-07",
+      "reduce_to:event_716: without this change, minimum 635.56 breaches reserve on 2025-05-07"
+    ]
+  },
   "selected_daily": [
     {
       "day": "2025-02-07",
@@ -4568,1045 +5208,1045 @@
       "day": "2025-02-11",
       "opening_balance": "1256.57",
       "credits": "0",
-      "essential_debits": "72.38",
+      "essential_debits": "59.05",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1184.19",
+      "closing_balance": "1197.52",
       "minimum_required": "800",
-      "surplus": "384.19",
-      "lowest_balance": "1184.19"
+      "surplus": "397.52",
+      "lowest_balance": "1197.52"
     },
     {
       "day": "2025-02-12",
-      "opening_balance": "1184.19",
+      "opening_balance": "1197.52",
       "credits": "0",
-      "essential_debits": "47.21",
-      "other_debits": "24",
+      "essential_debits": "37.49",
+      "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1112.98",
+      "closing_balance": "1160.03",
       "minimum_required": "800",
-      "surplus": "312.98",
-      "lowest_balance": "1112.98"
+      "surplus": "360.03",
+      "lowest_balance": "1160.03"
     },
     {
       "day": "2025-02-13",
-      "opening_balance": "1112.98",
+      "opening_balance": "1160.03",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "56.05",
+      "other_debits": "27.35",
       "request_payments": "0",
-      "closing_balance": "1056.93",
+      "closing_balance": "1132.68",
       "minimum_required": "800",
-      "surplus": "256.93",
-      "lowest_balance": "1056.93"
+      "surplus": "332.68",
+      "lowest_balance": "1132.68"
     },
     {
       "day": "2025-02-14",
-      "opening_balance": "1056.93",
+      "opening_balance": "1132.68",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1056.93",
+      "closing_balance": "1132.68",
       "minimum_required": "800",
-      "surplus": "256.93",
-      "lowest_balance": "1056.93"
+      "surplus": "332.68",
+      "lowest_balance": "1132.68"
     },
     {
       "day": "2025-02-15",
-      "opening_balance": "1056.93",
-      "credits": "782.57",
+      "opening_balance": "1132.68",
+      "credits": "1422.85",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1839.50",
+      "closing_balance": "2555.53",
       "minimum_required": "800",
-      "surplus": "1039.50",
-      "lowest_balance": "1056.93"
+      "surplus": "1755.53",
+      "lowest_balance": "1132.68"
     },
     {
       "day": "2025-02-16",
-      "opening_balance": "1839.50",
+      "opening_balance": "2555.53",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1839.50",
+      "closing_balance": "2555.53",
       "minimum_required": "800",
-      "surplus": "1039.50",
-      "lowest_balance": "1839.50"
+      "surplus": "1755.53",
+      "lowest_balance": "2555.53"
     },
     {
       "day": "2025-02-17",
-      "opening_balance": "1839.50",
+      "opening_balance": "2555.53",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1839.50",
+      "closing_balance": "2555.53",
       "minimum_required": "800",
-      "surplus": "1039.50",
-      "lowest_balance": "1839.50"
+      "surplus": "1755.53",
+      "lowest_balance": "2555.53"
     },
     {
       "day": "2025-02-18",
-      "opening_balance": "1839.50",
+      "opening_balance": "2555.53",
       "credits": "0",
-      "essential_debits": "72.38",
+      "essential_debits": "59.05",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1767.12",
+      "closing_balance": "2496.48",
       "minimum_required": "800",
-      "surplus": "967.12",
-      "lowest_balance": "1767.12"
+      "surplus": "1696.48",
+      "lowest_balance": "2496.48"
     },
     {
       "day": "2025-02-19",
-      "opening_balance": "1767.12",
+      "opening_balance": "2496.48",
       "credits": "0",
-      "essential_debits": "47.21",
+      "essential_debits": "37.49",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1719.91",
+      "closing_balance": "2458.99",
       "minimum_required": "800",
-      "surplus": "919.91",
-      "lowest_balance": "1719.91"
+      "surplus": "1658.99",
+      "lowest_balance": "2458.99"
     },
     {
       "day": "2025-02-20",
-      "opening_balance": "1719.91",
+      "opening_balance": "2458.99",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1719.91",
+      "closing_balance": "2458.99",
       "minimum_required": "800",
-      "surplus": "919.91",
-      "lowest_balance": "1719.91"
+      "surplus": "1658.99",
+      "lowest_balance": "2458.99"
     },
     {
       "day": "2025-02-21",
-      "opening_balance": "1719.91",
+      "opening_balance": "2458.99",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1719.91",
+      "closing_balance": "2458.99",
       "minimum_required": "800",
-      "surplus": "919.91",
-      "lowest_balance": "1719.91"
+      "surplus": "1658.99",
+      "lowest_balance": "2458.99"
     },
     {
       "day": "2025-02-22",
-      "opening_balance": "1719.91",
+      "opening_balance": "2458.99",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1719.91",
+      "closing_balance": "2458.99",
       "minimum_required": "800",
-      "surplus": "919.91",
-      "lowest_balance": "1719.91"
+      "surplus": "1658.99",
+      "lowest_balance": "2458.99"
     },
     {
       "day": "2025-02-23",
-      "opening_balance": "1719.91",
+      "opening_balance": "2458.99",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1719.91",
+      "closing_balance": "2458.99",
       "minimum_required": "800",
-      "surplus": "919.91",
-      "lowest_balance": "1719.91"
+      "surplus": "1658.99",
+      "lowest_balance": "2458.99"
     },
     {
       "day": "2025-02-24",
-      "opening_balance": "1719.91",
+      "opening_balance": "2458.99",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1719.91",
+      "closing_balance": "2458.99",
       "minimum_required": "800",
-      "surplus": "919.91",
-      "lowest_balance": "1719.91"
+      "surplus": "1658.99",
+      "lowest_balance": "2458.99"
     },
     {
       "day": "2025-02-25",
-      "opening_balance": "1719.91",
+      "opening_balance": "2458.99",
       "credits": "0",
-      "essential_debits": "72.38",
+      "essential_debits": "59.05",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1647.53",
+      "closing_balance": "2399.94",
       "minimum_required": "800",
-      "surplus": "847.53",
-      "lowest_balance": "1647.53"
+      "surplus": "1599.94",
+      "lowest_balance": "2399.94"
     },
     {
       "day": "2025-02-26",
-      "opening_balance": "1647.53",
+      "opening_balance": "2399.94",
       "credits": "0",
-      "essential_debits": "47.21",
+      "essential_debits": "37.49",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1600.32",
+      "closing_balance": "2362.45",
       "minimum_required": "800",
-      "surplus": "800.32",
-      "lowest_balance": "1600.32"
+      "surplus": "1562.45",
+      "lowest_balance": "2362.45"
     },
     {
       "day": "2025-02-27",
-      "opening_balance": "1600.32",
+      "opening_balance": "2362.45",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "56.05",
+      "other_debits": "27.35",
       "request_payments": "0",
-      "closing_balance": "1544.27",
+      "closing_balance": "2335.10",
       "minimum_required": "800",
-      "surplus": "744.27",
-      "lowest_balance": "1544.27"
+      "surplus": "1535.10",
+      "lowest_balance": "2335.10"
     },
     {
       "day": "2025-02-28",
-      "opening_balance": "1544.27",
+      "opening_balance": "2335.10",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1544.27",
+      "closing_balance": "2335.10",
       "minimum_required": "800",
-      "surplus": "744.27",
-      "lowest_balance": "1544.27"
+      "surplus": "1535.10",
+      "lowest_balance": "2335.10"
     },
     {
       "day": "2025-03-01",
-      "opening_balance": "1544.27",
+      "opening_balance": "2335.10",
       "credits": "0",
       "essential_debits": "467.5",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1076.77",
+      "closing_balance": "1867.60",
       "minimum_required": "800",
-      "surplus": "276.77",
-      "lowest_balance": "1076.77"
+      "surplus": "1067.60",
+      "lowest_balance": "1867.60"
     },
     {
       "day": "2025-03-02",
-      "opening_balance": "1076.77",
+      "opening_balance": "1867.60",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1076.77",
+      "closing_balance": "1867.60",
       "minimum_required": "800",
-      "surplus": "276.77",
-      "lowest_balance": "1076.77"
+      "surplus": "1067.60",
+      "lowest_balance": "1867.60"
     },
     {
       "day": "2025-03-03",
-      "opening_balance": "1076.77",
+      "opening_balance": "1867.60",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1076.77",
+      "closing_balance": "1867.60",
       "minimum_required": "800",
-      "surplus": "276.77",
-      "lowest_balance": "1076.77"
+      "surplus": "1067.60",
+      "lowest_balance": "1867.60"
     },
     {
       "day": "2025-03-04",
-      "opening_balance": "1076.77",
+      "opening_balance": "1867.60",
       "credits": "0",
-      "essential_debits": "72.38",
+      "essential_debits": "59.05",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1004.39",
+      "closing_balance": "1808.55",
       "minimum_required": "800",
-      "surplus": "204.39",
-      "lowest_balance": "1004.39"
+      "surplus": "1008.55",
+      "lowest_balance": "1808.55"
     },
     {
       "day": "2025-03-05",
-      "opening_balance": "1004.39",
+      "opening_balance": "1808.55",
       "credits": "0",
-      "essential_debits": "129.82",
+      "essential_debits": "114.32",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "874.57",
+      "closing_balance": "1694.23",
       "minimum_required": "800",
-      "surplus": "74.57",
-      "lowest_balance": "874.57"
+      "surplus": "894.23",
+      "lowest_balance": "1694.23"
     },
     {
       "day": "2025-03-06",
-      "opening_balance": "874.57",
+      "opening_balance": "1694.23",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "874.57",
+      "closing_balance": "1694.23",
       "minimum_required": "800",
-      "surplus": "74.57",
-      "lowest_balance": "874.57"
+      "surplus": "894.23",
+      "lowest_balance": "1694.23"
     },
     {
       "day": "2025-03-07",
-      "opening_balance": "874.57",
+      "opening_balance": "1694.23",
       "credits": "0",
       "essential_debits": "89",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "785.57",
+      "closing_balance": "1605.23",
       "minimum_required": "800",
-      "surplus": "-14.43",
-      "lowest_balance": "785.57"
+      "surplus": "805.23",
+      "lowest_balance": "1605.23"
     },
     {
       "day": "2025-03-08",
-      "opening_balance": "785.57",
+      "opening_balance": "1605.23",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "785.57",
+      "closing_balance": "1605.23",
       "minimum_required": "800",
-      "surplus": "-14.43",
-      "lowest_balance": "785.57"
+      "surplus": "805.23",
+      "lowest_balance": "1605.23"
     },
     {
       "day": "2025-03-09",
-      "opening_balance": "785.57",
+      "opening_balance": "1605.23",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "785.57",
+      "closing_balance": "1605.23",
       "minimum_required": "800",
-      "surplus": "-14.43",
-      "lowest_balance": "785.57"
+      "surplus": "805.23",
+      "lowest_balance": "1605.23"
     },
     {
       "day": "2025-03-10",
-      "opening_balance": "785.57",
+      "opening_balance": "1605.23",
       "credits": "0",
       "essential_debits": "177",
       "other_debits": "14",
       "request_payments": "0",
-      "closing_balance": "594.57",
+      "closing_balance": "1414.23",
       "minimum_required": "800",
-      "surplus": "-205.43",
-      "lowest_balance": "594.57"
+      "surplus": "614.23",
+      "lowest_balance": "1414.23"
     },
     {
       "day": "2025-03-11",
-      "opening_balance": "594.57",
+      "opening_balance": "1414.23",
       "credits": "0",
-      "essential_debits": "72.38",
+      "essential_debits": "59.05",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "522.19",
+      "closing_balance": "1355.18",
       "minimum_required": "800",
-      "surplus": "-277.81",
-      "lowest_balance": "522.19"
+      "surplus": "555.18",
+      "lowest_balance": "1355.18"
     },
     {
       "day": "2025-03-12",
-      "opening_balance": "522.19",
+      "opening_balance": "1355.18",
       "credits": "0",
-      "essential_debits": "47.21",
-      "other_debits": "24",
+      "essential_debits": "37.49",
+      "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "450.98",
+      "closing_balance": "1317.69",
       "minimum_required": "800",
-      "surplus": "-349.02",
-      "lowest_balance": "450.98"
+      "surplus": "517.69",
+      "lowest_balance": "1317.69"
     },
     {
       "day": "2025-03-13",
-      "opening_balance": "450.98",
+      "opening_balance": "1317.69",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "56.05",
+      "other_debits": "27.35",
       "request_payments": "0",
-      "closing_balance": "394.93",
+      "closing_balance": "1290.34",
       "minimum_required": "800",
-      "surplus": "-405.07",
-      "lowest_balance": "394.93"
+      "surplus": "490.34",
+      "lowest_balance": "1290.34"
     },
     {
       "day": "2025-03-14",
-      "opening_balance": "394.93",
+      "opening_balance": "1290.34",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "394.93",
+      "closing_balance": "1290.34",
       "minimum_required": "800",
-      "surplus": "-405.07",
-      "lowest_balance": "394.93"
+      "surplus": "490.34",
+      "lowest_balance": "1290.34"
     },
     {
       "day": "2025-03-15",
-      "opening_balance": "394.93",
-      "credits": "782.57",
+      "opening_balance": "1290.34",
+      "credits": "1422.85",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1177.50",
+      "closing_balance": "2713.19",
       "minimum_required": "800",
-      "surplus": "377.50",
-      "lowest_balance": "394.93"
+      "surplus": "1913.19",
+      "lowest_balance": "1290.34"
     },
     {
       "day": "2025-03-16",
-      "opening_balance": "1177.50",
+      "opening_balance": "2713.19",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1177.50",
+      "closing_balance": "2713.19",
       "minimum_required": "800",
-      "surplus": "377.50",
-      "lowest_balance": "1177.50"
+      "surplus": "1913.19",
+      "lowest_balance": "2713.19"
     },
     {
       "day": "2025-03-17",
-      "opening_balance": "1177.50",
+      "opening_balance": "2713.19",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1177.50",
+      "closing_balance": "2713.19",
       "minimum_required": "800",
-      "surplus": "377.50",
-      "lowest_balance": "1177.50"
+      "surplus": "1913.19",
+      "lowest_balance": "2713.19"
     },
     {
       "day": "2025-03-18",
-      "opening_balance": "1177.50",
+      "opening_balance": "2713.19",
       "credits": "0",
-      "essential_debits": "72.38",
+      "essential_debits": "59.05",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1105.12",
+      "closing_balance": "2654.14",
       "minimum_required": "800",
-      "surplus": "305.12",
-      "lowest_balance": "1105.12"
+      "surplus": "1854.14",
+      "lowest_balance": "2654.14"
     },
     {
       "day": "2025-03-19",
-      "opening_balance": "1105.12",
+      "opening_balance": "2654.14",
       "credits": "0",
-      "essential_debits": "47.21",
+      "essential_debits": "37.49",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1057.91",
+      "closing_balance": "2616.65",
       "minimum_required": "800",
-      "surplus": "257.91",
-      "lowest_balance": "1057.91"
+      "surplus": "1816.65",
+      "lowest_balance": "2616.65"
     },
     {
       "day": "2025-03-20",
-      "opening_balance": "1057.91",
+      "opening_balance": "2616.65",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1057.91",
+      "closing_balance": "2616.65",
       "minimum_required": "800",
-      "surplus": "257.91",
-      "lowest_balance": "1057.91"
+      "surplus": "1816.65",
+      "lowest_balance": "2616.65"
     },
     {
       "day": "2025-03-21",
-      "opening_balance": "1057.91",
+      "opening_balance": "2616.65",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1057.91",
+      "closing_balance": "2616.65",
       "minimum_required": "800",
-      "surplus": "257.91",
-      "lowest_balance": "1057.91"
+      "surplus": "1816.65",
+      "lowest_balance": "2616.65"
     },
     {
       "day": "2025-03-22",
-      "opening_balance": "1057.91",
+      "opening_balance": "2616.65",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1057.91",
+      "closing_balance": "2616.65",
       "minimum_required": "800",
-      "surplus": "257.91",
-      "lowest_balance": "1057.91"
+      "surplus": "1816.65",
+      "lowest_balance": "2616.65"
     },
     {
       "day": "2025-03-23",
-      "opening_balance": "1057.91",
+      "opening_balance": "2616.65",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1057.91",
+      "closing_balance": "2616.65",
       "minimum_required": "800",
-      "surplus": "257.91",
-      "lowest_balance": "1057.91"
+      "surplus": "1816.65",
+      "lowest_balance": "2616.65"
     },
     {
       "day": "2025-03-24",
-      "opening_balance": "1057.91",
+      "opening_balance": "2616.65",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "1057.91",
+      "closing_balance": "2616.65",
       "minimum_required": "800",
-      "surplus": "257.91",
-      "lowest_balance": "1057.91"
+      "surplus": "1816.65",
+      "lowest_balance": "2616.65"
     },
     {
       "day": "2025-03-25",
-      "opening_balance": "1057.91",
+      "opening_balance": "2616.65",
       "credits": "0",
-      "essential_debits": "72.38",
+      "essential_debits": "59.05",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "985.53",
+      "closing_balance": "2557.60",
       "minimum_required": "800",
-      "surplus": "185.53",
-      "lowest_balance": "985.53"
+      "surplus": "1757.60",
+      "lowest_balance": "2557.60"
     },
     {
       "day": "2025-03-26",
-      "opening_balance": "985.53",
+      "opening_balance": "2557.60",
       "credits": "0",
-      "essential_debits": "47.21",
+      "essential_debits": "37.49",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "938.32",
+      "closing_balance": "2520.11",
       "minimum_required": "800",
-      "surplus": "138.32",
-      "lowest_balance": "938.32"
+      "surplus": "1720.11",
+      "lowest_balance": "2520.11"
     },
     {
       "day": "2025-03-27",
-      "opening_balance": "938.32",
+      "opening_balance": "2520.11",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "56.05",
+      "other_debits": "27.35",
       "request_payments": "0",
-      "closing_balance": "882.27",
+      "closing_balance": "2492.76",
       "minimum_required": "800",
-      "surplus": "82.27",
-      "lowest_balance": "882.27"
+      "surplus": "1692.76",
+      "lowest_balance": "2492.76"
     },
     {
       "day": "2025-03-28",
-      "opening_balance": "882.27",
+      "opening_balance": "2492.76",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "882.27",
+      "closing_balance": "2492.76",
       "minimum_required": "800",
-      "surplus": "82.27",
-      "lowest_balance": "882.27"
+      "surplus": "1692.76",
+      "lowest_balance": "2492.76"
     },
     {
       "day": "2025-03-29",
-      "opening_balance": "882.27",
+      "opening_balance": "2492.76",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "882.27",
+      "closing_balance": "2492.76",
       "minimum_required": "800",
-      "surplus": "82.27",
-      "lowest_balance": "882.27"
+      "surplus": "1692.76",
+      "lowest_balance": "2492.76"
     },
     {
       "day": "2025-03-30",
-      "opening_balance": "882.27",
+      "opening_balance": "2492.76",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "882.27",
+      "closing_balance": "2492.76",
       "minimum_required": "800",
-      "surplus": "82.27",
-      "lowest_balance": "882.27"
+      "surplus": "1692.76",
+      "lowest_balance": "2492.76"
     },
     {
       "day": "2025-03-31",
-      "opening_balance": "882.27",
+      "opening_balance": "2492.76",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "882.27",
+      "closing_balance": "2492.76",
       "minimum_required": "800",
-      "surplus": "82.27",
-      "lowest_balance": "882.27"
+      "surplus": "1692.76",
+      "lowest_balance": "2492.76"
     },
     {
       "day": "2025-04-01",
-      "opening_balance": "882.27",
+      "opening_balance": "2492.76",
       "credits": "0",
-      "essential_debits": "539.88",
+      "essential_debits": "526.55",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "342.39",
+      "closing_balance": "1966.21",
       "minimum_required": "800",
-      "surplus": "-457.61",
-      "lowest_balance": "342.39"
+      "surplus": "1166.21",
+      "lowest_balance": "1966.21"
     },
     {
       "day": "2025-04-02",
-      "opening_balance": "342.39",
+      "opening_balance": "1966.21",
       "credits": "0",
-      "essential_debits": "47.21",
+      "essential_debits": "37.49",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "295.18",
+      "closing_balance": "1928.72",
       "minimum_required": "800",
-      "surplus": "-504.82",
-      "lowest_balance": "295.18"
+      "surplus": "1128.72",
+      "lowest_balance": "1928.72"
     },
     {
       "day": "2025-04-03",
-      "opening_balance": "295.18",
+      "opening_balance": "1928.72",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "295.18",
+      "closing_balance": "1928.72",
       "minimum_required": "800",
-      "surplus": "-504.82",
-      "lowest_balance": "295.18"
+      "surplus": "1128.72",
+      "lowest_balance": "1928.72"
     },
     {
       "day": "2025-04-04",
-      "opening_balance": "295.18",
+      "opening_balance": "1928.72",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "295.18",
+      "closing_balance": "1928.72",
       "minimum_required": "800",
-      "surplus": "-504.82",
-      "lowest_balance": "295.18"
+      "surplus": "1128.72",
+      "lowest_balance": "1928.72"
     },
     {
       "day": "2025-04-05",
-      "opening_balance": "295.18",
+      "opening_balance": "1928.72",
       "credits": "0",
-      "essential_debits": "82.61",
+      "essential_debits": "76.83",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "212.57",
+      "closing_balance": "1851.89",
       "minimum_required": "800",
-      "surplus": "-587.43",
-      "lowest_balance": "212.57"
+      "surplus": "1051.89",
+      "lowest_balance": "1851.89"
     },
     {
       "day": "2025-04-06",
-      "opening_balance": "212.57",
+      "opening_balance": "1851.89",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "212.57",
+      "closing_balance": "1851.89",
       "minimum_required": "800",
-      "surplus": "-587.43",
-      "lowest_balance": "212.57"
+      "surplus": "1051.89",
+      "lowest_balance": "1851.89"
     },
     {
       "day": "2025-04-07",
-      "opening_balance": "212.57",
+      "opening_balance": "1851.89",
       "credits": "0",
       "essential_debits": "89",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "123.57",
+      "closing_balance": "1762.89",
       "minimum_required": "800",
-      "surplus": "-676.43",
-      "lowest_balance": "123.57"
+      "surplus": "962.89",
+      "lowest_balance": "1762.89"
     },
     {
       "day": "2025-04-08",
-      "opening_balance": "123.57",
+      "opening_balance": "1762.89",
       "credits": "0",
-      "essential_debits": "72.38",
+      "essential_debits": "59.05",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "51.19",
+      "closing_balance": "1703.84",
       "minimum_required": "800",
-      "surplus": "-748.81",
-      "lowest_balance": "51.19"
+      "surplus": "903.84",
+      "lowest_balance": "1703.84"
     },
     {
       "day": "2025-04-09",
-      "opening_balance": "51.19",
+      "opening_balance": "1703.84",
       "credits": "0",
-      "essential_debits": "47.21",
+      "essential_debits": "37.49",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "3.98",
+      "closing_balance": "1666.35",
       "minimum_required": "800",
-      "surplus": "-796.02",
-      "lowest_balance": "3.98"
+      "surplus": "866.35",
+      "lowest_balance": "1666.35"
     },
     {
       "day": "2025-04-10",
-      "opening_balance": "3.98",
+      "opening_balance": "1666.35",
       "credits": "0",
       "essential_debits": "177",
-      "other_debits": "70.05",
+      "other_debits": "41.35",
       "request_payments": "0",
-      "closing_balance": "-243.07",
+      "closing_balance": "1448.00",
       "minimum_required": "800",
-      "surplus": "-1043.07",
-      "lowest_balance": "-243.07"
+      "surplus": "648.00",
+      "lowest_balance": "1448.00"
     },
     {
       "day": "2025-04-11",
-      "opening_balance": "-243.07",
+      "opening_balance": "1448.00",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "-243.07",
+      "closing_balance": "1448.00",
       "minimum_required": "800",
-      "surplus": "-1043.07",
-      "lowest_balance": "-243.07"
+      "surplus": "648.00",
+      "lowest_balance": "1448.00"
     },
     {
       "day": "2025-04-12",
-      "opening_balance": "-243.07",
+      "opening_balance": "1448.00",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "24",
+      "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "-267.07",
+      "closing_balance": "1448.00",
       "minimum_required": "800",
-      "surplus": "-1067.07",
-      "lowest_balance": "-267.07"
+      "surplus": "648.00",
+      "lowest_balance": "1448.00"
     },
     {
       "day": "2025-04-13",
-      "opening_balance": "-267.07",
+      "opening_balance": "1448.00",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "-267.07",
+      "closing_balance": "1448.00",
       "minimum_required": "800",
-      "surplus": "-1067.07",
-      "lowest_balance": "-267.07"
+      "surplus": "648.00",
+      "lowest_balance": "1448.00"
     },
     {
       "day": "2025-04-14",
-      "opening_balance": "-267.07",
+      "opening_balance": "1448.00",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "-267.07",
+      "closing_balance": "1448.00",
       "minimum_required": "800",
-      "surplus": "-1067.07",
-      "lowest_balance": "-267.07"
+      "surplus": "648.00",
+      "lowest_balance": "1448.00"
     },
     {
       "day": "2025-04-15",
-      "opening_balance": "-267.07",
-      "credits": "782.57",
-      "essential_debits": "72.38",
+      "opening_balance": "1448.00",
+      "credits": "1422.85",
+      "essential_debits": "59.05",
       "other_debits": "0",
-      "request_payments": "0",
-      "closing_balance": "443.12",
+      "request_payments": "996.6",
+      "closing_balance": "1815.20",
       "minimum_required": "800",
-      "surplus": "-356.88",
-      "lowest_balance": "-339.45"
+      "surplus": "1015.20",
+      "lowest_balance": "1388.95"
     },
     {
       "day": "2025-04-16",
-      "opening_balance": "443.12",
+      "opening_balance": "1815.20",
       "credits": "0",
-      "essential_debits": "47.21",
+      "essential_debits": "37.49",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "395.91",
+      "closing_balance": "1777.71",
       "minimum_required": "800",
-      "surplus": "-404.09",
-      "lowest_balance": "395.91"
+      "surplus": "977.71",
+      "lowest_balance": "1777.71"
     },
     {
       "day": "2025-04-17",
-      "opening_balance": "395.91",
+      "opening_balance": "1777.71",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "395.91",
+      "closing_balance": "1777.71",
       "minimum_required": "800",
-      "surplus": "-404.09",
-      "lowest_balance": "395.91"
+      "surplus": "977.71",
+      "lowest_balance": "1777.71"
     },
     {
       "day": "2025-04-18",
-      "opening_balance": "395.91",
+      "opening_balance": "1777.71",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "395.91",
+      "closing_balance": "1777.71",
       "minimum_required": "800",
-      "surplus": "-404.09",
-      "lowest_balance": "395.91"
+      "surplus": "977.71",
+      "lowest_balance": "1777.71"
     },
     {
       "day": "2025-04-19",
-      "opening_balance": "395.91",
+      "opening_balance": "1777.71",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "395.91",
+      "closing_balance": "1777.71",
       "minimum_required": "800",
-      "surplus": "-404.09",
-      "lowest_balance": "395.91"
+      "surplus": "977.71",
+      "lowest_balance": "1777.71"
     },
     {
       "day": "2025-04-20",
-      "opening_balance": "395.91",
+      "opening_balance": "1777.71",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "395.91",
+      "closing_balance": "1777.71",
       "minimum_required": "800",
-      "surplus": "-404.09",
-      "lowest_balance": "395.91"
+      "surplus": "977.71",
+      "lowest_balance": "1777.71"
     },
     {
       "day": "2025-04-21",
-      "opening_balance": "395.91",
+      "opening_balance": "1777.71",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "395.91",
+      "closing_balance": "1777.71",
       "minimum_required": "800",
-      "surplus": "-404.09",
-      "lowest_balance": "395.91"
+      "surplus": "977.71",
+      "lowest_balance": "1777.71"
     },
     {
       "day": "2025-04-22",
-      "opening_balance": "395.91",
+      "opening_balance": "1777.71",
       "credits": "0",
-      "essential_debits": "72.38",
+      "essential_debits": "59.05",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "323.53",
+      "closing_balance": "1718.66",
       "minimum_required": "800",
-      "surplus": "-476.47",
-      "lowest_balance": "323.53"
+      "surplus": "918.66",
+      "lowest_balance": "1718.66"
     },
     {
       "day": "2025-04-23",
-      "opening_balance": "323.53",
+      "opening_balance": "1718.66",
       "credits": "0",
-      "essential_debits": "47.21",
+      "essential_debits": "37.49",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "276.32",
+      "closing_balance": "1681.17",
       "minimum_required": "800",
-      "surplus": "-523.68",
-      "lowest_balance": "276.32"
+      "surplus": "881.17",
+      "lowest_balance": "1681.17"
     },
     {
       "day": "2025-04-24",
-      "opening_balance": "276.32",
+      "opening_balance": "1681.17",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "56.05",
+      "other_debits": "27.35",
       "request_payments": "0",
-      "closing_balance": "220.27",
+      "closing_balance": "1653.82",
       "minimum_required": "800",
-      "surplus": "-579.73",
-      "lowest_balance": "220.27"
+      "surplus": "853.82",
+      "lowest_balance": "1653.82"
     },
     {
       "day": "2025-04-25",
-      "opening_balance": "220.27",
+      "opening_balance": "1653.82",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "220.27",
+      "closing_balance": "1653.82",
       "minimum_required": "800",
-      "surplus": "-579.73",
-      "lowest_balance": "220.27"
+      "surplus": "853.82",
+      "lowest_balance": "1653.82"
     },
     {
       "day": "2025-04-26",
-      "opening_balance": "220.27",
+      "opening_balance": "1653.82",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "220.27",
+      "closing_balance": "1653.82",
       "minimum_required": "800",
-      "surplus": "-579.73",
-      "lowest_balance": "220.27"
+      "surplus": "853.82",
+      "lowest_balance": "1653.82"
     },
     {
       "day": "2025-04-27",
-      "opening_balance": "220.27",
+      "opening_balance": "1653.82",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "220.27",
+      "closing_balance": "1653.82",
       "minimum_required": "800",
-      "surplus": "-579.73",
-      "lowest_balance": "220.27"
+      "surplus": "853.82",
+      "lowest_balance": "1653.82"
     },
     {
       "day": "2025-04-28",
-      "opening_balance": "220.27",
+      "opening_balance": "1653.82",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "220.27",
+      "closing_balance": "1653.82",
       "minimum_required": "800",
-      "surplus": "-579.73",
-      "lowest_balance": "220.27"
+      "surplus": "853.82",
+      "lowest_balance": "1653.82"
     },
     {
       "day": "2025-04-29",
-      "opening_balance": "220.27",
+      "opening_balance": "1653.82",
       "credits": "0",
-      "essential_debits": "72.38",
+      "essential_debits": "59.05",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "147.89",
+      "closing_balance": "1594.77",
       "minimum_required": "800",
-      "surplus": "-652.11",
-      "lowest_balance": "147.89"
+      "surplus": "794.77",
+      "lowest_balance": "1594.77"
     },
     {
       "day": "2025-04-30",
-      "opening_balance": "147.89",
+      "opening_balance": "1594.77",
       "credits": "0",
-      "essential_debits": "47.21",
+      "essential_debits": "37.49",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "100.68",
+      "closing_balance": "1557.28",
       "minimum_required": "800",
-      "surplus": "-699.32",
-      "lowest_balance": "100.68"
+      "surplus": "757.28",
+      "lowest_balance": "1557.28"
     },
     {
       "day": "2025-05-01",
-      "opening_balance": "100.68",
+      "opening_balance": "1557.28",
       "credits": "0",
       "essential_debits": "467.5",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "-366.82",
+      "closing_balance": "1089.78",
       "minimum_required": "800",
-      "surplus": "-1166.82",
-      "lowest_balance": "-366.82"
+      "surplus": "289.78",
+      "lowest_balance": "1089.78"
     },
     {
       "day": "2025-05-02",
-      "opening_balance": "-366.82",
+      "opening_balance": "1089.78",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "-366.82",
+      "closing_balance": "1089.78",
       "minimum_required": "800",
-      "surplus": "-1166.82",
-      "lowest_balance": "-366.82"
+      "surplus": "289.78",
+      "lowest_balance": "1089.78"
     },
     {
       "day": "2025-05-03",
-      "opening_balance": "-366.82",
+      "opening_balance": "1089.78",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "-366.82",
+      "closing_balance": "1089.78",
       "minimum_required": "800",
-      "surplus": "-1166.82",
-      "lowest_balance": "-366.82"
+      "surplus": "289.78",
+      "lowest_balance": "1089.78"
     },
     {
       "day": "2025-05-04",
-      "opening_balance": "-366.82",
+      "opening_balance": "1089.78",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "-366.82",
+      "closing_balance": "1089.78",
       "minimum_required": "800",
-      "surplus": "-1166.82",
-      "lowest_balance": "-366.82"
+      "surplus": "289.78",
+      "lowest_balance": "1089.78"
     },
     {
       "day": "2025-05-05",
-      "opening_balance": "-366.82",
+      "opening_balance": "1089.78",
       "credits": "0",
-      "essential_debits": "82.61",
+      "essential_debits": "76.83",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "-449.43",
+      "closing_balance": "1012.95",
       "minimum_required": "800",
-      "surplus": "-1249.43",
-      "lowest_balance": "-449.43"
+      "surplus": "212.95",
+      "lowest_balance": "1012.95"
     },
     {
       "day": "2025-05-06",
-      "opening_balance": "-449.43",
+      "opening_balance": "1012.95",
       "credits": "0",
-      "essential_debits": "72.38",
+      "essential_debits": "59.05",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "-521.81",
+      "closing_balance": "953.90",
       "minimum_required": "800",
-      "surplus": "-1321.81",
-      "lowest_balance": "-521.81"
+      "surplus": "153.90",
+      "lowest_balance": "953.90"
     },
     {
       "day": "2025-05-07",
-      "opening_balance": "-521.81",
+      "opening_balance": "953.90",
       "credits": "0",
-      "essential_debits": "136.21",
+      "essential_debits": "126.49",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "-658.02",
+      "closing_balance": "827.41",
       "minimum_required": "800",
-      "surplus": "-1458.02",
-      "lowest_balance": "-658.02"
+      "surplus": "27.41",
+      "lowest_balance": "827.41"
     },
     {
       "day": "2025-05-08",
-      "opening_balance": "-658.02",
+      "opening_balance": "827.41",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "56.05",
+      "other_debits": "27.35",
       "request_payments": "0",
-      "closing_balance": "-714.07",
+      "closing_balance": "800.06",
       "minimum_required": "800",
-      "surplus": "-1514.07",
-      "lowest_balance": "-714.07"
+      "surplus": "0.06",
+      "lowest_balance": "800.06"
     }
   ],
   "selected_lowest_date": "2025-05-08",
@@ -5615,7 +6255,7 @@
     "model": "gpt-5.6-terra",
     "prompt_version": "evidence-v2",
     "live_calls": 0,
-    "cached_resolutions": 0,
+    "cached_resolutions": 7,
     "input_tokens": 0,
     "output_tokens": 0,
     "unmetered_calls": 0,
@@ -5626,12 +6266,12 @@
   },
   "output_row": {
     "request_id": "request_08",
-    "amount_safe_to_pay": "0",
-    "affordability_status": "not_affordable",
-    "recommended_payment_method": "not_recommended",
-    "payment_plan": "none",
+    "amount_safe_to_pay": "285.18",
+    "affordability_status": "affordable_with_plan",
+    "recommended_payment_method": "wait",
+    "payment_plan": "2025-04-15:996.6",
     "earliest_date_for_full_payment": "",
-    "spending_changes_needed": "none",
-    "decision_explanation": "Safe today before changes: 0 EUR; protected minimum: 800. No safe eligible plan completes by the deadline under the resolved forecast. Limiting expense: event_716 (56.05 on 2025-05-08). Unresolved evidence/forecast assumptions remain; see audit."
+    "spending_changes_needed": "stop:event_649|reduce_to:event_716:27.35",
+    "decision_explanation": "Safe today before changes: 285.18 EUR; protected minimum: 800. Use wait, total 996.6, completing 2025-04-15. Lowest projected balance: 800.06 on 2025-05-08. Required changes: stop:event_649; reduce_to:event_716:27.35. Earlier full payment would not preserve the reserve under this forecast. Limiting expense: event_716 (50.85 on 2025-05-08). Projected income includes event_643_next: 1422.85 on 2025-02-15."
   }
 }

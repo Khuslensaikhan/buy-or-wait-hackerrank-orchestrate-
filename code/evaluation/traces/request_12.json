@@ -20,17 +20,10 @@
   "evidence_skipped": [
     {
       "source_id": "message_09",
-      "reason": "unresolved_evidence"
+      "reason": "no financial facts"
     }
   ],
-  "issues": [
-    {
-      "code": "unresolved_evidence",
-      "source_id": "message_09",
-      "detail": "source unavailable or not cached; no value imputed",
-      "blocking": false
-    }
-  ],
+  "issues": [],
   "resolved_events": [
     {
       "event_id": "event_990",
@@ -1529,19 +1522,19 @@
     }
   ],
   "projected_recurrence": [
-    "event_1054: dining; interval=21; observations=9; conservative recent amount=2089.92",
-    "event_1036: groceries; interval=10; observations=18; conservative recent amount=2469.4",
-    "event_1018: monthly rent; monthly=1; observations=6; conservative recent amount=11792",
-    "event_1017: monthly shopping spend; monthly=11; observations=5; conservative recent amount=1401.99",
-    "event_1045: transport; interval=21; observations=9; conservative recent amount=1684.28",
-    "event_1014: water and power payment; monthly=5; observations=5; conservative recent amount=3755.96",
-    "event_1015: shared storage plan; monthly=11; observations=5; conservative recent amount=447.7",
-    "event_1016: family streaming plan; monthly=8; observations=5; conservative recent amount=1504.8"
+    "event_1054: dining; interval=21; observations=9; mean historical budget, rounded up=2257.60",
+    "event_1036: groceries; interval=10; observations=18; mean historical budget, rounded up=2134.89",
+    "event_1018: monthly rent; monthly=1; observations=6; latest contractual amount=11792",
+    "event_1017: monthly shopping spend; monthly=11; observations=5; mean historical budget, rounded up=1255.89",
+    "event_1045: transport; interval=21; observations=9; mean historical budget, rounded up=1436.23",
+    "event_1014: water and power payment; monthly=5; observations=5; mean historical budget, rounded up=3509.73",
+    "event_1015: shared storage plan; monthly=11; observations=5; latest contractual amount=447.7",
+    "event_1016: family streaming plan; monthly=8; observations=5; latest contractual amount=1504.8"
   ],
   "cash_flows": [
     {
       "day": "2026-04-05",
-      "amount": "-3755.96",
+      "amount": "-3509.73",
       "source_id": "event_1014",
       "inferred": true,
       "direction": "debit",
@@ -1549,15 +1542,15 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "water and power payment; monthly=5; observations=5; conservative recent amount=3755.96",
+      "recurrence_reason": "water and power payment; monthly=5; observations=5; mean historical budget, rounded up=3509.73",
       "evidence_ids": [],
-      "original_amount": "3755.96",
+      "original_amount": "3509.73",
       "original_currency": "ZAR",
       "conversion_rate": "1"
     },
     {
       "day": "2026-04-07",
-      "amount": "-2469.4",
+      "amount": "-2134.89",
       "source_id": "event_1036",
       "inferred": true,
       "direction": "debit",
@@ -1565,9 +1558,9 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "groceries; interval=10; observations=18; conservative recent amount=2469.4",
+      "recurrence_reason": "groceries; interval=10; observations=18; mean historical budget, rounded up=2134.89",
       "evidence_ids": [],
-      "original_amount": "2469.4",
+      "original_amount": "2134.89",
       "original_currency": "ZAR",
       "conversion_rate": "1"
     },
@@ -1581,7 +1574,7 @@
       "essential": false,
       "protected": false,
       "flexibility": "stoppable",
-      "recurrence_reason": "family streaming plan; monthly=8; observations=5; conservative recent amount=1504.8",
+      "recurrence_reason": "family streaming plan; monthly=8; observations=5; latest contractual amount=1504.8",
       "evidence_ids": [],
       "original_amount": "1504.8",
       "original_currency": "ZAR",
@@ -1597,7 +1590,7 @@
       "essential": false,
       "protected": false,
       "flexibility": "fixed",
-      "recurrence_reason": "shared storage plan; monthly=11; observations=5; conservative recent amount=447.7",
+      "recurrence_reason": "shared storage plan; monthly=11; observations=5; latest contractual amount=447.7",
       "evidence_ids": [],
       "original_amount": "447.7",
       "original_currency": "ZAR",
@@ -1605,7 +1598,7 @@
     },
     {
       "day": "2026-04-11",
-      "amount": "-1401.99",
+      "amount": "-1255.89",
       "source_id": "event_1017",
       "inferred": true,
       "direction": "debit",
@@ -1613,15 +1606,15 @@
       "essential": false,
       "protected": false,
       "flexibility": "reducible",
-      "recurrence_reason": "monthly shopping spend; monthly=11; observations=5; conservative recent amount=1401.99",
+      "recurrence_reason": "monthly shopping spend; monthly=11; observations=5; mean historical budget, rounded up=1255.89",
       "evidence_ids": [],
-      "original_amount": "1401.99",
+      "original_amount": "1255.89",
       "original_currency": "ZAR",
       "conversion_rate": "1"
     },
     {
       "day": "2026-04-17",
-      "amount": "-2469.4",
+      "amount": "-2134.89",
       "source_id": "event_1036",
       "inferred": true,
       "direction": "debit",
@@ -1629,15 +1622,15 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "groceries; interval=10; observations=18; conservative recent amount=2469.4",
+      "recurrence_reason": "groceries; interval=10; observations=18; mean historical budget, rounded up=2134.89",
       "evidence_ids": [],
-      "original_amount": "2469.4",
+      "original_amount": "2134.89",
       "original_currency": "ZAR",
       "conversion_rate": "1"
     },
     {
       "day": "2026-04-17",
-      "amount": "-1684.28",
+      "amount": "-1436.23",
       "source_id": "event_1045",
       "inferred": true,
       "direction": "debit",
@@ -1645,15 +1638,15 @@
       "essential": true,
       "protected": false,
       "flexibility": "fixed",
-      "recurrence_reason": "transport; interval=21; observations=9; conservative recent amount=1684.28",
+      "recurrence_reason": "transport; interval=21; observations=9; mean historical budget, rounded up=1436.23",
       "evidence_ids": [],
-      "original_amount": "1684.28",
+      "original_amount": "1436.23",
       "original_currency": "ZAR",
       "conversion_rate": "1"
     },
     {
       "day": "2026-04-18",
-      "amount": "-2089.92",
+      "amount": "-2257.60",
       "source_id": "event_1054",
       "inferred": true,
       "direction": "debit",
@@ -1661,15 +1654,15 @@
       "essential": false,
       "protected": false,
       "flexibility": "reducible",
-      "recurrence_reason": "dining; interval=21; observations=9; conservative recent amount=2089.92",
+      "recurrence_reason": "dining; interval=21; observations=9; mean historical budget, rounded up=2257.60",
       "evidence_ids": [],
-      "original_amount": "2089.92",
+      "original_amount": "2257.60",
       "original_currency": "ZAR",
       "conversion_rate": "1"
     },
     {
       "day": "2026-04-27",
-      "amount": "-2469.4",
+      "amount": "-2134.89",
       "source_id": "event_1036",
       "inferred": true,
       "direction": "debit",
@@ -1677,9 +1670,9 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "groceries; interval=10; observations=18; conservative recent amount=2469.4",
+      "recurrence_reason": "groceries; interval=10; observations=18; mean historical budget, rounded up=2134.89",
       "evidence_ids": [],
-      "original_amount": "2469.4",
+      "original_amount": "2134.89",
       "original_currency": "ZAR",
       "conversion_rate": "1"
     },
@@ -1693,7 +1686,7 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "monthly rent; monthly=1; observations=6; conservative recent amount=11792",
+      "recurrence_reason": "monthly rent; monthly=1; observations=6; latest contractual amount=11792",
       "evidence_ids": [],
       "original_amount": "11792",
       "original_currency": "ZAR",
@@ -1701,7 +1694,7 @@
     },
     {
       "day": "2026-05-05",
-      "amount": "-3755.96",
+      "amount": "-3509.73",
       "source_id": "event_1014",
       "inferred": true,
       "direction": "debit",
@@ -1709,15 +1702,15 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "water and power payment; monthly=5; observations=5; conservative recent amount=3755.96",
+      "recurrence_reason": "water and power payment; monthly=5; observations=5; mean historical budget, rounded up=3509.73",
       "evidence_ids": [],
-      "original_amount": "3755.96",
+      "original_amount": "3509.73",
       "original_currency": "ZAR",
       "conversion_rate": "1"
     },
     {
       "day": "2026-05-07",
-      "amount": "-2469.4",
+      "amount": "-2134.89",
       "source_id": "event_1036",
       "inferred": true,
       "direction": "debit",
@@ -1725,9 +1718,9 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "groceries; interval=10; observations=18; conservative recent amount=2469.4",
+      "recurrence_reason": "groceries; interval=10; observations=18; mean historical budget, rounded up=2134.89",
       "evidence_ids": [],
-      "original_amount": "2469.4",
+      "original_amount": "2134.89",
       "original_currency": "ZAR",
       "conversion_rate": "1"
     },
@@ -1741,7 +1734,7 @@
       "essential": false,
       "protected": false,
       "flexibility": "stoppable",
-      "recurrence_reason": "family streaming plan; monthly=8; observations=5; conservative recent amount=1504.8",
+      "recurrence_reason": "family streaming plan; monthly=8; observations=5; latest contractual amount=1504.8",
       "evidence_ids": [],
       "original_amount": "1504.8",
       "original_currency": "ZAR",
@@ -1749,7 +1742,7 @@
     },
     {
       "day": "2026-05-08",
-      "amount": "-1684.28",
+      "amount": "-1436.23",
       "source_id": "event_1045",
       "inferred": true,
       "direction": "debit",
@@ -1757,15 +1750,15 @@
       "essential": true,
       "protected": false,
       "flexibility": "fixed",
-      "recurrence_reason": "transport; interval=21; observations=9; conservative recent amount=1684.28",
+      "recurrence_reason": "transport; interval=21; observations=9; mean historical budget, rounded up=1436.23",
       "evidence_ids": [],
-      "original_amount": "1684.28",
+      "original_amount": "1436.23",
       "original_currency": "ZAR",
       "conversion_rate": "1"
     },
     {
       "day": "2026-05-09",
-      "amount": "-2089.92",
+      "amount": "-2257.60",
       "source_id": "event_1054",
       "inferred": true,
       "direction": "debit",
@@ -1773,9 +1766,9 @@
       "essential": false,
       "protected": false,
       "flexibility": "reducible",
-      "recurrence_reason": "dining; interval=21; observations=9; conservative recent amount=2089.92",
+      "recurrence_reason": "dining; interval=21; observations=9; mean historical budget, rounded up=2257.60",
       "evidence_ids": [],
-      "original_amount": "2089.92",
+      "original_amount": "2257.60",
       "original_currency": "ZAR",
       "conversion_rate": "1"
     },
@@ -1789,7 +1782,7 @@
       "essential": false,
       "protected": false,
       "flexibility": "fixed",
-      "recurrence_reason": "shared storage plan; monthly=11; observations=5; conservative recent amount=447.7",
+      "recurrence_reason": "shared storage plan; monthly=11; observations=5; latest contractual amount=447.7",
       "evidence_ids": [],
       "original_amount": "447.7",
       "original_currency": "ZAR",
@@ -1797,7 +1790,7 @@
     },
     {
       "day": "2026-05-11",
-      "amount": "-1401.99",
+      "amount": "-1255.89",
       "source_id": "event_1017",
       "inferred": true,
       "direction": "debit",
@@ -1805,15 +1798,15 @@
       "essential": false,
       "protected": false,
       "flexibility": "reducible",
-      "recurrence_reason": "monthly shopping spend; monthly=11; observations=5; conservative recent amount=1401.99",
+      "recurrence_reason": "monthly shopping spend; monthly=11; observations=5; mean historical budget, rounded up=1255.89",
       "evidence_ids": [],
-      "original_amount": "1401.99",
+      "original_amount": "1255.89",
       "original_currency": "ZAR",
       "conversion_rate": "1"
     },
     {
       "day": "2026-05-17",
-      "amount": "-2469.4",
+      "amount": "-2134.89",
       "source_id": "event_1036",
       "inferred": true,
       "direction": "debit",
@@ -1821,15 +1814,15 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "groceries; interval=10; observations=18; conservative recent amount=2469.4",
+      "recurrence_reason": "groceries; interval=10; observations=18; mean historical budget, rounded up=2134.89",
       "evidence_ids": [],
-      "original_amount": "2469.4",
+      "original_amount": "2134.89",
       "original_currency": "ZAR",
       "conversion_rate": "1"
     },
     {
       "day": "2026-05-27",
-      "amount": "-2469.4",
+      "amount": "-2134.89",
       "source_id": "event_1036",
       "inferred": true,
       "direction": "debit",
@@ -1837,15 +1830,15 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "groceries; interval=10; observations=18; conservative recent amount=2469.4",
+      "recurrence_reason": "groceries; interval=10; observations=18; mean historical budget, rounded up=2134.89",
       "evidence_ids": [],
-      "original_amount": "2469.4",
+      "original_amount": "2134.89",
       "original_currency": "ZAR",
       "conversion_rate": "1"
     },
     {
       "day": "2026-05-29",
-      "amount": "-1684.28",
+      "amount": "-1436.23",
       "source_id": "event_1045",
       "inferred": true,
       "direction": "debit",
@@ -1853,15 +1846,15 @@
       "essential": true,
       "protected": false,
       "flexibility": "fixed",
-      "recurrence_reason": "transport; interval=21; observations=9; conservative recent amount=1684.28",
+      "recurrence_reason": "transport; interval=21; observations=9; mean historical budget, rounded up=1436.23",
       "evidence_ids": [],
-      "original_amount": "1684.28",
+      "original_amount": "1436.23",
       "original_currency": "ZAR",
       "conversion_rate": "1"
     },
     {
       "day": "2026-05-30",
-      "amount": "-2089.92",
+      "amount": "-2257.60",
       "source_id": "event_1054",
       "inferred": true,
       "direction": "debit",
@@ -1869,9 +1862,9 @@
       "essential": false,
       "protected": false,
       "flexibility": "reducible",
-      "recurrence_reason": "dining; interval=21; observations=9; conservative recent amount=2089.92",
+      "recurrence_reason": "dining; interval=21; observations=9; mean historical budget, rounded up=2257.60",
       "evidence_ids": [],
-      "original_amount": "2089.92",
+      "original_amount": "2257.60",
       "original_currency": "ZAR",
       "conversion_rate": "1"
     },
@@ -1885,7 +1878,7 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "monthly rent; monthly=1; observations=6; conservative recent amount=11792",
+      "recurrence_reason": "monthly rent; monthly=1; observations=6; latest contractual amount=11792",
       "evidence_ids": [],
       "original_amount": "11792",
       "original_currency": "ZAR",
@@ -1893,7 +1886,7 @@
     },
     {
       "day": "2026-06-05",
-      "amount": "-3755.96",
+      "amount": "-3509.73",
       "source_id": "event_1014",
       "inferred": true,
       "direction": "debit",
@@ -1901,15 +1894,15 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "water and power payment; monthly=5; observations=5; conservative recent amount=3755.96",
+      "recurrence_reason": "water and power payment; monthly=5; observations=5; mean historical budget, rounded up=3509.73",
       "evidence_ids": [],
-      "original_amount": "3755.96",
+      "original_amount": "3509.73",
       "original_currency": "ZAR",
       "conversion_rate": "1"
     },
     {
       "day": "2026-06-06",
-      "amount": "-2469.4",
+      "amount": "-2134.89",
       "source_id": "event_1036",
       "inferred": true,
       "direction": "debit",
@@ -1917,9 +1910,9 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "groceries; interval=10; observations=18; conservative recent amount=2469.4",
+      "recurrence_reason": "groceries; interval=10; observations=18; mean historical budget, rounded up=2134.89",
       "evidence_ids": [],
-      "original_amount": "2469.4",
+      "original_amount": "2134.89",
       "original_currency": "ZAR",
       "conversion_rate": "1"
     },
@@ -1933,7 +1926,7 @@
       "essential": false,
       "protected": false,
       "flexibility": "stoppable",
-      "recurrence_reason": "family streaming plan; monthly=8; observations=5; conservative recent amount=1504.8",
+      "recurrence_reason": "family streaming plan; monthly=8; observations=5; latest contractual amount=1504.8",
       "evidence_ids": [],
       "original_amount": "1504.8",
       "original_currency": "ZAR",
@@ -1949,7 +1942,7 @@
       "essential": false,
       "protected": false,
       "flexibility": "fixed",
-      "recurrence_reason": "shared storage plan; monthly=11; observations=5; conservative recent amount=447.7",
+      "recurrence_reason": "shared storage plan; monthly=11; observations=5; latest contractual amount=447.7",
       "evidence_ids": [],
       "original_amount": "447.7",
       "original_currency": "ZAR",
@@ -1957,7 +1950,7 @@
     },
     {
       "day": "2026-06-11",
-      "amount": "-1401.99",
+      "amount": "-1255.89",
       "source_id": "event_1017",
       "inferred": true,
       "direction": "debit",
@@ -1965,15 +1958,15 @@
       "essential": false,
       "protected": false,
       "flexibility": "reducible",
-      "recurrence_reason": "monthly shopping spend; monthly=11; observations=5; conservative recent amount=1401.99",
+      "recurrence_reason": "monthly shopping spend; monthly=11; observations=5; mean historical budget, rounded up=1255.89",
       "evidence_ids": [],
-      "original_amount": "1401.99",
+      "original_amount": "1255.89",
       "original_currency": "ZAR",
       "conversion_rate": "1"
     },
     {
       "day": "2026-06-16",
-      "amount": "-2469.4",
+      "amount": "-2134.89",
       "source_id": "event_1036",
       "inferred": true,
       "direction": "debit",
@@ -1981,15 +1974,15 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "groceries; interval=10; observations=18; conservative recent amount=2469.4",
+      "recurrence_reason": "groceries; interval=10; observations=18; mean historical budget, rounded up=2134.89",
       "evidence_ids": [],
-      "original_amount": "2469.4",
+      "original_amount": "2134.89",
       "original_currency": "ZAR",
       "conversion_rate": "1"
     },
     {
       "day": "2026-06-19",
-      "amount": "-1684.28",
+      "amount": "-1436.23",
       "source_id": "event_1045",
       "inferred": true,
       "direction": "debit",
@@ -1997,15 +1990,15 @@
       "essential": true,
       "protected": false,
       "flexibility": "fixed",
-      "recurrence_reason": "transport; interval=21; observations=9; conservative recent amount=1684.28",
+      "recurrence_reason": "transport; interval=21; observations=9; mean historical budget, rounded up=1436.23",
       "evidence_ids": [],
-      "original_amount": "1684.28",
+      "original_amount": "1436.23",
       "original_currency": "ZAR",
       "conversion_rate": "1"
     },
     {
       "day": "2026-06-20",
-      "amount": "-2089.92",
+      "amount": "-2257.60",
       "source_id": "event_1054",
       "inferred": true,
       "direction": "debit",
@@ -2013,15 +2006,15 @@
       "essential": false,
       "protected": false,
       "flexibility": "reducible",
-      "recurrence_reason": "dining; interval=21; observations=9; conservative recent amount=2089.92",
+      "recurrence_reason": "dining; interval=21; observations=9; mean historical budget, rounded up=2257.60",
       "evidence_ids": [],
-      "original_amount": "2089.92",
+      "original_amount": "2257.60",
       "original_currency": "ZAR",
       "conversion_rate": "1"
     },
     {
       "day": "2026-06-26",
-      "amount": "-2469.4",
+      "amount": "-2134.89",
       "source_id": "event_1036",
       "inferred": true,
       "direction": "debit",
@@ -2029,9 +2022,9 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "groceries; interval=10; observations=18; conservative recent amount=2469.4",
+      "recurrence_reason": "groceries; interval=10; observations=18; mean historical budget, rounded up=2134.89",
       "evidence_ids": [],
-      "original_amount": "2469.4",
+      "original_amount": "2134.89",
       "original_currency": "ZAR",
       "conversion_rate": "1"
     },
@@ -2045,7 +2038,7 @@
       "essential": true,
       "protected": true,
       "flexibility": "fixed",
-      "recurrence_reason": "monthly rent; monthly=1; observations=6; conservative recent amount=11792",
+      "recurrence_reason": "monthly rent; monthly=1; observations=6; latest contractual amount=11792",
       "evidence_ids": [],
       "original_amount": "11792",
       "original_currency": "ZAR",
@@ -2057,1099 +2050,1099 @@
       "day": "2026-04-05",
       "opening_balance": "193089.89",
       "credits": "0",
-      "essential_debits": "3755.96",
+      "essential_debits": "3509.73",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "189333.93",
+      "closing_balance": "189580.16",
       "minimum_required": "43200",
-      "surplus": "146133.93",
-      "lowest_balance": "189333.93"
+      "surplus": "146380.16",
+      "lowest_balance": "189580.16"
     },
     {
       "day": "2026-04-06",
-      "opening_balance": "189333.93",
+      "opening_balance": "189580.16",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "189333.93",
+      "closing_balance": "189580.16",
       "minimum_required": "43200",
-      "surplus": "146133.93",
-      "lowest_balance": "189333.93"
+      "surplus": "146380.16",
+      "lowest_balance": "189580.16"
     },
     {
       "day": "2026-04-07",
-      "opening_balance": "189333.93",
+      "opening_balance": "189580.16",
       "credits": "0",
-      "essential_debits": "2469.4",
+      "essential_debits": "2134.89",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "186864.53",
+      "closing_balance": "187445.27",
       "minimum_required": "43200",
-      "surplus": "143664.53",
-      "lowest_balance": "186864.53"
+      "surplus": "144245.27",
+      "lowest_balance": "187445.27"
     },
     {
       "day": "2026-04-08",
-      "opening_balance": "186864.53",
+      "opening_balance": "187445.27",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "1504.8",
       "request_payments": "0",
-      "closing_balance": "185359.73",
+      "closing_balance": "185940.47",
       "minimum_required": "43200",
-      "surplus": "142159.73",
-      "lowest_balance": "185359.73"
+      "surplus": "142740.47",
+      "lowest_balance": "185940.47"
     },
     {
       "day": "2026-04-09",
-      "opening_balance": "185359.73",
+      "opening_balance": "185940.47",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "185359.73",
+      "closing_balance": "185940.47",
       "minimum_required": "43200",
-      "surplus": "142159.73",
-      "lowest_balance": "185359.73"
+      "surplus": "142740.47",
+      "lowest_balance": "185940.47"
     },
     {
       "day": "2026-04-10",
-      "opening_balance": "185359.73",
+      "opening_balance": "185940.47",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "185359.73",
+      "closing_balance": "185940.47",
       "minimum_required": "43200",
-      "surplus": "142159.73",
-      "lowest_balance": "185359.73"
+      "surplus": "142740.47",
+      "lowest_balance": "185940.47"
     },
     {
       "day": "2026-04-11",
-      "opening_balance": "185359.73",
+      "opening_balance": "185940.47",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "1849.69",
+      "other_debits": "1703.59",
       "request_payments": "0",
-      "closing_balance": "183510.04",
+      "closing_balance": "184236.88",
       "minimum_required": "43200",
-      "surplus": "140310.04",
-      "lowest_balance": "183510.04"
+      "surplus": "141036.88",
+      "lowest_balance": "184236.88"
     },
     {
       "day": "2026-04-12",
-      "opening_balance": "183510.04",
+      "opening_balance": "184236.88",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "183510.04",
+      "closing_balance": "184236.88",
       "minimum_required": "43200",
-      "surplus": "140310.04",
-      "lowest_balance": "183510.04"
+      "surplus": "141036.88",
+      "lowest_balance": "184236.88"
     },
     {
       "day": "2026-04-13",
-      "opening_balance": "183510.04",
+      "opening_balance": "184236.88",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "183510.04",
+      "closing_balance": "184236.88",
       "minimum_required": "43200",
-      "surplus": "140310.04",
-      "lowest_balance": "183510.04"
+      "surplus": "141036.88",
+      "lowest_balance": "184236.88"
     },
     {
       "day": "2026-04-14",
-      "opening_balance": "183510.04",
+      "opening_balance": "184236.88",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "183510.04",
+      "closing_balance": "184236.88",
       "minimum_required": "43200",
-      "surplus": "140310.04",
-      "lowest_balance": "183510.04"
+      "surplus": "141036.88",
+      "lowest_balance": "184236.88"
     },
     {
       "day": "2026-04-15",
-      "opening_balance": "183510.04",
+      "opening_balance": "184236.88",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "183510.04",
+      "closing_balance": "184236.88",
       "minimum_required": "43200",
-      "surplus": "140310.04",
-      "lowest_balance": "183510.04"
+      "surplus": "141036.88",
+      "lowest_balance": "184236.88"
     },
     {
       "day": "2026-04-16",
-      "opening_balance": "183510.04",
+      "opening_balance": "184236.88",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "183510.04",
+      "closing_balance": "184236.88",
       "minimum_required": "43200",
-      "surplus": "140310.04",
-      "lowest_balance": "183510.04"
+      "surplus": "141036.88",
+      "lowest_balance": "184236.88"
     },
     {
       "day": "2026-04-17",
-      "opening_balance": "183510.04",
+      "opening_balance": "184236.88",
       "credits": "0",
-      "essential_debits": "4153.68",
+      "essential_debits": "3571.12",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "179356.36",
+      "closing_balance": "180665.76",
       "minimum_required": "43200",
-      "surplus": "136156.36",
-      "lowest_balance": "179356.36"
+      "surplus": "137465.76",
+      "lowest_balance": "180665.76"
     },
     {
       "day": "2026-04-18",
-      "opening_balance": "179356.36",
+      "opening_balance": "180665.76",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "2089.92",
+      "other_debits": "2257.60",
       "request_payments": "0",
-      "closing_balance": "177266.44",
+      "closing_balance": "178408.16",
       "minimum_required": "43200",
-      "surplus": "134066.44",
-      "lowest_balance": "177266.44"
+      "surplus": "135208.16",
+      "lowest_balance": "178408.16"
     },
     {
       "day": "2026-04-19",
-      "opening_balance": "177266.44",
+      "opening_balance": "178408.16",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "177266.44",
+      "closing_balance": "178408.16",
       "minimum_required": "43200",
-      "surplus": "134066.44",
-      "lowest_balance": "177266.44"
+      "surplus": "135208.16",
+      "lowest_balance": "178408.16"
     },
     {
       "day": "2026-04-20",
-      "opening_balance": "177266.44",
+      "opening_balance": "178408.16",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "177266.44",
+      "closing_balance": "178408.16",
       "minimum_required": "43200",
-      "surplus": "134066.44",
-      "lowest_balance": "177266.44"
+      "surplus": "135208.16",
+      "lowest_balance": "178408.16"
     },
     {
       "day": "2026-04-21",
-      "opening_balance": "177266.44",
+      "opening_balance": "178408.16",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "177266.44",
+      "closing_balance": "178408.16",
       "minimum_required": "43200",
-      "surplus": "134066.44",
-      "lowest_balance": "177266.44"
+      "surplus": "135208.16",
+      "lowest_balance": "178408.16"
     },
     {
       "day": "2026-04-22",
-      "opening_balance": "177266.44",
+      "opening_balance": "178408.16",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "177266.44",
+      "closing_balance": "178408.16",
       "minimum_required": "43200",
-      "surplus": "134066.44",
-      "lowest_balance": "177266.44"
+      "surplus": "135208.16",
+      "lowest_balance": "178408.16"
     },
     {
       "day": "2026-04-23",
-      "opening_balance": "177266.44",
+      "opening_balance": "178408.16",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "177266.44",
+      "closing_balance": "178408.16",
       "minimum_required": "43200",
-      "surplus": "134066.44",
-      "lowest_balance": "177266.44"
+      "surplus": "135208.16",
+      "lowest_balance": "178408.16"
     },
     {
       "day": "2026-04-24",
-      "opening_balance": "177266.44",
+      "opening_balance": "178408.16",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "177266.44",
+      "closing_balance": "178408.16",
       "minimum_required": "43200",
-      "surplus": "134066.44",
-      "lowest_balance": "177266.44"
+      "surplus": "135208.16",
+      "lowest_balance": "178408.16"
     },
     {
       "day": "2026-04-25",
-      "opening_balance": "177266.44",
+      "opening_balance": "178408.16",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "177266.44",
+      "closing_balance": "178408.16",
       "minimum_required": "43200",
-      "surplus": "134066.44",
-      "lowest_balance": "177266.44"
+      "surplus": "135208.16",
+      "lowest_balance": "178408.16"
     },
     {
       "day": "2026-04-26",
-      "opening_balance": "177266.44",
+      "opening_balance": "178408.16",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "177266.44",
+      "closing_balance": "178408.16",
       "minimum_required": "43200",
-      "surplus": "134066.44",
-      "lowest_balance": "177266.44"
+      "surplus": "135208.16",
+      "lowest_balance": "178408.16"
     },
     {
       "day": "2026-04-27",
-      "opening_balance": "177266.44",
+      "opening_balance": "178408.16",
       "credits": "0",
-      "essential_debits": "2469.4",
+      "essential_debits": "2134.89",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "174797.04",
+      "closing_balance": "176273.27",
       "minimum_required": "43200",
-      "surplus": "131597.04",
-      "lowest_balance": "174797.04"
+      "surplus": "133073.27",
+      "lowest_balance": "176273.27"
     },
     {
       "day": "2026-04-28",
-      "opening_balance": "174797.04",
+      "opening_balance": "176273.27",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "174797.04",
+      "closing_balance": "176273.27",
       "minimum_required": "43200",
-      "surplus": "131597.04",
-      "lowest_balance": "174797.04"
+      "surplus": "133073.27",
+      "lowest_balance": "176273.27"
     },
     {
       "day": "2026-04-29",
-      "opening_balance": "174797.04",
+      "opening_balance": "176273.27",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "174797.04",
+      "closing_balance": "176273.27",
       "minimum_required": "43200",
-      "surplus": "131597.04",
-      "lowest_balance": "174797.04"
+      "surplus": "133073.27",
+      "lowest_balance": "176273.27"
     },
     {
       "day": "2026-04-30",
-      "opening_balance": "174797.04",
+      "opening_balance": "176273.27",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "174797.04",
+      "closing_balance": "176273.27",
       "minimum_required": "43200",
-      "surplus": "131597.04",
-      "lowest_balance": "174797.04"
+      "surplus": "133073.27",
+      "lowest_balance": "176273.27"
     },
     {
       "day": "2026-05-01",
-      "opening_balance": "174797.04",
+      "opening_balance": "176273.27",
       "credits": "0",
       "essential_debits": "11792",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "163005.04",
+      "closing_balance": "164481.27",
       "minimum_required": "43200",
-      "surplus": "119805.04",
-      "lowest_balance": "163005.04"
+      "surplus": "121281.27",
+      "lowest_balance": "164481.27"
     },
     {
       "day": "2026-05-02",
-      "opening_balance": "163005.04",
+      "opening_balance": "164481.27",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "163005.04",
+      "closing_balance": "164481.27",
       "minimum_required": "43200",
-      "surplus": "119805.04",
-      "lowest_balance": "163005.04"
+      "surplus": "121281.27",
+      "lowest_balance": "164481.27"
     },
     {
       "day": "2026-05-03",
-      "opening_balance": "163005.04",
+      "opening_balance": "164481.27",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "163005.04",
+      "closing_balance": "164481.27",
       "minimum_required": "43200",
-      "surplus": "119805.04",
-      "lowest_balance": "163005.04"
+      "surplus": "121281.27",
+      "lowest_balance": "164481.27"
     },
     {
       "day": "2026-05-04",
-      "opening_balance": "163005.04",
+      "opening_balance": "164481.27",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "163005.04",
+      "closing_balance": "164481.27",
       "minimum_required": "43200",
-      "surplus": "119805.04",
-      "lowest_balance": "163005.04"
+      "surplus": "121281.27",
+      "lowest_balance": "164481.27"
     },
     {
       "day": "2026-05-05",
-      "opening_balance": "163005.04",
+      "opening_balance": "164481.27",
       "credits": "0",
-      "essential_debits": "3755.96",
+      "essential_debits": "3509.73",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "159249.08",
+      "closing_balance": "160971.54",
       "minimum_required": "43200",
-      "surplus": "116049.08",
-      "lowest_balance": "159249.08"
+      "surplus": "117771.54",
+      "lowest_balance": "160971.54"
     },
     {
       "day": "2026-05-06",
-      "opening_balance": "159249.08",
+      "opening_balance": "160971.54",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "159249.08",
+      "closing_balance": "160971.54",
       "minimum_required": "43200",
-      "surplus": "116049.08",
-      "lowest_balance": "159249.08"
+      "surplus": "117771.54",
+      "lowest_balance": "160971.54"
     },
     {
       "day": "2026-05-07",
-      "opening_balance": "159249.08",
+      "opening_balance": "160971.54",
       "credits": "0",
-      "essential_debits": "2469.4",
+      "essential_debits": "2134.89",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "156779.68",
+      "closing_balance": "158836.65",
       "minimum_required": "43200",
-      "surplus": "113579.68",
-      "lowest_balance": "156779.68"
+      "surplus": "115636.65",
+      "lowest_balance": "158836.65"
     },
     {
       "day": "2026-05-08",
-      "opening_balance": "156779.68",
+      "opening_balance": "158836.65",
       "credits": "0",
-      "essential_debits": "1684.28",
+      "essential_debits": "1436.23",
       "other_debits": "1504.8",
       "request_payments": "0",
-      "closing_balance": "153590.60",
+      "closing_balance": "155895.62",
       "minimum_required": "43200",
-      "surplus": "110390.60",
-      "lowest_balance": "153590.60"
+      "surplus": "112695.62",
+      "lowest_balance": "155895.62"
     },
     {
       "day": "2026-05-09",
-      "opening_balance": "153590.60",
+      "opening_balance": "155895.62",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "2089.92",
+      "other_debits": "2257.60",
       "request_payments": "0",
-      "closing_balance": "151500.68",
+      "closing_balance": "153638.02",
       "minimum_required": "43200",
-      "surplus": "108300.68",
-      "lowest_balance": "151500.68"
+      "surplus": "110438.02",
+      "lowest_balance": "153638.02"
     },
     {
       "day": "2026-05-10",
-      "opening_balance": "151500.68",
+      "opening_balance": "153638.02",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "151500.68",
+      "closing_balance": "153638.02",
       "minimum_required": "43200",
-      "surplus": "108300.68",
-      "lowest_balance": "151500.68"
+      "surplus": "110438.02",
+      "lowest_balance": "153638.02"
     },
     {
       "day": "2026-05-11",
-      "opening_balance": "151500.68",
+      "opening_balance": "153638.02",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "1849.69",
+      "other_debits": "1703.59",
       "request_payments": "0",
-      "closing_balance": "149650.99",
+      "closing_balance": "151934.43",
       "minimum_required": "43200",
-      "surplus": "106450.99",
-      "lowest_balance": "149650.99"
+      "surplus": "108734.43",
+      "lowest_balance": "151934.43"
     },
     {
       "day": "2026-05-12",
-      "opening_balance": "149650.99",
+      "opening_balance": "151934.43",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "149650.99",
+      "closing_balance": "151934.43",
       "minimum_required": "43200",
-      "surplus": "106450.99",
-      "lowest_balance": "149650.99"
+      "surplus": "108734.43",
+      "lowest_balance": "151934.43"
     },
     {
       "day": "2026-05-13",
-      "opening_balance": "149650.99",
+      "opening_balance": "151934.43",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "149650.99",
+      "closing_balance": "151934.43",
       "minimum_required": "43200",
-      "surplus": "106450.99",
-      "lowest_balance": "149650.99"
+      "surplus": "108734.43",
+      "lowest_balance": "151934.43"
     },
     {
       "day": "2026-05-14",
-      "opening_balance": "149650.99",
+      "opening_balance": "151934.43",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "149650.99",
+      "closing_balance": "151934.43",
       "minimum_required": "43200",
-      "surplus": "106450.99",
-      "lowest_balance": "149650.99"
+      "surplus": "108734.43",
+      "lowest_balance": "151934.43"
     },
     {
       "day": "2026-05-15",
-      "opening_balance": "149650.99",
+      "opening_balance": "151934.43",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "149650.99",
+      "closing_balance": "151934.43",
       "minimum_required": "43200",
-      "surplus": "106450.99",
-      "lowest_balance": "149650.99"
+      "surplus": "108734.43",
+      "lowest_balance": "151934.43"
     },
     {
       "day": "2026-05-16",
-      "opening_balance": "149650.99",
+      "opening_balance": "151934.43",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "149650.99",
+      "closing_balance": "151934.43",
       "minimum_required": "43200",
-      "surplus": "106450.99",
-      "lowest_balance": "149650.99"
+      "surplus": "108734.43",
+      "lowest_balance": "151934.43"
     },
     {
       "day": "2026-05-17",
-      "opening_balance": "149650.99",
+      "opening_balance": "151934.43",
       "credits": "0",
-      "essential_debits": "2469.4",
+      "essential_debits": "2134.89",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "147181.59",
+      "closing_balance": "149799.54",
       "minimum_required": "43200",
-      "surplus": "103981.59",
-      "lowest_balance": "147181.59"
+      "surplus": "106599.54",
+      "lowest_balance": "149799.54"
     },
     {
       "day": "2026-05-18",
-      "opening_balance": "147181.59",
+      "opening_balance": "149799.54",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "147181.59",
+      "closing_balance": "149799.54",
       "minimum_required": "43200",
-      "surplus": "103981.59",
-      "lowest_balance": "147181.59"
+      "surplus": "106599.54",
+      "lowest_balance": "149799.54"
     },
     {
       "day": "2026-05-19",
-      "opening_balance": "147181.59",
+      "opening_balance": "149799.54",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "147181.59",
+      "closing_balance": "149799.54",
       "minimum_required": "43200",
-      "surplus": "103981.59",
-      "lowest_balance": "147181.59"
+      "surplus": "106599.54",
+      "lowest_balance": "149799.54"
     },
     {
       "day": "2026-05-20",
-      "opening_balance": "147181.59",
+      "opening_balance": "149799.54",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "147181.59",
+      "closing_balance": "149799.54",
       "minimum_required": "43200",
-      "surplus": "103981.59",
-      "lowest_balance": "147181.59"
+      "surplus": "106599.54",
+      "lowest_balance": "149799.54"
     },
     {
       "day": "2026-05-21",
-      "opening_balance": "147181.59",
+      "opening_balance": "149799.54",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "147181.59",
+      "closing_balance": "149799.54",
       "minimum_required": "43200",
-      "surplus": "103981.59",
-      "lowest_balance": "147181.59"
+      "surplus": "106599.54",
+      "lowest_balance": "149799.54"
     },
     {
       "day": "2026-05-22",
-      "opening_balance": "147181.59",
+      "opening_balance": "149799.54",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "147181.59",
+      "closing_balance": "149799.54",
       "minimum_required": "43200",
-      "surplus": "103981.59",
-      "lowest_balance": "147181.59"
+      "surplus": "106599.54",
+      "lowest_balance": "149799.54"
     },
     {
       "day": "2026-05-23",
-      "opening_balance": "147181.59",
+      "opening_balance": "149799.54",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "147181.59",
+      "closing_balance": "149799.54",
       "minimum_required": "43200",
-      "surplus": "103981.59",
-      "lowest_balance": "147181.59"
+      "surplus": "106599.54",
+      "lowest_balance": "149799.54"
     },
     {
       "day": "2026-05-24",
-      "opening_balance": "147181.59",
+      "opening_balance": "149799.54",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "147181.59",
+      "closing_balance": "149799.54",
       "minimum_required": "43200",
-      "surplus": "103981.59",
-      "lowest_balance": "147181.59"
+      "surplus": "106599.54",
+      "lowest_balance": "149799.54"
     },
     {
       "day": "2026-05-25",
-      "opening_balance": "147181.59",
+      "opening_balance": "149799.54",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "147181.59",
+      "closing_balance": "149799.54",
       "minimum_required": "43200",
-      "surplus": "103981.59",
-      "lowest_balance": "147181.59"
+      "surplus": "106599.54",
+      "lowest_balance": "149799.54"
     },
     {
       "day": "2026-05-26",
-      "opening_balance": "147181.59",
+      "opening_balance": "149799.54",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "147181.59",
+      "closing_balance": "149799.54",
       "minimum_required": "43200",
-      "surplus": "103981.59",
-      "lowest_balance": "147181.59"
+      "surplus": "106599.54",
+      "lowest_balance": "149799.54"
     },
     {
       "day": "2026-05-27",
-      "opening_balance": "147181.59",
+      "opening_balance": "149799.54",
       "credits": "0",
-      "essential_debits": "2469.4",
+      "essential_debits": "2134.89",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "144712.19",
+      "closing_balance": "147664.65",
       "minimum_required": "43200",
-      "surplus": "101512.19",
-      "lowest_balance": "144712.19"
+      "surplus": "104464.65",
+      "lowest_balance": "147664.65"
     },
     {
       "day": "2026-05-28",
-      "opening_balance": "144712.19",
+      "opening_balance": "147664.65",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "144712.19",
+      "closing_balance": "147664.65",
       "minimum_required": "43200",
-      "surplus": "101512.19",
-      "lowest_balance": "144712.19"
+      "surplus": "104464.65",
+      "lowest_balance": "147664.65"
     },
     {
       "day": "2026-05-29",
-      "opening_balance": "144712.19",
+      "opening_balance": "147664.65",
       "credits": "0",
-      "essential_debits": "1684.28",
+      "essential_debits": "1436.23",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "143027.91",
+      "closing_balance": "146228.42",
       "minimum_required": "43200",
-      "surplus": "99827.91",
-      "lowest_balance": "143027.91"
+      "surplus": "103028.42",
+      "lowest_balance": "146228.42"
     },
     {
       "day": "2026-05-30",
-      "opening_balance": "143027.91",
+      "opening_balance": "146228.42",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "2089.92",
+      "other_debits": "2257.60",
       "request_payments": "0",
-      "closing_balance": "140937.99",
+      "closing_balance": "143970.82",
       "minimum_required": "43200",
-      "surplus": "97737.99",
-      "lowest_balance": "140937.99"
+      "surplus": "100770.82",
+      "lowest_balance": "143970.82"
     },
     {
       "day": "2026-05-31",
-      "opening_balance": "140937.99",
+      "opening_balance": "143970.82",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "140937.99",
+      "closing_balance": "143970.82",
       "minimum_required": "43200",
-      "surplus": "97737.99",
-      "lowest_balance": "140937.99"
+      "surplus": "100770.82",
+      "lowest_balance": "143970.82"
     },
     {
       "day": "2026-06-01",
-      "opening_balance": "140937.99",
+      "opening_balance": "143970.82",
       "credits": "0",
       "essential_debits": "11792",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "129145.99",
+      "closing_balance": "132178.82",
       "minimum_required": "43200",
-      "surplus": "85945.99",
-      "lowest_balance": "129145.99"
+      "surplus": "88978.82",
+      "lowest_balance": "132178.82"
     },
     {
       "day": "2026-06-02",
-      "opening_balance": "129145.99",
+      "opening_balance": "132178.82",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "129145.99",
+      "closing_balance": "132178.82",
       "minimum_required": "43200",
-      "surplus": "85945.99",
-      "lowest_balance": "129145.99"
+      "surplus": "88978.82",
+      "lowest_balance": "132178.82"
     },
     {
       "day": "2026-06-03",
-      "opening_balance": "129145.99",
+      "opening_balance": "132178.82",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "129145.99",
+      "closing_balance": "132178.82",
       "minimum_required": "43200",
-      "surplus": "85945.99",
-      "lowest_balance": "129145.99"
+      "surplus": "88978.82",
+      "lowest_balance": "132178.82"
     },
     {
       "day": "2026-06-04",
-      "opening_balance": "129145.99",
+      "opening_balance": "132178.82",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "129145.99",
+      "closing_balance": "132178.82",
       "minimum_required": "43200",
-      "surplus": "85945.99",
-      "lowest_balance": "129145.99"
+      "surplus": "88978.82",
+      "lowest_balance": "132178.82"
     },
     {
       "day": "2026-06-05",
-      "opening_balance": "129145.99",
+      "opening_balance": "132178.82",
       "credits": "0",
-      "essential_debits": "3755.96",
+      "essential_debits": "3509.73",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "125390.03",
+      "closing_balance": "128669.09",
       "minimum_required": "43200",
-      "surplus": "82190.03",
-      "lowest_balance": "125390.03"
+      "surplus": "85469.09",
+      "lowest_balance": "128669.09"
     },
     {
       "day": "2026-06-06",
-      "opening_balance": "125390.03",
+      "opening_balance": "128669.09",
       "credits": "0",
-      "essential_debits": "2469.4",
+      "essential_debits": "2134.89",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "122920.63",
+      "closing_balance": "126534.20",
       "minimum_required": "43200",
-      "surplus": "79720.63",
-      "lowest_balance": "122920.63"
+      "surplus": "83334.20",
+      "lowest_balance": "126534.20"
     },
     {
       "day": "2026-06-07",
-      "opening_balance": "122920.63",
+      "opening_balance": "126534.20",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "122920.63",
+      "closing_balance": "126534.20",
       "minimum_required": "43200",
-      "surplus": "79720.63",
-      "lowest_balance": "122920.63"
+      "surplus": "83334.20",
+      "lowest_balance": "126534.20"
     },
     {
       "day": "2026-06-08",
-      "opening_balance": "122920.63",
+      "opening_balance": "126534.20",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "1504.8",
       "request_payments": "0",
-      "closing_balance": "121415.83",
+      "closing_balance": "125029.40",
       "minimum_required": "43200",
-      "surplus": "78215.83",
-      "lowest_balance": "121415.83"
+      "surplus": "81829.40",
+      "lowest_balance": "125029.40"
     },
     {
       "day": "2026-06-09",
-      "opening_balance": "121415.83",
+      "opening_balance": "125029.40",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "121415.83",
+      "closing_balance": "125029.40",
       "minimum_required": "43200",
-      "surplus": "78215.83",
-      "lowest_balance": "121415.83"
+      "surplus": "81829.40",
+      "lowest_balance": "125029.40"
     },
     {
       "day": "2026-06-10",
-      "opening_balance": "121415.83",
+      "opening_balance": "125029.40",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "121415.83",
+      "closing_balance": "125029.40",
       "minimum_required": "43200",
-      "surplus": "78215.83",
-      "lowest_balance": "121415.83"
+      "surplus": "81829.40",
+      "lowest_balance": "125029.40"
     },
     {
       "day": "2026-06-11",
-      "opening_balance": "121415.83",
+      "opening_balance": "125029.40",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "1849.69",
+      "other_debits": "1703.59",
       "request_payments": "0",
-      "closing_balance": "119566.14",
+      "closing_balance": "123325.81",
       "minimum_required": "43200",
-      "surplus": "76366.14",
-      "lowest_balance": "119566.14"
+      "surplus": "80125.81",
+      "lowest_balance": "123325.81"
     },
     {
       "day": "2026-06-12",
-      "opening_balance": "119566.14",
+      "opening_balance": "123325.81",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "119566.14",
+      "closing_balance": "123325.81",
       "minimum_required": "43200",
-      "surplus": "76366.14",
-      "lowest_balance": "119566.14"
+      "surplus": "80125.81",
+      "lowest_balance": "123325.81"
     },
     {
       "day": "2026-06-13",
-      "opening_balance": "119566.14",
+      "opening_balance": "123325.81",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "119566.14",
+      "closing_balance": "123325.81",
       "minimum_required": "43200",
-      "surplus": "76366.14",
-      "lowest_balance": "119566.14"
+      "surplus": "80125.81",
+      "lowest_balance": "123325.81"
     },
     {
       "day": "2026-06-14",
-      "opening_balance": "119566.14",
+      "opening_balance": "123325.81",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "119566.14",
+      "closing_balance": "123325.81",
       "minimum_required": "43200",
-      "surplus": "76366.14",
-      "lowest_balance": "119566.14"
+      "surplus": "80125.81",
+      "lowest_balance": "123325.81"
     },
     {
       "day": "2026-06-15",
-      "opening_balance": "119566.14",
+      "opening_balance": "123325.81",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "119566.14",
+      "closing_balance": "123325.81",
       "minimum_required": "43200",
-      "surplus": "76366.14",
-      "lowest_balance": "119566.14"
+      "surplus": "80125.81",
+      "lowest_balance": "123325.81"
     },
     {
       "day": "2026-06-16",
-      "opening_balance": "119566.14",
+      "opening_balance": "123325.81",
       "credits": "0",
-      "essential_debits": "2469.4",
+      "essential_debits": "2134.89",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "117096.74",
+      "closing_balance": "121190.92",
       "minimum_required": "43200",
-      "surplus": "73896.74",
-      "lowest_balance": "117096.74"
+      "surplus": "77990.92",
+      "lowest_balance": "121190.92"
     },
     {
       "day": "2026-06-17",
-      "opening_balance": "117096.74",
+      "opening_balance": "121190.92",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "117096.74",
+      "closing_balance": "121190.92",
       "minimum_required": "43200",
-      "surplus": "73896.74",
-      "lowest_balance": "117096.74"
+      "surplus": "77990.92",
+      "lowest_balance": "121190.92"
     },
     {
       "day": "2026-06-18",
-      "opening_balance": "117096.74",
+      "opening_balance": "121190.92",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "117096.74",
+      "closing_balance": "121190.92",
       "minimum_required": "43200",
-      "surplus": "73896.74",
-      "lowest_balance": "117096.74"
+      "surplus": "77990.92",
+      "lowest_balance": "121190.92"
     },
     {
       "day": "2026-06-19",
-      "opening_balance": "117096.74",
+      "opening_balance": "121190.92",
       "credits": "0",
-      "essential_debits": "1684.28",
+      "essential_debits": "1436.23",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "115412.46",
+      "closing_balance": "119754.69",
       "minimum_required": "43200",
-      "surplus": "72212.46",
-      "lowest_balance": "115412.46"
+      "surplus": "76554.69",
+      "lowest_balance": "119754.69"
     },
     {
       "day": "2026-06-20",
-      "opening_balance": "115412.46",
+      "opening_balance": "119754.69",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "2089.92",
+      "other_debits": "2257.60",
       "request_payments": "0",
-      "closing_balance": "113322.54",
+      "closing_balance": "117497.09",
       "minimum_required": "43200",
-      "surplus": "70122.54",
-      "lowest_balance": "113322.54"
+      "surplus": "74297.09",
+      "lowest_balance": "117497.09"
     },
     {
       "day": "2026-06-21",
-      "opening_balance": "113322.54",
+      "opening_balance": "117497.09",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "113322.54",
+      "closing_balance": "117497.09",
       "minimum_required": "43200",
-      "surplus": "70122.54",
-      "lowest_balance": "113322.54"
+      "surplus": "74297.09",
+      "lowest_balance": "117497.09"
     },
     {
       "day": "2026-06-22",
-      "opening_balance": "113322.54",
+      "opening_balance": "117497.09",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "113322.54",
+      "closing_balance": "117497.09",
       "minimum_required": "43200",
-      "surplus": "70122.54",
-      "lowest_balance": "113322.54"
+      "surplus": "74297.09",
+      "lowest_balance": "117497.09"
     },
     {
       "day": "2026-06-23",
-      "opening_balance": "113322.54",
+      "opening_balance": "117497.09",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "113322.54",
+      "closing_balance": "117497.09",
       "minimum_required": "43200",
-      "surplus": "70122.54",
-      "lowest_balance": "113322.54"
+      "surplus": "74297.09",
+      "lowest_balance": "117497.09"
     },
     {
       "day": "2026-06-24",
-      "opening_balance": "113322.54",
+      "opening_balance": "117497.09",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "113322.54",
+      "closing_balance": "117497.09",
       "minimum_required": "43200",
-      "surplus": "70122.54",
-      "lowest_balance": "113322.54"
+      "surplus": "74297.09",
+      "lowest_balance": "117497.09"
     },
     {
       "day": "2026-06-25",
-      "opening_balance": "113322.54",
+      "opening_balance": "117497.09",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "113322.54",
+      "closing_balance": "117497.09",
       "minimum_required": "43200",
-      "surplus": "70122.54",
-      "lowest_balance": "113322.54"
+      "surplus": "74297.09",
+      "lowest_balance": "117497.09"
     },
     {
       "day": "2026-06-26",
-      "opening_balance": "113322.54",
+      "opening_balance": "117497.09",
       "credits": "0",
-      "essential_debits": "2469.4",
+      "essential_debits": "2134.89",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "110853.14",
+      "closing_balance": "115362.20",
       "minimum_required": "43200",
-      "surplus": "67653.14",
-      "lowest_balance": "110853.14"
+      "surplus": "72162.20",
+      "lowest_balance": "115362.20"
     },
     {
       "day": "2026-06-27",
-      "opening_balance": "110853.14",
+      "opening_balance": "115362.20",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "110853.14",
+      "closing_balance": "115362.20",
       "minimum_required": "43200",
-      "surplus": "67653.14",
-      "lowest_balance": "110853.14"
+      "surplus": "72162.20",
+      "lowest_balance": "115362.20"
     },
     {
       "day": "2026-06-28",
-      "opening_balance": "110853.14",
+      "opening_balance": "115362.20",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "110853.14",
+      "closing_balance": "115362.20",
       "minimum_required": "43200",
-      "surplus": "67653.14",
-      "lowest_balance": "110853.14"
+      "surplus": "72162.20",
+      "lowest_balance": "115362.20"
     },
     {
       "day": "2026-06-29",
-      "opening_balance": "110853.14",
+      "opening_balance": "115362.20",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "110853.14",
+      "closing_balance": "115362.20",
       "minimum_required": "43200",
-      "surplus": "67653.14",
-      "lowest_balance": "110853.14"
+      "surplus": "72162.20",
+      "lowest_balance": "115362.20"
     },
     {
       "day": "2026-06-30",
-      "opening_balance": "110853.14",
+      "opening_balance": "115362.20",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "110853.14",
+      "closing_balance": "115362.20",
       "minimum_required": "43200",
-      "surplus": "67653.14",
-      "lowest_balance": "110853.14"
+      "surplus": "72162.20",
+      "lowest_balance": "115362.20"
     },
     {
       "day": "2026-07-01",
-      "opening_balance": "110853.14",
+      "opening_balance": "115362.20",
       "credits": "0",
       "essential_debits": "11792",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "99061.14",
+      "closing_balance": "103570.20",
       "minimum_required": "43200",
-      "surplus": "55861.14",
-      "lowest_balance": "99061.14"
+      "surplus": "60370.20",
+      "lowest_balance": "103570.20"
     },
     {
       "day": "2026-07-02",
-      "opening_balance": "99061.14",
+      "opening_balance": "103570.20",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "99061.14",
+      "closing_balance": "103570.20",
       "minimum_required": "43200",
-      "surplus": "55861.14",
-      "lowest_balance": "99061.14"
+      "surplus": "60370.20",
+      "lowest_balance": "103570.20"
     },
     {
       "day": "2026-07-03",
-      "opening_balance": "99061.14",
+      "opening_balance": "103570.20",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "99061.14",
+      "closing_balance": "103570.20",
       "minimum_required": "43200",
-      "surplus": "55861.14",
-      "lowest_balance": "99061.14"
+      "surplus": "60370.20",
+      "lowest_balance": "103570.20"
     },
     {
       "day": "2026-07-04",
-      "opening_balance": "99061.14",
+      "opening_balance": "103570.20",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "99061.14",
+      "closing_balance": "103570.20",
       "minimum_required": "43200",
-      "surplus": "55861.14",
-      "lowest_balance": "99061.14"
+      "surplus": "60370.20",
+      "lowest_balance": "103570.20"
     }
   ],
   "baseline_lowest_date": "2026-07-01",
-  "baseline_minimum_balance": "99061.14",
+  "baseline_minimum_balance": "103570.20",
   "amount_safe_calculation": {
-    "amount": "55861.14",
+    "amount": "60370.20",
     "verified_by_simulation": true,
     "blocked": false,
     "algorithm": "maximum cent amount via monotone binary search"
@@ -3158,547 +3151,547 @@
     {
       "date": "2026-04-05",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-04-06",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-04-07",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-04-08",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-04-09",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-04-10",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-04-11",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-04-12",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-04-13",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-04-14",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-04-15",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-04-16",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-04-17",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-04-18",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-04-19",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-04-20",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-04-21",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-04-22",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-04-23",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-04-24",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-04-25",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-04-26",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-04-27",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-04-28",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-04-29",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-04-30",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-01",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-02",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-03",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-04",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-05",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-06",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-07",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-08",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-09",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-10",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-11",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-12",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-13",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-14",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-15",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-16",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-17",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-18",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-19",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-20",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-21",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-22",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-23",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-24",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-25",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-26",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-27",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-28",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-29",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-30",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-05-31",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-01",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-02",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-03",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-04",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-05",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-06",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-07",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-08",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-09",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-10",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-11",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-12",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-13",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-14",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-15",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-16",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-17",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-18",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-19",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-20",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-21",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-22",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-23",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-24",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-25",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-26",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-27",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-28",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-29",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-06-30",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-07-01",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-01"
     },
     {
       "date": "2026-07-02",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-02"
     },
     {
       "date": "2026-07-03",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-03"
     },
     {
       "date": "2026-07-04",
       "safe": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "breach_date": "2026-07-04"
     }
   ],
@@ -3729,10 +3722,10 @@
       },
       "errors": [
         "payment method excluded by user",
-        "minimum balance breached on 2026-07-01: 33897.14"
+        "minimum balance breached on 2026-07-01: 38406.20"
       ],
       "valid": false,
-      "minimum_balance": "33897.14",
+      "minimum_balance": "38406.20",
       "ranking_key": null
     },
     {
@@ -3768,10 +3761,10 @@
         "spending_changes_valid": true
       },
       "errors": [
-        "minimum balance breached on 2026-06-26: 31290.57"
+        "minimum balance breached on 2026-07-01: 35799.63"
       ],
       "valid": false,
-      "minimum_balance": "31290.57",
+      "minimum_balance": "35799.63",
       "ranking_key": null
     },
     {
@@ -3885,1101 +3878,1193 @@
       "valid": false,
       "minimum_balance": null,
       "ranking_key": null
+    },
+    {
+      "candidate": {
+        "method": "installments",
+        "payments": [
+          {
+            "day": "2026-04-19",
+            "amount": "22590.19"
+          },
+          {
+            "day": "2026-05-20",
+            "amount": "22590.19"
+          },
+          {
+            "day": "2026-06-20",
+            "amount": "22590.19"
+          }
+        ],
+        "total_cost": "67770.57",
+        "option_id": "payment_option_33",
+        "changes": [
+          {
+            "action": "stop",
+            "event_id": "event_1016",
+            "amount": null
+          },
+          {
+            "action": "reduce_to",
+            "event_id": "event_1054",
+            "amount": "1536.10"
+          }
+        ],
+        "change_reasons": [
+          "stop:event_1016: without this change, minimum 38685.63 breaches reserve on 2026-07-01",
+          "reduce_to:event_1054: without this change, minimum 40314.03 breaches reserve on 2026-07-01"
+        ]
+      },
+      "checks": {
+        "method_accepted": true,
+        "every_payment_possible": true,
+        "full_commitment_completed": true,
+        "deadline_met": true,
+        "minimum_maintained": true,
+        "plan_format_valid": true,
+        "installment_option_matches": true,
+        "spending_changes_valid": true
+      },
+      "errors": [],
+      "valid": true,
+      "minimum_balance": "43200.03",
+      "ranking_key": [
+        false,
+        1,
+        "67770.57",
+        "2026-04-19",
+        3,
+        "payment_option_33"
+      ]
     }
   ],
-  "selected": null,
+  "selected": {
+    "method": "installments",
+    "payments": [
+      {
+        "day": "2026-04-19",
+        "amount": "22590.19"
+      },
+      {
+        "day": "2026-05-20",
+        "amount": "22590.19"
+      },
+      {
+        "day": "2026-06-20",
+        "amount": "22590.19"
+      }
+    ],
+    "total_cost": "67770.57",
+    "option_id": "payment_option_33",
+    "changes": [
+      {
+        "action": "stop",
+        "event_id": "event_1016",
+        "amount": null
+      },
+      {
+        "action": "reduce_to",
+        "event_id": "event_1054",
+        "amount": "1536.10"
+      }
+    ],
+    "change_reasons": [
+      "stop:event_1016: without this change, minimum 38685.63 breaches reserve on 2026-07-01",
+      "reduce_to:event_1054: without this change, minimum 40314.03 breaches reserve on 2026-07-01"
+    ]
+  },
   "selected_daily": [
     {
       "day": "2026-04-05",
       "opening_balance": "193089.89",
       "credits": "0",
-      "essential_debits": "3755.96",
+      "essential_debits": "3509.73",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "189333.93",
+      "closing_balance": "189580.16",
       "minimum_required": "43200",
-      "surplus": "146133.93",
-      "lowest_balance": "189333.93"
+      "surplus": "146380.16",
+      "lowest_balance": "189580.16"
     },
     {
       "day": "2026-04-06",
-      "opening_balance": "189333.93",
+      "opening_balance": "189580.16",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "189333.93",
+      "closing_balance": "189580.16",
       "minimum_required": "43200",
-      "surplus": "146133.93",
-      "lowest_balance": "189333.93"
+      "surplus": "146380.16",
+      "lowest_balance": "189580.16"
     },
     {
       "day": "2026-04-07",
-      "opening_balance": "189333.93",
+      "opening_balance": "189580.16",
       "credits": "0",
-      "essential_debits": "2469.4",
+      "essential_debits": "2134.89",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "186864.53",
+      "closing_balance": "187445.27",
       "minimum_required": "43200",
-      "surplus": "143664.53",
-      "lowest_balance": "186864.53"
+      "surplus": "144245.27",
+      "lowest_balance": "187445.27"
     },
     {
       "day": "2026-04-08",
-      "opening_balance": "186864.53",
+      "opening_balance": "187445.27",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "1504.8",
+      "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "185359.73",
+      "closing_balance": "187445.27",
       "minimum_required": "43200",
-      "surplus": "142159.73",
-      "lowest_balance": "185359.73"
+      "surplus": "144245.27",
+      "lowest_balance": "187445.27"
     },
     {
       "day": "2026-04-09",
-      "opening_balance": "185359.73",
+      "opening_balance": "187445.27",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "185359.73",
+      "closing_balance": "187445.27",
       "minimum_required": "43200",
-      "surplus": "142159.73",
-      "lowest_balance": "185359.73"
+      "surplus": "144245.27",
+      "lowest_balance": "187445.27"
     },
     {
       "day": "2026-04-10",
-      "opening_balance": "185359.73",
+      "opening_balance": "187445.27",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "185359.73",
+      "closing_balance": "187445.27",
       "minimum_required": "43200",
-      "surplus": "142159.73",
-      "lowest_balance": "185359.73"
+      "surplus": "144245.27",
+      "lowest_balance": "187445.27"
     },
     {
       "day": "2026-04-11",
-      "opening_balance": "185359.73",
+      "opening_balance": "187445.27",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "1849.69",
+      "other_debits": "1703.59",
       "request_payments": "0",
-      "closing_balance": "183510.04",
+      "closing_balance": "185741.68",
       "minimum_required": "43200",
-      "surplus": "140310.04",
-      "lowest_balance": "183510.04"
+      "surplus": "142541.68",
+      "lowest_balance": "185741.68"
     },
     {
       "day": "2026-04-12",
-      "opening_balance": "183510.04",
+      "opening_balance": "185741.68",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "183510.04",
+      "closing_balance": "185741.68",
       "minimum_required": "43200",
-      "surplus": "140310.04",
-      "lowest_balance": "183510.04"
+      "surplus": "142541.68",
+      "lowest_balance": "185741.68"
     },
     {
       "day": "2026-04-13",
-      "opening_balance": "183510.04",
+      "opening_balance": "185741.68",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "183510.04",
+      "closing_balance": "185741.68",
       "minimum_required": "43200",
-      "surplus": "140310.04",
-      "lowest_balance": "183510.04"
+      "surplus": "142541.68",
+      "lowest_balance": "185741.68"
     },
     {
       "day": "2026-04-14",
-      "opening_balance": "183510.04",
+      "opening_balance": "185741.68",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "183510.04",
+      "closing_balance": "185741.68",
       "minimum_required": "43200",
-      "surplus": "140310.04",
-      "lowest_balance": "183510.04"
+      "surplus": "142541.68",
+      "lowest_balance": "185741.68"
     },
     {
       "day": "2026-04-15",
-      "opening_balance": "183510.04",
+      "opening_balance": "185741.68",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "183510.04",
+      "closing_balance": "185741.68",
       "minimum_required": "43200",
-      "surplus": "140310.04",
-      "lowest_balance": "183510.04"
+      "surplus": "142541.68",
+      "lowest_balance": "185741.68"
     },
     {
       "day": "2026-04-16",
-      "opening_balance": "183510.04",
+      "opening_balance": "185741.68",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "183510.04",
+      "closing_balance": "185741.68",
       "minimum_required": "43200",
-      "surplus": "140310.04",
-      "lowest_balance": "183510.04"
+      "surplus": "142541.68",
+      "lowest_balance": "185741.68"
     },
     {
       "day": "2026-04-17",
-      "opening_balance": "183510.04",
+      "opening_balance": "185741.68",
       "credits": "0",
-      "essential_debits": "4153.68",
+      "essential_debits": "3571.12",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "179356.36",
+      "closing_balance": "182170.56",
       "minimum_required": "43200",
-      "surplus": "136156.36",
-      "lowest_balance": "179356.36"
+      "surplus": "138970.56",
+      "lowest_balance": "182170.56"
     },
     {
       "day": "2026-04-18",
-      "opening_balance": "179356.36",
+      "opening_balance": "182170.56",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "2089.92",
+      "other_debits": "1536.10",
       "request_payments": "0",
-      "closing_balance": "177266.44",
+      "closing_balance": "180634.46",
       "minimum_required": "43200",
-      "surplus": "134066.44",
-      "lowest_balance": "177266.44"
+      "surplus": "137434.46",
+      "lowest_balance": "180634.46"
     },
     {
       "day": "2026-04-19",
-      "opening_balance": "177266.44",
+      "opening_balance": "180634.46",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
-      "request_payments": "0",
-      "closing_balance": "177266.44",
+      "request_payments": "22590.19",
+      "closing_balance": "158044.27",
       "minimum_required": "43200",
-      "surplus": "134066.44",
-      "lowest_balance": "177266.44"
+      "surplus": "114844.27",
+      "lowest_balance": "158044.27"
     },
     {
       "day": "2026-04-20",
-      "opening_balance": "177266.44",
+      "opening_balance": "158044.27",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "177266.44",
+      "closing_balance": "158044.27",
       "minimum_required": "43200",
-      "surplus": "134066.44",
-      "lowest_balance": "177266.44"
+      "surplus": "114844.27",
+      "lowest_balance": "158044.27"
     },
     {
       "day": "2026-04-21",
-      "opening_balance": "177266.44",
+      "opening_balance": "158044.27",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "177266.44",
+      "closing_balance": "158044.27",
       "minimum_required": "43200",
-      "surplus": "134066.44",
-      "lowest_balance": "177266.44"
+      "surplus": "114844.27",
+      "lowest_balance": "158044.27"
     },
     {
       "day": "2026-04-22",
-      "opening_balance": "177266.44",
+      "opening_balance": "158044.27",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "177266.44",
+      "closing_balance": "158044.27",
       "minimum_required": "43200",
-      "surplus": "134066.44",
-      "lowest_balance": "177266.44"
+      "surplus": "114844.27",
+      "lowest_balance": "158044.27"
     },
     {
       "day": "2026-04-23",
-      "opening_balance": "177266.44",
+      "opening_balance": "158044.27",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "177266.44",
+      "closing_balance": "158044.27",
       "minimum_required": "43200",
-      "surplus": "134066.44",
-      "lowest_balance": "177266.44"
+      "surplus": "114844.27",
+      "lowest_balance": "158044.27"
     },
     {
       "day": "2026-04-24",
-      "opening_balance": "177266.44",
+      "opening_balance": "158044.27",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "177266.44",
+      "closing_balance": "158044.27",
       "minimum_required": "43200",
-      "surplus": "134066.44",
-      "lowest_balance": "177266.44"
+      "surplus": "114844.27",
+      "lowest_balance": "158044.27"
     },
     {
       "day": "2026-04-25",
-      "opening_balance": "177266.44",
+      "opening_balance": "158044.27",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "177266.44",
+      "closing_balance": "158044.27",
       "minimum_required": "43200",
-      "surplus": "134066.44",
-      "lowest_balance": "177266.44"
+      "surplus": "114844.27",
+      "lowest_balance": "158044.27"
     },
     {
       "day": "2026-04-26",
-      "opening_balance": "177266.44",
+      "opening_balance": "158044.27",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "177266.44",
+      "closing_balance": "158044.27",
       "minimum_required": "43200",
-      "surplus": "134066.44",
-      "lowest_balance": "177266.44"
+      "surplus": "114844.27",
+      "lowest_balance": "158044.27"
     },
     {
       "day": "2026-04-27",
-      "opening_balance": "177266.44",
+      "opening_balance": "158044.27",
       "credits": "0",
-      "essential_debits": "2469.4",
+      "essential_debits": "2134.89",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "174797.04",
+      "closing_balance": "155909.38",
       "minimum_required": "43200",
-      "surplus": "131597.04",
-      "lowest_balance": "174797.04"
+      "surplus": "112709.38",
+      "lowest_balance": "155909.38"
     },
     {
       "day": "2026-04-28",
-      "opening_balance": "174797.04",
+      "opening_balance": "155909.38",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "174797.04",
+      "closing_balance": "155909.38",
       "minimum_required": "43200",
-      "surplus": "131597.04",
-      "lowest_balance": "174797.04"
+      "surplus": "112709.38",
+      "lowest_balance": "155909.38"
     },
     {
       "day": "2026-04-29",
-      "opening_balance": "174797.04",
+      "opening_balance": "155909.38",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "174797.04",
+      "closing_balance": "155909.38",
       "minimum_required": "43200",
-      "surplus": "131597.04",
-      "lowest_balance": "174797.04"
+      "surplus": "112709.38",
+      "lowest_balance": "155909.38"
     },
     {
       "day": "2026-04-30",
-      "opening_balance": "174797.04",
+      "opening_balance": "155909.38",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "174797.04",
+      "closing_balance": "155909.38",
       "minimum_required": "43200",
-      "surplus": "131597.04",
-      "lowest_balance": "174797.04"
+      "surplus": "112709.38",
+      "lowest_balance": "155909.38"
     },
     {
       "day": "2026-05-01",
-      "opening_balance": "174797.04",
+      "opening_balance": "155909.38",
       "credits": "0",
       "essential_debits": "11792",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "163005.04",
+      "closing_balance": "144117.38",
       "minimum_required": "43200",
-      "surplus": "119805.04",
-      "lowest_balance": "163005.04"
+      "surplus": "100917.38",
+      "lowest_balance": "144117.38"
     },
     {
       "day": "2026-05-02",
-      "opening_balance": "163005.04",
+      "opening_balance": "144117.38",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "163005.04",
+      "closing_balance": "144117.38",
       "minimum_required": "43200",
-      "surplus": "119805.04",
-      "lowest_balance": "163005.04"
+      "surplus": "100917.38",
+      "lowest_balance": "144117.38"
     },
     {
       "day": "2026-05-03",
-      "opening_balance": "163005.04",
+      "opening_balance": "144117.38",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "163005.04",
+      "closing_balance": "144117.38",
       "minimum_required": "43200",
-      "surplus": "119805.04",
-      "lowest_balance": "163005.04"
+      "surplus": "100917.38",
+      "lowest_balance": "144117.38"
     },
     {
       "day": "2026-05-04",
-      "opening_balance": "163005.04",
+      "opening_balance": "144117.38",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "163005.04",
+      "closing_balance": "144117.38",
       "minimum_required": "43200",
-      "surplus": "119805.04",
-      "lowest_balance": "163005.04"
+      "surplus": "100917.38",
+      "lowest_balance": "144117.38"
     },
     {
       "day": "2026-05-05",
-      "opening_balance": "163005.04",
+      "opening_balance": "144117.38",
       "credits": "0",
-      "essential_debits": "3755.96",
+      "essential_debits": "3509.73",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "159249.08",
+      "closing_balance": "140607.65",
       "minimum_required": "43200",
-      "surplus": "116049.08",
-      "lowest_balance": "159249.08"
+      "surplus": "97407.65",
+      "lowest_balance": "140607.65"
     },
     {
       "day": "2026-05-06",
-      "opening_balance": "159249.08",
+      "opening_balance": "140607.65",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "159249.08",
+      "closing_balance": "140607.65",
       "minimum_required": "43200",
-      "surplus": "116049.08",
-      "lowest_balance": "159249.08"
+      "surplus": "97407.65",
+      "lowest_balance": "140607.65"
     },
     {
       "day": "2026-05-07",
-      "opening_balance": "159249.08",
+      "opening_balance": "140607.65",
       "credits": "0",
-      "essential_debits": "2469.4",
+      "essential_debits": "2134.89",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "156779.68",
+      "closing_balance": "138472.76",
       "minimum_required": "43200",
-      "surplus": "113579.68",
-      "lowest_balance": "156779.68"
+      "surplus": "95272.76",
+      "lowest_balance": "138472.76"
     },
     {
       "day": "2026-05-08",
-      "opening_balance": "156779.68",
+      "opening_balance": "138472.76",
       "credits": "0",
-      "essential_debits": "1684.28",
-      "other_debits": "1504.8",
+      "essential_debits": "1436.23",
+      "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "153590.60",
+      "closing_balance": "137036.53",
       "minimum_required": "43200",
-      "surplus": "110390.60",
-      "lowest_balance": "153590.60"
+      "surplus": "93836.53",
+      "lowest_balance": "137036.53"
     },
     {
       "day": "2026-05-09",
-      "opening_balance": "153590.60",
+      "opening_balance": "137036.53",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "2089.92",
+      "other_debits": "1536.10",
       "request_payments": "0",
-      "closing_balance": "151500.68",
+      "closing_balance": "135500.43",
       "minimum_required": "43200",
-      "surplus": "108300.68",
-      "lowest_balance": "151500.68"
+      "surplus": "92300.43",
+      "lowest_balance": "135500.43"
     },
     {
       "day": "2026-05-10",
-      "opening_balance": "151500.68",
+      "opening_balance": "135500.43",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "151500.68",
+      "closing_balance": "135500.43",
       "minimum_required": "43200",
-      "surplus": "108300.68",
-      "lowest_balance": "151500.68"
+      "surplus": "92300.43",
+      "lowest_balance": "135500.43"
     },
     {
       "day": "2026-05-11",
-      "opening_balance": "151500.68",
+      "opening_balance": "135500.43",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "1849.69",
+      "other_debits": "1703.59",
       "request_payments": "0",
-      "closing_balance": "149650.99",
+      "closing_balance": "133796.84",
       "minimum_required": "43200",
-      "surplus": "106450.99",
-      "lowest_balance": "149650.99"
+      "surplus": "90596.84",
+      "lowest_balance": "133796.84"
     },
     {
       "day": "2026-05-12",
-      "opening_balance": "149650.99",
+      "opening_balance": "133796.84",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "149650.99",
+      "closing_balance": "133796.84",
       "minimum_required": "43200",
-      "surplus": "106450.99",
-      "lowest_balance": "149650.99"
+      "surplus": "90596.84",
+      "lowest_balance": "133796.84"
     },
     {
       "day": "2026-05-13",
-      "opening_balance": "149650.99",
+      "opening_balance": "133796.84",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "149650.99",
+      "closing_balance": "133796.84",
       "minimum_required": "43200",
-      "surplus": "106450.99",
-      "lowest_balance": "149650.99"
+      "surplus": "90596.84",
+      "lowest_balance": "133796.84"
     },
     {
       "day": "2026-05-14",
-      "opening_balance": "149650.99",
+      "opening_balance": "133796.84",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "149650.99",
+      "closing_balance": "133796.84",
       "minimum_required": "43200",
-      "surplus": "106450.99",
-      "lowest_balance": "149650.99"
+      "surplus": "90596.84",
+      "lowest_balance": "133796.84"
     },
     {
       "day": "2026-05-15",
-      "opening_balance": "149650.99",
+      "opening_balance": "133796.84",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "149650.99",
+      "closing_balance": "133796.84",
       "minimum_required": "43200",
-      "surplus": "106450.99",
-      "lowest_balance": "149650.99"
+      "surplus": "90596.84",
+      "lowest_balance": "133796.84"
     },
     {
       "day": "2026-05-16",
-      "opening_balance": "149650.99",
+      "opening_balance": "133796.84",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "149650.99",
+      "closing_balance": "133796.84",
       "minimum_required": "43200",
-      "surplus": "106450.99",
-      "lowest_balance": "149650.99"
+      "surplus": "90596.84",
+      "lowest_balance": "133796.84"
     },
     {
       "day": "2026-05-17",
-      "opening_balance": "149650.99",
+      "opening_balance": "133796.84",
       "credits": "0",
-      "essential_debits": "2469.4",
+      "essential_debits": "2134.89",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "147181.59",
+      "closing_balance": "131661.95",
       "minimum_required": "43200",
-      "surplus": "103981.59",
-      "lowest_balance": "147181.59"
+      "surplus": "88461.95",
+      "lowest_balance": "131661.95"
     },
     {
       "day": "2026-05-18",
-      "opening_balance": "147181.59",
+      "opening_balance": "131661.95",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "147181.59",
+      "closing_balance": "131661.95",
       "minimum_required": "43200",
-      "surplus": "103981.59",
-      "lowest_balance": "147181.59"
+      "surplus": "88461.95",
+      "lowest_balance": "131661.95"
     },
     {
       "day": "2026-05-19",
-      "opening_balance": "147181.59",
+      "opening_balance": "131661.95",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "147181.59",
+      "closing_balance": "131661.95",
       "minimum_required": "43200",
-      "surplus": "103981.59",
-      "lowest_balance": "147181.59"
+      "surplus": "88461.95",
+      "lowest_balance": "131661.95"
     },
     {
       "day": "2026-05-20",
-      "opening_balance": "147181.59",
+      "opening_balance": "131661.95",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
-      "request_payments": "0",
-      "closing_balance": "147181.59",
+      "request_payments": "22590.19",
+      "closing_balance": "109071.76",
       "minimum_required": "43200",
-      "surplus": "103981.59",
-      "lowest_balance": "147181.59"
+      "surplus": "65871.76",
+      "lowest_balance": "109071.76"
     },
     {
       "day": "2026-05-21",
-      "opening_balance": "147181.59",
+      "opening_balance": "109071.76",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "147181.59",
+      "closing_balance": "109071.76",
       "minimum_required": "43200",
-      "surplus": "103981.59",
-      "lowest_balance": "147181.59"
+      "surplus": "65871.76",
+      "lowest_balance": "109071.76"
     },
     {
       "day": "2026-05-22",
-      "opening_balance": "147181.59",
+      "opening_balance": "109071.76",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "147181.59",
+      "closing_balance": "109071.76",
       "minimum_required": "43200",
-      "surplus": "103981.59",
-      "lowest_balance": "147181.59"
+      "surplus": "65871.76",
+      "lowest_balance": "109071.76"
     },
     {
       "day": "2026-05-23",
-      "opening_balance": "147181.59",
+      "opening_balance": "109071.76",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "147181.59",
+      "closing_balance": "109071.76",
       "minimum_required": "43200",
-      "surplus": "103981.59",
-      "lowest_balance": "147181.59"
+      "surplus": "65871.76",
+      "lowest_balance": "109071.76"
     },
     {
       "day": "2026-05-24",
-      "opening_balance": "147181.59",
+      "opening_balance": "109071.76",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "147181.59",
+      "closing_balance": "109071.76",
       "minimum_required": "43200",
-      "surplus": "103981.59",
-      "lowest_balance": "147181.59"
+      "surplus": "65871.76",
+      "lowest_balance": "109071.76"
     },
     {
       "day": "2026-05-25",
-      "opening_balance": "147181.59",
+      "opening_balance": "109071.76",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "147181.59",
+      "closing_balance": "109071.76",
       "minimum_required": "43200",
-      "surplus": "103981.59",
-      "lowest_balance": "147181.59"
+      "surplus": "65871.76",
+      "lowest_balance": "109071.76"
     },
     {
       "day": "2026-05-26",
-      "opening_balance": "147181.59",
+      "opening_balance": "109071.76",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "147181.59",
+      "closing_balance": "109071.76",
       "minimum_required": "43200",
-      "surplus": "103981.59",
-      "lowest_balance": "147181.59"
+      "surplus": "65871.76",
+      "lowest_balance": "109071.76"
     },
     {
       "day": "2026-05-27",
-      "opening_balance": "147181.59",
+      "opening_balance": "109071.76",
       "credits": "0",
-      "essential_debits": "2469.4",
+      "essential_debits": "2134.89",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "144712.19",
+      "closing_balance": "106936.87",
       "minimum_required": "43200",
-      "surplus": "101512.19",
-      "lowest_balance": "144712.19"
+      "surplus": "63736.87",
+      "lowest_balance": "106936.87"
     },
     {
       "day": "2026-05-28",
-      "opening_balance": "144712.19",
+      "opening_balance": "106936.87",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "144712.19",
+      "closing_balance": "106936.87",
       "minimum_required": "43200",
-      "surplus": "101512.19",
-      "lowest_balance": "144712.19"
+      "surplus": "63736.87",
+      "lowest_balance": "106936.87"
     },
     {
       "day": "2026-05-29",
-      "opening_balance": "144712.19",
+      "opening_balance": "106936.87",
       "credits": "0",
-      "essential_debits": "1684.28",
+      "essential_debits": "1436.23",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "143027.91",
+      "closing_balance": "105500.64",
       "minimum_required": "43200",
-      "surplus": "99827.91",
-      "lowest_balance": "143027.91"
+      "surplus": "62300.64",
+      "lowest_balance": "105500.64"
     },
     {
       "day": "2026-05-30",
-      "opening_balance": "143027.91",
+      "opening_balance": "105500.64",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "2089.92",
+      "other_debits": "1536.10",
       "request_payments": "0",
-      "closing_balance": "140937.99",
+      "closing_balance": "103964.54",
       "minimum_required": "43200",
-      "surplus": "97737.99",
-      "lowest_balance": "140937.99"
+      "surplus": "60764.54",
+      "lowest_balance": "103964.54"
     },
     {
       "day": "2026-05-31",
-      "opening_balance": "140937.99",
+      "opening_balance": "103964.54",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "140937.99",
+      "closing_balance": "103964.54",
       "minimum_required": "43200",
-      "surplus": "97737.99",
-      "lowest_balance": "140937.99"
+      "surplus": "60764.54",
+      "lowest_balance": "103964.54"
     },
     {
       "day": "2026-06-01",
-      "opening_balance": "140937.99",
+      "opening_balance": "103964.54",
       "credits": "0",
       "essential_debits": "11792",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "129145.99",
+      "closing_balance": "92172.54",
       "minimum_required": "43200",
-      "surplus": "85945.99",
-      "lowest_balance": "129145.99"
+      "surplus": "48972.54",
+      "lowest_balance": "92172.54"
     },
     {
       "day": "2026-06-02",
-      "opening_balance": "129145.99",
+      "opening_balance": "92172.54",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "129145.99",
+      "closing_balance": "92172.54",
       "minimum_required": "43200",
-      "surplus": "85945.99",
-      "lowest_balance": "129145.99"
+      "surplus": "48972.54",
+      "lowest_balance": "92172.54"
     },
     {
       "day": "2026-06-03",
-      "opening_balance": "129145.99",
+      "opening_balance": "92172.54",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "129145.99",
+      "closing_balance": "92172.54",
       "minimum_required": "43200",
-      "surplus": "85945.99",
-      "lowest_balance": "129145.99"
+      "surplus": "48972.54",
+      "lowest_balance": "92172.54"
     },
     {
       "day": "2026-06-04",
-      "opening_balance": "129145.99",
+      "opening_balance": "92172.54",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "129145.99",
+      "closing_balance": "92172.54",
       "minimum_required": "43200",
-      "surplus": "85945.99",
-      "lowest_balance": "129145.99"
+      "surplus": "48972.54",
+      "lowest_balance": "92172.54"
     },
     {
       "day": "2026-06-05",
-      "opening_balance": "129145.99",
+      "opening_balance": "92172.54",
       "credits": "0",
-      "essential_debits": "3755.96",
+      "essential_debits": "3509.73",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "125390.03",
+      "closing_balance": "88662.81",
       "minimum_required": "43200",
-      "surplus": "82190.03",
-      "lowest_balance": "125390.03"
+      "surplus": "45462.81",
+      "lowest_balance": "88662.81"
     },
     {
       "day": "2026-06-06",
-      "opening_balance": "125390.03",
+      "opening_balance": "88662.81",
       "credits": "0",
-      "essential_debits": "2469.4",
+      "essential_debits": "2134.89",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "122920.63",
+      "closing_balance": "86527.92",
       "minimum_required": "43200",
-      "surplus": "79720.63",
-      "lowest_balance": "122920.63"
+      "surplus": "43327.92",
+      "lowest_balance": "86527.92"
     },
     {
       "day": "2026-06-07",
-      "opening_balance": "122920.63",
+      "opening_balance": "86527.92",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "122920.63",
+      "closing_balance": "86527.92",
       "minimum_required": "43200",
-      "surplus": "79720.63",
-      "lowest_balance": "122920.63"
+      "surplus": "43327.92",
+      "lowest_balance": "86527.92"
     },
     {
       "day": "2026-06-08",
-      "opening_balance": "122920.63",
+      "opening_balance": "86527.92",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "1504.8",
+      "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "121415.83",
+      "closing_balance": "86527.92",
       "minimum_required": "43200",
-      "surplus": "78215.83",
-      "lowest_balance": "121415.83"
+      "surplus": "43327.92",
+      "lowest_balance": "86527.92"
     },
     {
       "day": "2026-06-09",
-      "opening_balance": "121415.83",
+      "opening_balance": "86527.92",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "121415.83",
+      "closing_balance": "86527.92",
       "minimum_required": "43200",
-      "surplus": "78215.83",
-      "lowest_balance": "121415.83"
+      "surplus": "43327.92",
+      "lowest_balance": "86527.92"
     },
     {
       "day": "2026-06-10",
-      "opening_balance": "121415.83",
+      "opening_balance": "86527.92",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "121415.83",
+      "closing_balance": "86527.92",
       "minimum_required": "43200",
-      "surplus": "78215.83",
-      "lowest_balance": "121415.83"
+      "surplus": "43327.92",
+      "lowest_balance": "86527.92"
     },
     {
       "day": "2026-06-11",
-      "opening_balance": "121415.83",
+      "opening_balance": "86527.92",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "1849.69",
+      "other_debits": "1703.59",
       "request_payments": "0",
-      "closing_balance": "119566.14",
+      "closing_balance": "84824.33",
       "minimum_required": "43200",
-      "surplus": "76366.14",
-      "lowest_balance": "119566.14"
+      "surplus": "41624.33",
+      "lowest_balance": "84824.33"
     },
     {
       "day": "2026-06-12",
-      "opening_balance": "119566.14",
+      "opening_balance": "84824.33",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "119566.14",
+      "closing_balance": "84824.33",
       "minimum_required": "43200",
-      "surplus": "76366.14",
-      "lowest_balance": "119566.14"
+      "surplus": "41624.33",
+      "lowest_balance": "84824.33"
     },
     {
       "day": "2026-06-13",
-      "opening_balance": "119566.14",
+      "opening_balance": "84824.33",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "119566.14",
+      "closing_balance": "84824.33",
       "minimum_required": "43200",
-      "surplus": "76366.14",
-      "lowest_balance": "119566.14"
+      "surplus": "41624.33",
+      "lowest_balance": "84824.33"
     },
     {
       "day": "2026-06-14",
-      "opening_balance": "119566.14",
+      "opening_balance": "84824.33",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "119566.14",
+      "closing_balance": "84824.33",
       "minimum_required": "43200",
-      "surplus": "76366.14",
-      "lowest_balance": "119566.14"
+      "surplus": "41624.33",
+      "lowest_balance": "84824.33"
     },
     {
       "day": "2026-06-15",
-      "opening_balance": "119566.14",
+      "opening_balance": "84824.33",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "119566.14",
+      "closing_balance": "84824.33",
       "minimum_required": "43200",
-      "surplus": "76366.14",
-      "lowest_balance": "119566.14"
+      "surplus": "41624.33",
+      "lowest_balance": "84824.33"
     },
     {
       "day": "2026-06-16",
-      "opening_balance": "119566.14",
+      "opening_balance": "84824.33",
       "credits": "0",
-      "essential_debits": "2469.4",
+      "essential_debits": "2134.89",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "117096.74",
+      "closing_balance": "82689.44",
       "minimum_required": "43200",
-      "surplus": "73896.74",
-      "lowest_balance": "117096.74"
+      "surplus": "39489.44",
+      "lowest_balance": "82689.44"
     },
     {
       "day": "2026-06-17",
-      "opening_balance": "117096.74",
+      "opening_balance": "82689.44",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "117096.74",
+      "closing_balance": "82689.44",
       "minimum_required": "43200",
-      "surplus": "73896.74",
-      "lowest_balance": "117096.74"
+      "surplus": "39489.44",
+      "lowest_balance": "82689.44"
     },
     {
       "day": "2026-06-18",
-      "opening_balance": "117096.74",
+      "opening_balance": "82689.44",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "117096.74",
+      "closing_balance": "82689.44",
       "minimum_required": "43200",
-      "surplus": "73896.74",
-      "lowest_balance": "117096.74"
+      "surplus": "39489.44",
+      "lowest_balance": "82689.44"
     },
     {
       "day": "2026-06-19",
-      "opening_balance": "117096.74",
+      "opening_balance": "82689.44",
       "credits": "0",
-      "essential_debits": "1684.28",
+      "essential_debits": "1436.23",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "115412.46",
+      "closing_balance": "81253.21",
       "minimum_required": "43200",
-      "surplus": "72212.46",
-      "lowest_balance": "115412.46"
+      "surplus": "38053.21",
+      "lowest_balance": "81253.21"
     },
     {
       "day": "2026-06-20",
-      "opening_balance": "115412.46",
+      "opening_balance": "81253.21",
       "credits": "0",
       "essential_debits": "0",
-      "other_debits": "2089.92",
-      "request_payments": "0",
-      "closing_balance": "113322.54",
+      "other_debits": "1536.10",
+      "request_payments": "22590.19",
+      "closing_balance": "57126.92",
       "minimum_required": "43200",
-      "surplus": "70122.54",
-      "lowest_balance": "113322.54"
+      "surplus": "13926.92",
+      "lowest_balance": "57126.92"
     },
     {
       "day": "2026-06-21",
-      "opening_balance": "113322.54",
+      "opening_balance": "57126.92",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "113322.54",
+      "closing_balance": "57126.92",
       "minimum_required": "43200",
-      "surplus": "70122.54",
-      "lowest_balance": "113322.54"
+      "surplus": "13926.92",
+      "lowest_balance": "57126.92"
     },
     {
       "day": "2026-06-22",
-      "opening_balance": "113322.54",
+      "opening_balance": "57126.92",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "113322.54",
+      "closing_balance": "57126.92",
       "minimum_required": "43200",
-      "surplus": "70122.54",
-      "lowest_balance": "113322.54"
+      "surplus": "13926.92",
+      "lowest_balance": "57126.92"
     },
     {
       "day": "2026-06-23",
-      "opening_balance": "113322.54",
+      "opening_balance": "57126.92",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "113322.54",
+      "closing_balance": "57126.92",
       "minimum_required": "43200",
-      "surplus": "70122.54",
-      "lowest_balance": "113322.54"
+      "surplus": "13926.92",
+      "lowest_balance": "57126.92"
     },
     {
       "day": "2026-06-24",
-      "opening_balance": "113322.54",
+      "opening_balance": "57126.92",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "113322.54",
+      "closing_balance": "57126.92",
       "minimum_required": "43200",
-      "surplus": "70122.54",
-      "lowest_balance": "113322.54"
+      "surplus": "13926.92",
+      "lowest_balance": "57126.92"
     },
     {
       "day": "2026-06-25",
-      "opening_balance": "113322.54",
+      "opening_balance": "57126.92",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "113322.54",
+      "closing_balance": "57126.92",
       "minimum_required": "43200",
-      "surplus": "70122.54",
-      "lowest_balance": "113322.54"
+      "surplus": "13926.92",
+      "lowest_balance": "57126.92"
     },
     {
       "day": "2026-06-26",
-      "opening_balance": "113322.54",
+      "opening_balance": "57126.92",
       "credits": "0",
-      "essential_debits": "2469.4",
+      "essential_debits": "2134.89",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "110853.14",
+      "closing_balance": "54992.03",
       "minimum_required": "43200",
-      "surplus": "67653.14",
-      "lowest_balance": "110853.14"
+      "surplus": "11792.03",
+      "lowest_balance": "54992.03"
     },
     {
       "day": "2026-06-27",
-      "opening_balance": "110853.14",
+      "opening_balance": "54992.03",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "110853.14",
+      "closing_balance": "54992.03",
       "minimum_required": "43200",
-      "surplus": "67653.14",
-      "lowest_balance": "110853.14"
+      "surplus": "11792.03",
+      "lowest_balance": "54992.03"
     },
     {
       "day": "2026-06-28",
-      "opening_balance": "110853.14",
+      "opening_balance": "54992.03",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "110853.14",
+      "closing_balance": "54992.03",
       "minimum_required": "43200",
-      "surplus": "67653.14",
-      "lowest_balance": "110853.14"
+      "surplus": "11792.03",
+      "lowest_balance": "54992.03"
     },
     {
       "day": "2026-06-29",
-      "opening_balance": "110853.14",
+      "opening_balance": "54992.03",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "110853.14",
+      "closing_balance": "54992.03",
       "minimum_required": "43200",
-      "surplus": "67653.14",
-      "lowest_balance": "110853.14"
+      "surplus": "11792.03",
+      "lowest_balance": "54992.03"
     },
     {
       "day": "2026-06-30",
-      "opening_balance": "110853.14",
+      "opening_balance": "54992.03",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "110853.14",
+      "closing_balance": "54992.03",
       "minimum_required": "43200",
-      "surplus": "67653.14",
-      "lowest_balance": "110853.14"
+      "surplus": "11792.03",
+      "lowest_balance": "54992.03"
     },
     {
       "day": "2026-07-01",
-      "opening_balance": "110853.14",
+      "opening_balance": "54992.03",
       "credits": "0",
       "essential_debits": "11792",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "99061.14",
+      "closing_balance": "43200.03",
       "minimum_required": "43200",
-      "surplus": "55861.14",
-      "lowest_balance": "99061.14"
+      "surplus": "0.03",
+      "lowest_balance": "43200.03"
     },
     {
       "day": "2026-07-02",
-      "opening_balance": "99061.14",
+      "opening_balance": "43200.03",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "99061.14",
+      "closing_balance": "43200.03",
       "minimum_required": "43200",
-      "surplus": "55861.14",
-      "lowest_balance": "99061.14"
+      "surplus": "0.03",
+      "lowest_balance": "43200.03"
     },
     {
       "day": "2026-07-03",
-      "opening_balance": "99061.14",
+      "opening_balance": "43200.03",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "99061.14",
+      "closing_balance": "43200.03",
       "minimum_required": "43200",
-      "surplus": "55861.14",
-      "lowest_balance": "99061.14"
+      "surplus": "0.03",
+      "lowest_balance": "43200.03"
     },
     {
       "day": "2026-07-04",
-      "opening_balance": "99061.14",
+      "opening_balance": "43200.03",
       "credits": "0",
       "essential_debits": "0",
       "other_debits": "0",
       "request_payments": "0",
-      "closing_balance": "99061.14",
+      "closing_balance": "43200.03",
       "minimum_required": "43200",
-      "surplus": "55861.14",
-      "lowest_balance": "99061.14"
+      "surplus": "0.03",
+      "lowest_balance": "43200.03"
     }
   ],
   "selected_lowest_date": "2026-07-01",
@@ -4988,7 +5073,7 @@
     "model": "gpt-5.6-terra",
     "prompt_version": "evidence-v2",
     "live_calls": 0,
-    "cached_resolutions": 0,
+    "cached_resolutions": 10,
     "input_tokens": 0,
     "output_tokens": 0,
     "unmetered_calls": 0,
@@ -4999,12 +5084,12 @@
   },
   "output_row": {
     "request_id": "request_12",
-    "amount_safe_to_pay": "55861.14",
-    "affordability_status": "not_affordable",
-    "recommended_payment_method": "not_recommended",
-    "payment_plan": "none",
+    "amount_safe_to_pay": "60370.2",
+    "affordability_status": "affordable_with_plan",
+    "recommended_payment_method": "installments",
+    "payment_plan": "2026-04-19:22590.19|2026-05-20:22590.19|2026-06-20:22590.19",
     "earliest_date_for_full_payment": "",
-    "spending_changes_needed": "none",
-    "decision_explanation": "Safe today before changes: 55861.14 ZAR; protected minimum: 43200. No safe eligible plan completes by the deadline under the resolved forecast. Limiting expense: event_1018 (11792 on 2026-07-01). Unresolved evidence/forecast assumptions remain; see audit."
+    "spending_changes_needed": "stop:event_1016|reduce_to:event_1054:1536.1",
+    "decision_explanation": "Safe today before changes: 60370.20 ZAR; protected minimum: 43200. Use installments, total 67770.57, completing 2026-06-20. Lowest projected balance: 43200.03 on 2026-07-01. Required changes: stop:event_1016; reduce_to:event_1054:1536.10. Limiting expense: event_1018 (11792 on 2026-07-01)."
   }
 }
