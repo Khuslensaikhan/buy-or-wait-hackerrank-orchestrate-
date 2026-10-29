@@ -1,0 +1,188 @@
+[
+  {
+    "request_id": "request_87",
+    "request_date": "2026-01-05",
+    "sources": [
+      {
+        "message_id": "message_66",
+        "message_text": "Hi, HarborWorks payroll here. Regular salary of INR 251000 resumes on 2026-01-15. A new recurring childcare payment begins in the same month. The updated pay and deductions will appear from the next cycle. Payroll ref EMP-0066.",
+        "cached_facts": {
+          "images": [],
+          "messages": [
+            {
+              "source_id": "message_66",
+              "related_event_id": null,
+              "confidence": 0.97,
+              "evidence_summary": "Regular salary of INR 251000 resumes on 2026-01-15.",
+              "action": "create_fact",
+              "new_amount": null,
+              "new_currency": null,
+              "new_date": null,
+              "new_status": null,
+              "creates_new_event": true,
+              "event_description": "Regular salary resumes",
+              "event_category": "salary",
+              "event_direction": "credit",
+              "event_type": "income",
+              "scope": "single_occurrence",
+              "percentage_change": null
+            },
+            {
+              "source_id": "message_66",
+              "related_event_id": null,
+              "confidence": 0.82,
+              "evidence_summary": "A new recurring childcare payment begins in January 2026; no amount or exact date is stated.",
+              "action": "create_fact",
+              "new_amount": null,
+              "new_currency": null,
+              "new_date": null,
+              "new_status": "scheduled",
+              "creates_new_event": true,
+              "event_description": "Recurring childcare payment",
+              "event_category": "childcare",
+              "event_direction": "debit",
+              "event_type": "expense",
+              "scope": "future_recurrence",
+              "percentage_change": null
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "request_id": "request_119",
+    "request_date": "2025-05-04",
+    "sources": [
+      {
+        "message_id": "message_91",
+        "message_text": "A note from Cobalt Systems about your upcoming pay. Regular salary of INR 176000 resumes on 2025-05-15. A new recurring childcare payment begins in the same month. The updated pay and deductions will appear from the next cycle. Payroll ref EMP-0091.",
+        "cached_facts": {
+          "images": [],
+          "messages": [
+            {
+              "source_id": "message_91",
+              "related_event_id": null,
+              "confidence": 0.98,
+              "evidence_summary": "Regular salary of INR 176000 resumes on 2025-05-15.",
+              "action": "create_fact",
+              "new_amount": "176000",
+              "new_currency": "INR",
+              "new_date": "2025-05-15",
+              "new_status": "scheduled",
+              "creates_new_event": true,
+              "event_description": "Regular salary",
+              "event_category": "salary",
+              "event_direction": "credit",
+              "event_type": "income",
+              "scope": "single_occurrence",
+              "percentage_change": null
+            },
+            {
+              "source_id": "message_91",
+              "related_event_id": null,
+              "confidence": 0.91,
+              "evidence_summary": "A new recurring childcare payment begins in May 2025; no amount, currency, or exact date is stated.",
+              "action": "create_fact",
+              "new_amount": null,
+              "new_currency": null,
+              "new_date": null,
+              "new_status": "scheduled",
+              "creates_new_event": true,
+              "event_description": "Recurring childcare payment",
+              "event_category": "childcare",
+              "event_direction": "debit",
+              "event_type": "expense",
+              "scope": "future_recurrence",
+              "percentage_change": null
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "request_id": "request_127",
+    "request_date": "2024-09-05",
+    "sources": [
+      {
+        "message_id": "message_97",
+        "message_text": "Cedar Health payroll has posted a new update. Regular salary of ZAR 50160 resumes on 2024-09-15. A new recurring childcare payment begins in the same month. The updated pay and deductions will appear from the next cycle. Payroll ref EMP-0097.",
+        "cached_facts": {
+          "images": [],
+          "messages": [
+            {
+              "source_id": "message_97",
+              "related_event_id": "event_11702",
+              "confidence": 0.97,
+              "evidence_summary": "Regular salary of ZAR 50160 resumes on 2024-09-15.",
+              "action": "confirm",
+              "new_amount": "50160",
+              "new_currency": "ZAR",
+              "new_date": "2024-09-15",
+              "new_status": "scheduled",
+              "creates_new_event": false,
+              "event_description": null,
+              "event_category": null,
+              "event_direction": null,
+              "event_type": null,
+              "scope": "single_occurrence",
+              "percentage_change": null
+            },
+            {
+              "source_id": "message_97",
+              "related_event_id": null,
+              "confidence": 0.87,
+              "evidence_summary": "A new recurring childcare payment begins in September 2024; no amount, specific date, or status is stated.",
+              "action": "create_fact",
+              "new_amount": null,
+              "new_currency": null,
+              "new_date": null,
+              "new_status": null,
+              "creates_new_event": true,
+              "event_description": "Recurring childcare payment",
+              "event_category": "childcare",
+              "event_direction": "debit",
+              "event_type": "expense",
+              "scope": "future_recurrence",
+              "percentage_change": null
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "request_id": "request_153",
+    "request_date": "2026-07-07",
+    "sources": [
+      {
+        "message_id": "message_118",
+        "message_text": "Hi, ShopNest here with an update on your payment. The bill was charged in a foreign currency. Your bank will confirm the final home-currency amount when the transaction settles. The final home-currency amount will use the rate applied when it settles. Order ref MER-0118.",
+        "cached_facts": {
+          "images": [],
+          "messages": [
+            {
+              "source_id": "message_118",
+              "related_event_id": null,
+              "confidence": 0.94,
+              "evidence_summary": "ShopNest reports that a bill was charged in a foreign currency; the final home-currency amount and exchange rate will be confirmed when the transaction settles. No amount, currency, or settlement date is stated.",
+              "action": "create_fact",
+              "new_amount": null,
+              "new_currency": null,
+              "new_date": null,
+              "new_status": null,
+              "creates_new_event": true,
+              "event_description": "ShopNest order MER-0118 charged in a foreign currency",
+              "event_category": null,
+              "event_direction": "debit",
+              "event_type": "expense",
+              "scope": "single_occurrence",
+              "percentage_change": null
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

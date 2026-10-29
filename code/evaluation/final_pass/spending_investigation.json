@@ -1,0 +1,799 @@
+[
+  {
+    "request_id": "request_06",
+    "reserve": "800",
+    "predicted": {
+      "request_id": "request_06",
+      "amount_safe_to_pay": "488.79",
+      "affordability_status": "not_affordable",
+      "recommended_payment_method": "not_recommended",
+      "payment_plan": "none",
+      "earliest_date_for_full_payment": "2026-02-15",
+      "spending_changes_needed": "none",
+      "decision_explanation": "Safe today before changes: 488.79 EUR; protected minimum: 800. No safe eligible plan completes by the deadline under the resolved forecast. Baseline full payment first becomes safe on 2026-02-15, after the deadline. Limiting expense: event_478 (35.02 on 2026-01-15). Unresolved evidence/forecast assumptions remain; see audit."
+    },
+    "expected": {
+      "request_id": "request_06",
+      "amount_safe_to_pay": "603.3",
+      "affordability_status": "affordable_with_plan",
+      "recommended_payment_method": "full_payment",
+      "payment_plan": "2026-01-03:620.40",
+      "earliest_date_for_full_payment": "2026-01-15",
+      "spending_changes_needed": "stop:event_476",
+      "decision_explanation": "Stop the family streaming plan, then pay EUR 620.40 today. This leaves at least EUR 800 available."
+    },
+    "selected_without_changes": {
+      "safe": true,
+      "minimum": "1288.79",
+      "breach_date": "None",
+      "lowest_date": "2026-01-15",
+      "eligibility_errors": []
+    },
+    "expected_schedule_without_changes": {
+      "safe": false,
+      "minimum": "668.39",
+      "breach_date": "2026-01-11",
+      "lowest_date": "2026-01-15",
+      "eligibility_errors": []
+    },
+    "expected_schedule_with_expected_changes": {
+      "safe": false,
+      "minimum": "687.39",
+      "breach_date": "2026-01-11",
+      "lowest_date": "2026-01-15",
+      "eligibility_errors": []
+    },
+    "selected_individual_necessity": [],
+    "eligible_event_details": [
+      {
+        "event": {
+          "event_id": "event_476",
+          "user_id": "user_06",
+          "event_type": "subscription",
+          "description": "Family streaming plan",
+          "category": "streaming",
+          "direction": "debit",
+          "amount": "19",
+          "currency": "EUR",
+          "event_date": "2025-12-10",
+          "settlement_date": "2025-12-10",
+          "status": "settled",
+          "linked_event_id": null,
+          "flexibility": "stoppable",
+          "minimum_allowed_amount": null,
+          "evidence_ids": [],
+          "recurrence_override_amount": null,
+          "recurrence_override_date": null,
+          "recurrence_override_currency": null,
+          "recurrence_override_day": null,
+          "recurrence_cancelled": false,
+          "recurrence_reason": ""
+        },
+        "projected_amounts": [
+          "19"
+        ],
+        "protected": false,
+        "can_stop_category": true,
+        "can_reduce_category": false
+      }
+    ]
+  },
+  {
+    "request_id": "request_08",
+    "reserve": "800",
+    "predicted": {
+      "request_id": "request_08",
+      "amount_safe_to_pay": "285.18",
+      "affordability_status": "affordable_with_plan",
+      "recommended_payment_method": "wait",
+      "payment_plan": "2025-04-15:996.6",
+      "earliest_date_for_full_payment": "",
+      "spending_changes_needed": "stop:event_649|reduce_to:event_716:27.35",
+      "decision_explanation": "Safe today before changes: 285.18 EUR; protected minimum: 800. Use wait, total 996.6, completing 2025-04-15. Lowest projected balance: 800.06 on 2025-05-08. Required changes: stop:event_649; reduce_to:event_716:27.35. Earlier full payment would not preserve the reserve under this forecast. Limiting expense: event_716 (50.85 on 2025-05-08). Projected income includes event_643_next: 1422.85 on 2025-02-15."
+    },
+    "expected": {
+      "request_id": "request_08",
+      "amount_safe_to_pay": "284.57",
+      "affordability_status": "affordable_later",
+      "recommended_payment_method": "wait",
+      "payment_plan": "2025-04-15:996.60",
+      "earliest_date_for_full_payment": "2025-04-15",
+      "spending_changes_needed": "none",
+      "decision_explanation": "Pay EUR 996.60 in full on 15 April 2025. Paying earlier would take the balance below the EUR 800 minimum."
+    },
+    "selected_without_changes": {
+      "safe": false,
+      "minimum": "563.56",
+      "breach_date": "2025-05-05",
+      "lowest_date": "2025-05-08",
+      "eligibility_errors": []
+    },
+    "expected_schedule_without_changes": {
+      "safe": false,
+      "minimum": "563.56",
+      "breach_date": "2025-05-05",
+      "lowest_date": "2025-05-08",
+      "eligibility_errors": []
+    },
+    "expected_schedule_with_expected_changes": {
+      "safe": false,
+      "minimum": "563.56",
+      "breach_date": "2025-05-05",
+      "lowest_date": "2025-05-08",
+      "eligibility_errors": []
+    },
+    "selected_individual_necessity": [
+      {
+        "change": {
+          "action": "stop",
+          "event_id": "event_649",
+          "amount": null
+        },
+        "without": {
+          "safe": false,
+          "minimum": "728.06",
+          "breach_date": "2025-05-07",
+          "lowest_date": "2025-05-08",
+          "eligibility_errors": []
+        },
+        "one_cent_less_reduction": null
+      },
+      {
+        "change": {
+          "action": "reduce_to",
+          "event_id": "event_716",
+          "amount": "27.35"
+        },
+        "without": {
+          "safe": false,
+          "minimum": "635.56",
+          "breach_date": "2025-05-07",
+          "lowest_date": "2025-05-08",
+          "eligibility_errors": []
+        },
+        "one_cent_less_reduction": {
+          "safe": false,
+          "minimum": "799.99",
+          "breach_date": "2025-05-08",
+          "lowest_date": "2025-05-08",
+          "eligibility_errors": []
+        }
+      }
+    ],
+    "matching_schedule_valid_change_counts": [
+      2
+    ],
+    "eligible_event_details": [
+      {
+        "event": {
+          "event_id": "event_648",
+          "user_id": "user_08",
+          "event_type": "subscription",
+          "description": "Music subscription",
+          "category": "music_subscription",
+          "direction": "debit",
+          "amount": "14",
+          "currency": "EUR",
+          "event_date": "2025-01-10",
+          "settlement_date": "2025-01-10",
+          "status": "settled",
+          "linked_event_id": null,
+          "flexibility": "stoppable",
+          "minimum_allowed_amount": null,
+          "evidence_ids": [],
+          "recurrence_override_amount": null,
+          "recurrence_override_date": null,
+          "recurrence_override_currency": null,
+          "recurrence_override_day": null,
+          "recurrence_cancelled": false,
+          "recurrence_reason": ""
+        },
+        "projected_amounts": [
+          "14"
+        ],
+        "protected": false,
+        "can_stop_category": true,
+        "can_reduce_category": false
+      },
+      {
+        "event": {
+          "event_id": "event_649",
+          "user_id": "user_08",
+          "event_type": "subscription",
+          "description": "Grocery delivery membership",
+          "category": "delivery_membership",
+          "direction": "debit",
+          "amount": "24",
+          "currency": "EUR",
+          "event_date": "2025-01-12",
+          "settlement_date": "2025-01-12",
+          "status": "settled",
+          "linked_event_id": null,
+          "flexibility": "stoppable",
+          "minimum_allowed_amount": null,
+          "evidence_ids": [],
+          "recurrence_override_amount": null,
+          "recurrence_override_date": null,
+          "recurrence_override_currency": null,
+          "recurrence_override_day": null,
+          "recurrence_cancelled": false,
+          "recurrence_reason": ""
+        },
+        "projected_amounts": [
+          "24"
+        ],
+        "protected": false,
+        "can_stop_category": true,
+        "can_reduce_category": false
+      },
+      {
+        "event": {
+          "event_id": "event_716",
+          "user_id": "user_08",
+          "event_type": "expense",
+          "description": "Bakery and snacks",
+          "category": "dining",
+          "direction": "debit",
+          "amount": "42.33",
+          "currency": "EUR",
+          "event_date": "2025-01-30",
+          "settlement_date": "2025-01-30",
+          "status": "settled",
+          "linked_event_id": null,
+          "flexibility": "reducible",
+          "minimum_allowed_amount": "24.5",
+          "evidence_ids": [],
+          "recurrence_override_amount": null,
+          "recurrence_override_date": null,
+          "recurrence_override_currency": null,
+          "recurrence_override_day": null,
+          "recurrence_cancelled": false,
+          "recurrence_reason": ""
+        },
+        "projected_amounts": [
+          "50.85"
+        ],
+        "protected": false,
+        "can_stop_category": false,
+        "can_reduce_category": true
+      }
+    ]
+  },
+  {
+    "request_id": "request_11",
+    "reserve": "34140600",
+    "predicted": {
+      "request_id": "request_11",
+      "amount_safe_to_pay": "12319866.6",
+      "affordability_status": "affordable_with_plan",
+      "recommended_payment_method": "full_payment",
+      "payment_plan": "2025-05-03:13110000",
+      "earliest_date_for_full_payment": "2025-06-15",
+      "spending_changes_needed": "stop:event_949|reduce_to:event_989:728039.15",
+      "decision_explanation": "Safe today before changes: 12319866.60 IDR; protected minimum: 34140600. Use full_payment, total 13110000, completing 2025-05-03. Lowest projected balance: 34140600.00 on 2025-05-14. Required changes: stop:event_949; reduce_to:event_989:728039.15. Limiting expense: event_989 (1350022.55 on 2025-05-14). Unresolved evidence/forecast assumptions remain; see audit."
+    },
+    "expected": {
+      "request_id": "request_11",
+      "amount_safe_to_pay": "12510645",
+      "affordability_status": "affordable_with_plan",
+      "recommended_payment_method": "full_payment",
+      "payment_plan": "2025-05-03:13110000",
+      "earliest_date_for_full_payment": "2025-07-15",
+      "spending_changes_needed": "reduce_to:event_989:665950",
+      "decision_explanation": "Reduce the weekend food delivery to IDR 665,950, then pay IDR 13,110,000 today. This leaves at least IDR 34,140,600 available."
+    },
+    "selected_without_changes": {
+      "safe": false,
+      "minimum": "33350466.60",
+      "breach_date": "2025-05-14",
+      "lowest_date": "2025-05-14",
+      "eligibility_errors": []
+    },
+    "expected_schedule_without_changes": {
+      "safe": false,
+      "minimum": "33350466.60",
+      "breach_date": "2025-05-14",
+      "lowest_date": "2025-05-14",
+      "eligibility_errors": []
+    },
+    "expected_schedule_with_expected_changes": {
+      "safe": false,
+      "minimum": "34034539.15",
+      "breach_date": "2025-05-14",
+      "lowest_date": "2025-05-14",
+      "eligibility_errors": []
+    },
+    "selected_individual_necessity": [
+      {
+        "change": {
+          "action": "stop",
+          "event_id": "event_949",
+          "amount": null
+        },
+        "without": {
+          "safe": false,
+          "minimum": "33972450.00",
+          "breach_date": "2025-05-14",
+          "lowest_date": "2025-05-14",
+          "eligibility_errors": []
+        },
+        "one_cent_less_reduction": null
+      },
+      {
+        "change": {
+          "action": "reduce_to",
+          "event_id": "event_989",
+          "amount": "728039.15"
+        },
+        "without": {
+          "safe": false,
+          "minimum": "33518616.60",
+          "breach_date": "2025-05-14",
+          "lowest_date": "2025-05-14",
+          "eligibility_errors": []
+        },
+        "one_cent_less_reduction": {
+          "safe": false,
+          "minimum": "34140599.99",
+          "breach_date": "2025-05-14",
+          "lowest_date": "2025-05-14",
+          "eligibility_errors": []
+        }
+      }
+    ],
+    "matching_schedule_valid_change_counts": [
+      2
+    ],
+    "eligible_event_details": [
+      {
+        "event": {
+          "event_id": "event_948",
+          "user_id": "user_11",
+          "event_type": "expense",
+          "description": "Games and recreation",
+          "category": "entertainment",
+          "direction": "debit",
+          "amount": "1674887.61",
+          "currency": "IDR",
+          "event_date": "2025-04-16",
+          "settlement_date": "2025-04-16",
+          "status": "settled",
+          "linked_event_id": null,
+          "flexibility": "reducible",
+          "minimum_allowed_amount": "755250",
+          "evidence_ids": [],
+          "recurrence_override_amount": null,
+          "recurrence_override_date": null,
+          "recurrence_override_currency": null,
+          "recurrence_override_day": null,
+          "recurrence_cancelled": false,
+          "recurrence_reason": ""
+        },
+        "projected_amounts": [
+          "1600926.76"
+        ],
+        "protected": false,
+        "can_stop_category": false,
+        "can_reduce_category": true
+      },
+      {
+        "event": {
+          "event_id": "event_949",
+          "user_id": "user_11",
+          "event_type": "subscription",
+          "description": "Cloud storage plan",
+          "category": "cloud_storage",
+          "direction": "debit",
+          "amount": "168150",
+          "currency": "IDR",
+          "event_date": "2025-04-14",
+          "settlement_date": "2025-04-14",
+          "status": "settled",
+          "linked_event_id": null,
+          "flexibility": "stoppable",
+          "minimum_allowed_amount": null,
+          "evidence_ids": [],
+          "recurrence_override_amount": null,
+          "recurrence_override_date": null,
+          "recurrence_override_currency": null,
+          "recurrence_override_day": null,
+          "recurrence_cancelled": false,
+          "recurrence_reason": ""
+        },
+        "projected_amounts": [
+          "168150"
+        ],
+        "protected": false,
+        "can_stop_category": true,
+        "can_reduce_category": false
+      },
+      {
+        "event": {
+          "event_id": "event_989",
+          "user_id": "user_11",
+          "event_type": "expense",
+          "description": "Weekend food delivery",
+          "category": "dining",
+          "direction": "debit",
+          "amount": "1163530.49",
+          "currency": "IDR",
+          "event_date": "2025-04-23",
+          "settlement_date": "2025-04-23",
+          "status": "settled",
+          "linked_event_id": null,
+          "flexibility": "reducible",
+          "minimum_allowed_amount": "665950",
+          "evidence_ids": [],
+          "recurrence_override_amount": null,
+          "recurrence_override_date": null,
+          "recurrence_override_currency": null,
+          "recurrence_override_day": null,
+          "recurrence_cancelled": false,
+          "recurrence_reason": ""
+        },
+        "projected_amounts": [
+          "1350022.55"
+        ],
+        "protected": false,
+        "can_stop_category": false,
+        "can_reduce_category": true
+      }
+    ]
+  },
+  {
+    "request_id": "request_12",
+    "reserve": "43200",
+    "predicted": {
+      "request_id": "request_12",
+      "amount_safe_to_pay": "60370.2",
+      "affordability_status": "affordable_with_plan",
+      "recommended_payment_method": "installments",
+      "payment_plan": "2026-04-19:22590.19|2026-05-20:22590.19|2026-06-20:22590.19",
+      "earliest_date_for_full_payment": "",
+      "spending_changes_needed": "stop:event_1016|reduce_to:event_1054:1536.1",
+      "decision_explanation": "Safe today before changes: 60370.20 ZAR; protected minimum: 43200. Use installments, total 67770.57, completing 2026-06-20. Lowest projected balance: 43200.03 on 2026-07-01. Required changes: stop:event_1016; reduce_to:event_1054:1536.10. Limiting expense: event_1018 (11792 on 2026-07-01)."
+    },
+    "expected": {
+      "request_id": "request_12",
+      "amount_safe_to_pay": "65164",
+      "affordability_status": "affordable_with_plan",
+      "recommended_payment_method": "installments",
+      "payment_plan": "2026-04-19:22590.19|2026-05-20:22590.19|2026-06-20:22590.19",
+      "earliest_date_for_full_payment": "2026-04-05",
+      "spending_changes_needed": "none",
+      "decision_explanation": "Use 3 installments of ZAR 22,590.19, starting 19 April 2026. This leaves at least ZAR 43,200 available."
+    },
+    "selected_without_changes": {
+      "safe": false,
+      "minimum": "35799.63",
+      "breach_date": "2026-07-01",
+      "lowest_date": "2026-07-01",
+      "eligibility_errors": []
+    },
+    "expected_schedule_without_changes": {
+      "safe": false,
+      "minimum": "35799.63",
+      "breach_date": "2026-07-01",
+      "lowest_date": "2026-07-01",
+      "eligibility_errors": []
+    },
+    "expected_schedule_with_expected_changes": {
+      "safe": false,
+      "minimum": "35799.63",
+      "breach_date": "2026-07-01",
+      "lowest_date": "2026-07-01",
+      "eligibility_errors": []
+    },
+    "selected_individual_necessity": [
+      {
+        "change": {
+          "action": "stop",
+          "event_id": "event_1016",
+          "amount": null
+        },
+        "without": {
+          "safe": false,
+          "minimum": "38685.63",
+          "breach_date": "2026-07-01",
+          "lowest_date": "2026-07-01",
+          "eligibility_errors": []
+        },
+        "one_cent_less_reduction": null
+      },
+      {
+        "change": {
+          "action": "reduce_to",
+          "event_id": "event_1054",
+          "amount": "1536.10"
+        },
+        "without": {
+          "safe": false,
+          "minimum": "40314.03",
+          "breach_date": "2026-07-01",
+          "lowest_date": "2026-07-01",
+          "eligibility_errors": []
+        },
+        "one_cent_less_reduction": {
+          "safe": false,
+          "minimum": "43199.99",
+          "breach_date": "2026-07-01",
+          "lowest_date": "2026-07-01",
+          "eligibility_errors": []
+        }
+      }
+    ],
+    "matching_schedule_valid_change_counts": [
+      2
+    ],
+    "eligible_event_details": [
+      {
+        "event": {
+          "event_id": "event_1016",
+          "user_id": "user_12",
+          "event_type": "subscription",
+          "description": "Family streaming plan",
+          "category": "streaming",
+          "direction": "debit",
+          "amount": "1504.8",
+          "currency": "ZAR",
+          "event_date": "2026-03-08",
+          "settlement_date": "2026-03-08",
+          "status": "settled",
+          "linked_event_id": null,
+          "flexibility": "stoppable",
+          "minimum_allowed_amount": null,
+          "evidence_ids": [],
+          "recurrence_override_amount": null,
+          "recurrence_override_date": null,
+          "recurrence_override_currency": null,
+          "recurrence_override_day": null,
+          "recurrence_cancelled": false,
+          "recurrence_reason": ""
+        },
+        "projected_amounts": [
+          "1504.8"
+        ],
+        "protected": false,
+        "can_stop_category": true,
+        "can_reduce_category": false
+      },
+      {
+        "event": {
+          "event_id": "event_1017",
+          "user_id": "user_12",
+          "event_type": "expense",
+          "description": "Monthly shopping spend",
+          "category": "shopping",
+          "direction": "debit",
+          "amount": "1169.42",
+          "currency": "ZAR",
+          "event_date": "2026-03-11",
+          "settlement_date": "2026-03-11",
+          "status": "settled",
+          "linked_event_id": null,
+          "flexibility": "reducible",
+          "minimum_allowed_amount": "511.28",
+          "evidence_ids": [],
+          "recurrence_override_amount": null,
+          "recurrence_override_date": null,
+          "recurrence_override_currency": null,
+          "recurrence_override_day": null,
+          "recurrence_cancelled": false,
+          "recurrence_reason": ""
+        },
+        "projected_amounts": [
+          "1255.89"
+        ],
+        "protected": false,
+        "can_stop_category": false,
+        "can_reduce_category": true
+      },
+      {
+        "event": {
+          "event_id": "event_1054",
+          "user_id": "user_12",
+          "event_type": "expense",
+          "description": "Coffee shop",
+          "category": "dining",
+          "direction": "debit",
+          "amount": "1943.35",
+          "currency": "ZAR",
+          "event_date": "2026-03-28",
+          "settlement_date": "2026-03-28",
+          "status": "settled",
+          "linked_event_id": null,
+          "flexibility": "reducible",
+          "minimum_allowed_amount": "1072.5",
+          "evidence_ids": [],
+          "recurrence_override_amount": null,
+          "recurrence_override_date": null,
+          "recurrence_override_currency": null,
+          "recurrence_override_day": null,
+          "recurrence_cancelled": false,
+          "recurrence_reason": ""
+        },
+        "projected_amounts": [
+          "2257.60"
+        ],
+        "protected": false,
+        "can_stop_category": false,
+        "can_reduce_category": true
+      }
+    ]
+  },
+  {
+    "request_id": "request_21",
+    "reserve": "1800",
+    "predicted": {
+      "request_id": "request_21",
+      "amount_safe_to_pay": "1574.4",
+      "affordability_status": "affordable_now",
+      "recommended_payment_method": "full_payment",
+      "payment_plan": "2026-04-03:1574.4",
+      "earliest_date_for_full_payment": "2026-04-03",
+      "spending_changes_needed": "none",
+      "decision_explanation": "Safe today before changes: 1574.40 USD; protected minimum: 1800. Use full_payment, total 1574.4, completing 2026-04-03. Lowest projected balance: 1898.72 on 2026-04-12. Limiting expense: event_1817 (122.42 on 2026-04-12)."
+    },
+    "expected": {
+      "request_id": "request_21",
+      "amount_safe_to_pay": "1543.35",
+      "affordability_status": "affordable_with_plan",
+      "recommended_payment_method": "full_payment",
+      "payment_plan": "2026-04-03:1574.40",
+      "earliest_date_for_full_payment": "2026-04-15",
+      "spending_changes_needed": "stop:event_1815|reduce_to:event_1816:23.50",
+      "decision_explanation": "Stop the online backup subscription and reduce the streaming subscription to USD 23.50, then pay USD 1,574.40 today. This leaves at least USD 1,800 available."
+    },
+    "selected_without_changes": {
+      "safe": true,
+      "minimum": "1898.72",
+      "breach_date": "None",
+      "lowest_date": "2026-04-12",
+      "eligibility_errors": []
+    },
+    "expected_schedule_without_changes": {
+      "safe": true,
+      "minimum": "1898.72",
+      "breach_date": "None",
+      "lowest_date": "2026-04-12",
+      "eligibility_errors": []
+    },
+    "expected_schedule_with_expected_changes": {
+      "safe": true,
+      "minimum": "1933.22",
+      "breach_date": "None",
+      "lowest_date": "2026-04-12",
+      "eligibility_errors": []
+    },
+    "selected_individual_necessity": [],
+    "matching_schedule_valid_change_counts": [
+      0
+    ],
+    "eligible_event_details": [
+      {
+        "event": {
+          "event_id": "event_1815",
+          "user_id": "user_21",
+          "event_type": "subscription",
+          "description": "Online backup subscription",
+          "category": "cloud_storage",
+          "direction": "debit",
+          "amount": "11",
+          "currency": "USD",
+          "event_date": "2026-03-12",
+          "settlement_date": "2026-03-12",
+          "status": "settled",
+          "linked_event_id": null,
+          "flexibility": "stoppable",
+          "minimum_allowed_amount": null,
+          "evidence_ids": [],
+          "recurrence_override_amount": null,
+          "recurrence_override_date": null,
+          "recurrence_override_currency": null,
+          "recurrence_override_day": null,
+          "recurrence_cancelled": false,
+          "recurrence_reason": ""
+        },
+        "projected_amounts": [
+          "11"
+        ],
+        "protected": false,
+        "can_stop_category": true,
+        "can_reduce_category": false
+      },
+      {
+        "event": {
+          "event_id": "event_1816",
+          "user_id": "user_21",
+          "event_type": "subscription",
+          "description": "Streaming subscription",
+          "category": "streaming",
+          "direction": "debit",
+          "amount": "47",
+          "currency": "USD",
+          "event_date": "2026-03-09",
+          "settlement_date": "2026-03-09",
+          "status": "settled",
+          "linked_event_id": null,
+          "flexibility": "reducible_or_stoppable",
+          "minimum_allowed_amount": "23.5",
+          "evidence_ids": [],
+          "recurrence_override_amount": null,
+          "recurrence_override_date": null,
+          "recurrence_override_currency": null,
+          "recurrence_override_day": null,
+          "recurrence_cancelled": false,
+          "recurrence_reason": ""
+        },
+        "projected_amounts": [
+          "47"
+        ],
+        "protected": false,
+        "can_stop_category": true,
+        "can_reduce_category": true
+      },
+      {
+        "event": {
+          "event_id": "event_1817",
+          "user_id": "user_21",
+          "event_type": "expense",
+          "description": "Monthly shopping spend",
+          "category": "shopping",
+          "direction": "debit",
+          "amount": "126.38",
+          "currency": "USD",
+          "event_date": "2026-03-12",
+          "settlement_date": "2026-03-12",
+          "status": "settled",
+          "linked_event_id": null,
+          "flexibility": "reducible",
+          "minimum_allowed_amount": "49.6",
+          "evidence_ids": [],
+          "recurrence_override_amount": null,
+          "recurrence_override_date": null,
+          "recurrence_override_currency": null,
+          "recurrence_override_day": null,
+          "recurrence_cancelled": false,
+          "recurrence_reason": ""
+        },
+        "projected_amounts": [
+          "122.42"
+        ],
+        "protected": false,
+        "can_stop_category": false,
+        "can_reduce_category": true
+      },
+      {
+        "event": {
+          "event_id": "event_1854",
+          "user_id": "user_21",
+          "event_type": "expense",
+          "description": "Neighbourhood restaurant",
+          "category": "dining",
+          "direction": "debit",
+          "amount": "69.31",
+          "currency": "USD",
+          "event_date": "2026-03-27",
+          "settlement_date": "2026-03-27",
+          "status": "settled",
+          "linked_event_id": null,
+          "flexibility": "reducible",
+          "minimum_allowed_amount": "41",
+          "evidence_ids": [],
+          "recurrence_override_amount": null,
+          "recurrence_override_date": null,
+          "recurrence_override_currency": null,
+          "recurrence_override_day": null,
+          "recurrence_cancelled": false,
+          "recurrence_reason": ""
+        },
+        "projected_amounts": [
+          "83.44"
+        ],
+        "protected": false,
+        "can_stop_category": false,
+        "can_reduce_category": true
+      }
+    ]
+  }
+]

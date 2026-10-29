@@ -1,0 +1,1363 @@
+{
+  "rows": 250,
+  "request_ids_exact_and_in_order": true,
+  "output_sha256": "7bf59bc60ab11fcaf2b82184c20e0e141c3c9cbe8f80f266683c7380c3ebc1dc",
+  "methods": {
+    "full_payment": 49,
+    "not_recommended": 114,
+    "wait": 38,
+    "partial_payment": 9,
+    "installments": 40
+  },
+  "issue_counts": {
+    "incomplete_new_fact": 102,
+    "stale_recurrence": 17,
+    "rejected_fact": 3,
+    "unlinked_fact": 2,
+    "unconfirmed_credit": 1
+  },
+  "blocked_requests": [
+    "request_87",
+    "request_119",
+    "request_127",
+    "request_153"
+  ],
+  "evidence_used_actions": {
+    "amend": 36,
+    "cancel": 12,
+    "image_fact": 11,
+    "confirm": 26,
+    "settle": 10,
+    "literal_percentage_fallback": 6,
+    "create_fact": 5,
+    "delay": 2
+  },
+  "warnings": [
+    {
+      "request_id": "request_26",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_18",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_27",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_19",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_28",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_20",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_32",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_22",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_33",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_23",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_34",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_24",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_37",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_27",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_40",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_29",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_43",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_31",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        },
+        {
+          "code": "stale_recurrence",
+          "source_id": "event_3973",
+          "detail": "previous employer payroll: expected next occurrence 2024-08-15 already overdue",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_44",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_32",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_47",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_34",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_50",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_37",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_52",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_38",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        },
+        {
+          "code": "stale_recurrence",
+          "source_id": "event_4849",
+          "detail": "previous employer payroll: expected next occurrence 2024-05-15 already overdue",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_57",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_41",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_58",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_42",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_59",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_43",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_60",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_44",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_61",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_45",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_62",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_46",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_64",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_47",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_66",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_49",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_68",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_50",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_71",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_53",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_74",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_56",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_75",
+      "issues": [
+        {
+          "code": "stale_recurrence",
+          "source_id": "event_6950",
+          "detail": "payroll credit: expected next occurrence 2026-03-15 already overdue",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_82",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_62",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        },
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_62",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_87",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_66",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        },
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_66",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": true
+        }
+      ]
+    },
+    {
+      "request_id": "request_90",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_68",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_93",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_71",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_94",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_72",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_95",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_73",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_97",
+      "issues": [
+        {
+          "code": "stale_recurrence",
+          "source_id": "event_8997",
+          "detail": "previous employer payroll: expected next occurrence 2024-02-15 already overdue",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_98",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_74",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_102",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_76",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_103",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_77",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_106",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_80",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        },
+        {
+          "code": "stale_recurrence",
+          "source_id": "event_9823",
+          "detail": "previous employer payroll: expected next occurrence 2024-11-15 already overdue",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_107",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_81",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_108",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_82",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_110",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_83",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_111",
+      "issues": [
+        {
+          "code": "stale_recurrence",
+          "source_id": "event_10255",
+          "detail": "payroll credit: expected next occurrence 2026-03-15 already overdue",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_112",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_85",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_113",
+      "issues": [
+        {
+          "code": "rejected_fact",
+          "source_id": "message_86",
+          "detail": "fact contradicts supplied event link",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_114",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_87",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_118",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_90",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        },
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_90",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_119",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_91",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": true
+        }
+      ]
+    },
+    {
+      "request_id": "request_122",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_93",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_123",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_94",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_124",
+      "issues": [
+        {
+          "code": "stale_recurrence",
+          "source_id": "event_11439",
+          "detail": "previous employer payroll: expected next occurrence 2024-05-15 already overdue",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_125",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_95",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_126",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_96",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_127",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_97",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": true
+        }
+      ]
+    },
+    {
+      "request_id": "request_131",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_101",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_132",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_102",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_142",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_109",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_144",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_111",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_145",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_112",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_147",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_113",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        },
+        {
+          "code": "rejected_fact",
+          "source_id": "message_113",
+          "detail": "low confidence; requires review",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_150",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_115",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_151",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_116",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        },
+        {
+          "code": "stale_recurrence",
+          "source_id": "event_13883",
+          "detail": "previous employer payroll: expected next occurrence 2024-08-15 already overdue",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_153",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_118",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": true
+        }
+      ]
+    },
+    {
+      "request_id": "request_155",
+      "issues": [
+        {
+          "code": "rejected_fact",
+          "source_id": "message_120",
+          "detail": "low confidence; requires review",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_159",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_123",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_160",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_124",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        },
+        {
+          "code": "stale_recurrence",
+          "source_id": "event_14701",
+          "detail": "previous employer payroll: expected next occurrence 2024-05-15 already overdue",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_161",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_125",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_165",
+      "issues": [
+        {
+          "code": "stale_recurrence",
+          "source_id": "event_15125",
+          "detail": "payroll credit: expected next occurrence 2026-03-15 already overdue",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_166",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_130",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_167",
+      "issues": [
+        {
+          "code": "unlinked_fact",
+          "source_id": "message_131",
+          "detail": "no unambiguous existing event or complete new fact",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_168",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_132",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_169",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_133",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_170",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_134",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_171",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_135",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_173",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_137",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_174",
+      "issues": [
+        {
+          "code": "stale_recurrence",
+          "source_id": "event_15965",
+          "detail": "payroll credit: expected next occurrence 2026-03-15 already overdue",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_176",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_139",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_177",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_140",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_178",
+      "issues": [
+        {
+          "code": "unconfirmed_credit",
+          "source_id": "evidence_message_141_0",
+          "detail": "non-salary credit omitted until settlement",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_180",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_143",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_186",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_148",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_187",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_149",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        },
+        {
+          "code": "stale_recurrence",
+          "source_id": "event_17256",
+          "detail": "previous employer payroll: expected next occurrence 2024-08-15 already overdue",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_194",
+      "issues": [
+        {
+          "code": "unlinked_fact",
+          "source_id": "message_154",
+          "detail": "no unambiguous existing event or complete new fact",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_195",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_155",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_196",
+      "issues": [
+        {
+          "code": "stale_recurrence",
+          "source_id": "event_18053",
+          "detail": "previous employer payroll: expected next occurrence 2024-05-15 already overdue",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_197",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_156",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_199",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_158",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_204",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_162",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_212",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_165",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_215",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_168",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_222",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_173",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_223",
+      "issues": [
+        {
+          "code": "stale_recurrence",
+          "source_id": "event_20469",
+          "detail": "previous employer payroll: expected next occurrence 2024-08-15 already overdue",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_226",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_176",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_227",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_177",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_228",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_178",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_230",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_180",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_232",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_181",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_233",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_182",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_235",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_184",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_237",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_186",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_238",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_187",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_240",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_188",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_242",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_190",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_245",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_191",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_246",
+      "issues": [
+        {
+          "code": "stale_recurrence",
+          "source_id": "event_22603",
+          "detail": "payroll credit: expected next occurrence 2026-03-15 already overdue",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_249",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_195",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_250",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_196",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        },
+        {
+          "code": "stale_recurrence",
+          "source_id": "event_22972",
+          "detail": "previous employer payroll: expected next occurrence 2024-11-15 already overdue",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_255",
+      "issues": [
+        {
+          "code": "stale_recurrence",
+          "source_id": "event_23407",
+          "detail": "payroll credit: expected next occurrence 2026-03-15 already overdue",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_256",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_200",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_261",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_202",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_263",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_204",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_267",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_208",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_268",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_209",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_269",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_210",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_271",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_211",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_273",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_213",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "request_id": "request_274",
+      "issues": [
+        {
+          "code": "incomplete_new_fact",
+          "source_id": "message_214",
+          "detail": "new event requires explicit description/category/direction/type/currency/date/status",
+          "blocking": false
+        }
+      ]
+    }
+  ],
+  "engine_validation": "Passed: all 250 rows re-evaluated by validate-output",
+  "selected_plans_verified": 136,
+  "all_selected_plans_maintain_reserve": true,
+  "dataset_unchanged": true,
+  "tests_passed": 88,
+  "deterministic_rerun_same_sha256": true
+}
